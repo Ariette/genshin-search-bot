@@ -104,9 +104,6 @@ async function handleRequest(request) {
             return response({ type: 4, data: {content:'에러 발생!'} });
           }
         }
-        case '음식': {
-          return response({ type: 4, data: {content: `\`\`\`${JSON.stringify(body, null, 2)}\`\`\``}})
-        }
         default:
           return new Response('Bad Request', { status: 400 });
       }
