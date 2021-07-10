@@ -1,0 +1,7 @@
+{
+    "errorTemplate": "에러 발생!",
+    "missingCharacter": "그런 캐릭터는 몰라!",
+    "missingWeapon": "그런 무기는 몰라!",
+    "missingArtifact": "그런 성유물은 몰라!",
+    "missingItem": "그런 아이템은 몰라!"
+}
