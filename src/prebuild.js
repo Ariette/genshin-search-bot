@@ -4,6 +4,7 @@ const characters = require('./data/characters.json');
 const weapons = require('./data/weapons.json');
 const foods = require('./data/foods.json');
 const materials = require('./data/materials.json');
+const alias = require('./modules/alias.json');
 
 const data = {
     characters: [],
@@ -60,13 +61,13 @@ function subStatTransform(substat) {
     if (!substat) return;
     switch(substat) {
         case '치명타 확률':
-            return ['치명타', '확률', '치확'];
+            return ['치명타', '확률', '치확', '치명타확률'];
         case '치명타 피해':
-            return ['치명타', '피해', '치피'];
+            return ['치명타', '피해', '치피', '치명타피해'];
         case '원소 충전 효율':
-            return ['원소', '충전', '효율', '원충'];
+            return ['원소', '충전', '효율', '원충', '원소충전효율'];
         case '원소 마스터리':
-            return ['원소', '마스터리', '원마'];
+            return ['원소', '마스터리', '원마', '원소마스터리'];
         case '공격력':
             return ['공격력', '공퍼'];
         case '방어력':
@@ -116,23 +117,25 @@ function talentTransform(talent) {
         }
     }
     const findLabel = /(.*)\|(.*)/;
-    const findParam = /{param(\d+):(\w*)}/g;
+    const findParam = /{param(\d+):(\w*)}/;
     const result = [];
     for (const label of talent.info) {
         const slice = label.match(findLabel);
         if (!slice) continue;
         
-        const params = {};
-        let i;
-        while ((i = findParam.exec(slice[2] ?? '')) !== null) {
-            for (const upgrade of talent.upgrade) {
-                if (!params[i[1]]) params[i[1]] = [];
-                params[i[1]].push(parseParam(upgrade.params[Number(i[1]) - 1], i[2]))
+        const parameters = [];
+        for (const upgrade of talent.upgrade) {
+            let param = slice[2] ?? '';
+            let i;
+            while ((i = findParam.exec(param ?? '')) !== null) {
+                const value = parseParam(upgrade.params[Number(i[1]) - 1], i[2]);
+                param = param.replace(findParam, value);
             }
+            parameters.push(param);
         }
         result.push({
             label: slice[1],
-            params: Object.values(params)
+            params: parameters
         })
     }
     return {
@@ -140,6 +143,22 @@ function talentTransform(talent) {
         desc: escapeDesc(talent.desc),
         info: result
     }
+}
+
+function nameTransform(name) {
+    const names = new Set();
+    const regExp = /[ 「」]/g;
+    const adds = alias[name];
+    if (adds) {
+        for (const n of alias[name]) {
+            names.add(n);
+            names.add(n.replace(regExp, ''));
+        }
+    }
+    names.add(name);
+    names.add(name.replace(regExp, ''));
+
+    return [...names].join(' ');
 }
 
 const Characters = Object.values(characters);
@@ -153,25 +172,23 @@ for (const Character of Characters) {
         weapontype: Character.weapontype,
         material: materialTransform(Character),
         icon: Character.icon,
-        substat: Character.stat.substat,
+        substat: Character.stat.upgrade[1].props[3].type,
         element: Character.element,
         constellation: Character.constellation,
-        association: Character.association,
+        affiliation: Character.affiliation,
         cv: Character.cv,
         birthday: Character.birthday || '-',
         days: dayTransform(Character.day),
-        names: Character.name,
-        substats: subStatTransform(Character.stat.substat),
+        names: nameTransform(Character.name),
+        substats: subStatTransform(Character.stat.upgrade[1].props[3].type),
         raritys: Character.rarity + '성'
     };
     if (Character.id === 10000005) character.names += ' 아이테르 남행자';
     if (Character.id === 10000007) character.names += ' 루미네';
-    if (Character.id === 10000033) character.names += ' 타탈';
-    if (Character.id === 10000031) character.names += ' 에이미';
-    if (Character.id === 4) character.names += ' 남행자 바람';
-    if (Character.id === 6) character.names += ' 남행자 바위';
-    if (Character.id === 14) character.names += ' 여행자 바람';
-    if (Character.id === 16) character.names += ' 여행자 바위';
+    if (Character.id === 4) character.names += ' 남행자 바람 바람남행자';
+    if (Character.id === 6) character.names += ' 남행자 바위 바위남행자';
+    if (Character.id === 14) character.names += ' 여행자 바람 행자 바람행자 바람여행자';
+    if (Character.id === 16) character.names += ' 여행자 바위 행자 바위행자 바위여행자';
 
     // 특성/별자리 정보가 없는 여행자 기본 정보를 제외
     if (Character.name != '여행자') {
@@ -230,7 +247,8 @@ for (const Weapon of Weapons) {
         } : undefined,
         substats: subStatTransform(Weapon.stat[1]?.type),
         days: dayTransform(Weapon.day),
-        raritys: Weapon.rarity + '성'
+        raritys: Weapon.rarity + '성',
+        names: nameTransform(Weapon.name)
     }
     data.weapons.push(weapon);
 }
@@ -247,10 +265,10 @@ for (const Material of Materials) {
         icon: Material.icon,
         rarity: Material.rarity,
         source: Material.domain ? Material.source.concat(Material.domain) : Material.source,
-        names: Material.name.replace(/[「」]/g, ''),
         characters: Material.character?.map(w => characters[w].name),
         weapons: Material.weapon?.map(w => weapons[w].name),
         days: Material.day ? dayTransform(Material.day) : undefined,
+        names: nameTransform(Material.name)
     }
     data.materials.push(material);
 }
@@ -268,35 +286,31 @@ for (const Food of Foods) {
                 count: w.count
             }
         }),
-        characters: characters[Food.character]?.name,
-        materials: Food.material.map(w => materials[w].name)
+        characters: characters[Food.special?.character]?.name,
+        special: materials[Food.special?.id]?.name,
+        materials: Food.material.map(w => materials[w].name),
+        names: nameTransform(Food.name)
     }
     data.foods.push(food);
 }
 
 const db = new loki();
 const collChara = db.addCollection('Character', {
-    indices: ['names', 'element', 'weapontype', 'substats', 'days', 'raritys'],
     disableMeta: true
 });
 const collWep = db.addCollection('Weapon', {
-    indices: ['name', 'weapontype', 'substats', 'days', 'raritys'],
     disableMeta: true
 });
 const collMat = db.addCollection('Material', {
-    indices: ['names', 'days', 'characters', 'weapons'],
     disableMeta: true
 });
 const collFood = db.addCollection('Food', {
-    indices: ['name', 'materials', 'characters'],
     disableMeta: true
 });
 const collTalent = db.addCollection('Talent', {
-    indices: ['characters'],
     disableMeta: true
 });
 const collCons = db.addCollection('Constellation', {
-    indices: ['characters'],
     disableMeta: true
 })
 collChara.insert(data.characters);

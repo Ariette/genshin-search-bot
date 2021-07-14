@@ -33,7 +33,10 @@
         "count": 1
       }
     ],
-    "character": 10000015,
+    "special": {
+      "id": 108014,
+      "character": 10000015
+    },
     "material": [
       100011,
       100064
@@ -70,7 +73,10 @@
         "count": 1
       }
     ],
-    "character": 10000032,
+    "special": {
+      "id": 108116,
+      "character": 10000032
+    },
     "material": [
       100062
     ]
@@ -106,7 +112,10 @@
         "count": 1
       }
     ],
-    "character": 10000021,
+    "special": {
+      "id": 108010,
+      "character": 10000021
+    },
     "material": [
       100061
     ]
@@ -186,7 +195,10 @@
         "count": 1
       }
     ],
-    "character": 10000039,
+    "special": {
+      "id": 108134,
+      "character": 10000039
+    },
     "material": [
       100084,
       100077
@@ -266,7 +278,10 @@
         "count": 1
       }
     ],
-    "character": 10000027,
+    "special": {
+      "id": 108139,
+      "character": 10000027
+    },
     "material": [
       100061,
       110001
@@ -307,7 +322,10 @@
         "count": 1
       }
     ],
-    "character": 10000024,
+    "special": {
+      "id": 108138,
+      "character": 10000024
+    },
     "material": [
       100061,
       100027
@@ -347,7 +365,10 @@
         "count": 1
       }
     ],
-    "character": 10000042,
+    "special": {
+      "id": 108145,
+      "character": 10000042
+    },
     "material": [
       100084,
       100077
@@ -431,7 +452,10 @@
         "count": 1
       }
     ],
-    "character": 10000006,
+    "special": {
+      "id": 108018,
+      "character": 10000006
+    },
     "material": [
       110001,
       100061,
@@ -472,7 +496,10 @@
         "count": 1
       }
     ],
-    "character": 10000045,
+    "special": {
+      "id": 108234,
+      "character": 10000045
+    },
     "material": [
       100064,
       100012
@@ -561,7 +588,10 @@
         "count": 1
       }
     ],
-    "character": 10000014,
+    "special": {
+      "id": 108040,
+      "character": 10000014
+    },
     "material": [
       100061,
       110002,
@@ -607,7 +637,10 @@
         "count": 1
       }
     ],
-    "character": 10000034,
+    "special": {
+      "id": 108118,
+      "character": 10000034
+    },
     "material": [
       100051,
       110001,
@@ -702,7 +735,10 @@
         "count": 1
       }
     ],
-    "character": 10000041,
+    "special": {
+      "id": 108114,
+      "character": 10000041
+    },
     "material": [
       100018,
       100001,
@@ -752,7 +788,10 @@
         "count": 1
       }
     ],
-    "character": 10000029,
+    "special": {
+      "id": 108115,
+      "character": 10000029
+    },
     "material": [
       110001,
       100079,
@@ -889,7 +928,10 @@
         "count": 1
       }
     ],
-    "character": 10000026,
+    "special": {
+      "id": 108137,
+      "character": 10000026
+    },
     "material": [
       100078,
       110006,
@@ -935,7 +977,10 @@
         "count": 1
       }
     ],
-    "character": 10000044,
+    "special": {
+      "id": 108174,
+      "character": 10000044
+    },
     "material": [
       100064,
       100027,
@@ -1064,7 +1109,10 @@
         "count": 1
       }
     ],
-    "character": 10000025,
+    "special": {
+      "id": 108136,
+      "character": 10000025
+    },
     "material": [
       100092,
       100093,
@@ -1199,7 +1247,10 @@
         "count": 1
       }
     ],
-    "character": 10000036,
+    "special": {
+      "id": 108144,
+      "character": 10000036
+    },
     "material": [
       100011,
       100061,
@@ -1241,7 +1292,10 @@
         "count": 1
       }
     ],
-    "character": 10000046,
+    "special": {
+      "id": 108200,
+      "character": 10000046
+    },
     "material": [
       100063,
       100015
@@ -1367,7 +1421,10 @@
         "count": 1
       }
     ],
-    "character": 10000048,
+    "special": {
+      "id": 108244,
+      "character": 10000048
+    },
     "material": [
       100074,
       100088
@@ -1456,7 +1513,10 @@
         "count": 1
       }
     ],
-    "character": 10000033,
+    "special": {
+      "id": 108175,
+      "character": 10000033
+    },
     "material": [
       100073,
       100056,
@@ -1556,7 +1616,10 @@
         "count": 1
       }
     ],
-    "character": 10000031,
+    "special": {
+      "id": 108117,
+      "character": 10000031
+    },
     "material": [
       110005,
       110010,
@@ -1652,7 +1715,10 @@
         "count": 1
       }
     ],
-    "character": 10000043,
+    "special": {
+      "id": 108146,
+      "character": 10000043
+    },
     "material": [
       100074,
       110005,
@@ -1703,7 +1769,10 @@
         "count": 1
       }
     ],
-    "character": 10000003,
+    "special": {
+      "id": 108044,
+      "character": 10000003
+    },
     "material": [
       100011,
       110001,
@@ -1749,7 +1818,10 @@
         "count": 1
       }
     ],
-    "character": 10000020,
+    "special": {
+      "id": 108048,
+      "character": 10000020
+    },
     "material": [
       100020,
       100080,
@@ -1799,7 +1871,10 @@
         "count": 1
       }
     ],
-    "character": 10000016,
+    "special": {
+      "id": 108058,
+      "character": 10000016
+    },
     "material": [
       100061,
       100080,
@@ -1846,7 +1921,10 @@
         "count": 1
       }
     ],
-    "character": 10000022,
+    "special": {
+      "id": 108113,
+      "character": 10000022
+    },
     "material": [
       100013,
       100080,
@@ -1989,7 +2067,10 @@
         "count": 1
       }
     ],
-    "character": 10000038,
+    "special": {
+      "id": 108214,
+      "character": 10000038
+    },
     "material": [
       110004,
       100084,
@@ -2189,7 +2270,10 @@
         "count": 1
       }
     ],
-    "character": 10000023,
+    "special": {
+      "id": 108135,
+      "character": 10000023
+    },
     "material": [
       100084,
       100027,
@@ -2339,7 +2423,10 @@
         "count": 1
       }
     ],
-    "character": 10000035,
+    "special": {
+      "id": 108140,
+      "character": 10000035
+    },
     "material": [
       100061,
       100084,
@@ -2386,7 +2473,10 @@
         "count": 1
       }
     ],
-    "character": 10000030,
+    "special": {
+      "id": 108173,
+      "character": 10000030
+    },
     "material": [
       100061,
       110005,
@@ -2533,7 +2623,10 @@
         "count": 1
       }
     ],
-    "character": 10000037,
+    "special": {
+      "id": 108213,
+      "character": 10000037
+    },
     "material": [
       100092,
       100026,
@@ -2822,7 +2915,10 @@
         "count": 1
       }
     ],
-    "character": 10000051,
+    "special": {
+      "id": 108245,
+      "character": 10000051
+    },
     "material": [
       100061,
       100062,

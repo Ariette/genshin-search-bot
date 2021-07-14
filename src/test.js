@@ -1,49 +1,89 @@
-const nacl = require('tweetnacl');
-const fetch = require('node-fetch');
+const fs = require('fs');
+const pa = require('path');
 
-function str2ab(text) {
-  return new TextEncoder().encode(text);
-}
-function ab2str(buf) {
-  return new TextDecoder().decode(buf);
-}
+/*
+const initSqlJs = require('sql.js-fts5');
+const dataload_sql = fs.readFileSync(pa.join(__dirname, '../sqlite.db'));
+initSqlJs().then(SQL => {
+  const before = new Date();
+  for (let i = 0; i < 1000; i++) {
+    const db = new SQL.Database(dataload_sql);
+    const sql = "SELECT document FROM Weapon WHERE Weapon MATCH '4성 법구'";
+    const result = db.exec(sql);
+  }
+  const after = new Date();
+  console.log(after - before);
+})
+*/
 
-// Fake data for testing
-const data = {
-  "type": 2,
-  "token": "A_UNIQUE_TOKEN",
-  "member": {
-      "user": {
-          "id": 53908232506183680,
-          "username": "Mason",
-          "avatar": "a_d5efa99b3eeaa7dd43acca82f5692432",
-          "discriminator": "1337",
-          "public_flags": 131141
-      },
-      "roles": ["539082325061836999"],
-      "premium_since": null,
-      "permissions": "2147483647",
-      "pending": false,
-      "nick": null,
-      "mute": false,
-      "joined_at": "2017-03-13T19:19:14.040000+00:00",
-      "is_pending": false,
-      "deaf": false
-  },
-  "id": "786008729715212338",
-  "guild_id": "290926798626357999",
-  "data": {
-      "options": [{
-          "name": "특성",
-          "value": "연비"
-      }],
-      "name": "캐릭터",
-      "id": "771825006014889984"
-  },
-  "channel_id": "645027906669510667"
+/*
+initSqlJs().then(function(SQL){
+  // Load the db
+  const db = new SQL.Database();
+  let sql = [`CREATE VIRTUAL TABLE Weapon USING FTS5(weapontype, raritys, names, substats, document UNINDEXED);`];
+  const lokidb = new loki();
+  lokidb.loadJSON(dataload_loki);
+  const coll = lokidb.getCollection('Weapon');
+  coll.data.forEach(w => {
+    sql.push(`INSERT INTO Weapon VALUES ('${w.weapontype}', '${w.raritys}', '${w.names}', '${w.substats}', '${JSON.stringify(w).replace(/'/g, "''")}');`);
+  });
+  db.run(sql.join(''));
+  const data = db.export();
+  const buffer = new Buffer(data);
+  fs.writeFileSync(pa.join(__dirname, '../sqlite.db'), buffer);
+});
+*/
+function intersectionWith(comp, ...arrays) {
+  if (arrays.length == 0) return arrays
+  if (arrays.length == 1) return arrays[0]
+
+  const first = arrays[0];
+  const others = arrays.slice(1);
+return first.filter(a => others.every(arr => arr.some(b => comp(a, b))));
 }
-const body = JSON.stringify(data);
-const key = nacl.sign.keyPair();
-const timestamp = '1625886216';
-const signature = nacl.sign(str2ab(timestamp + body), key.secretKey);
-const signstring = ab2str(signature);
+/*
+const loki = require('lokijs');
+const dataload_loki = fs.readFileSync(pa.join(__dirname, '../loki.json'), 'utf-8');
+const before = new Date();
+for (let i = 0; i < 1000; i++) {
+  const query = ['4성', '법구'];
+  const db = new loki();
+  db.loadJSON(dataload_loki);
+  const coll = db.getCollection('Weapon');
+  results = coll.find({
+    'name': {'$contains': query}
+  });
+  if (!results.length) {
+    const lists = {
+      raritys: coll.find({'raritys': {'$containsAny': query}}),
+      weapontype: coll.find({'weapontype': {'$containsAny': query}}),
+      substats: coll.find({'substats': {'$containsAny': query}})
+    } 
+    results = Object.values(lists).filter(w => w.length > 0);
+    results = intersectionWith((a, b) => a['$loki'] == b['$loki'], ...results);
+  }
+}
+const after = new Date();
+console.log(after - before);
+*/
+
+
+const loki = require('lokijs');
+const dataload_loki = fs.readFileSync(pa.join(__dirname, '../loki.json'), 'utf-8');
+const query = ['4성', '법구'];
+const db = new loki();
+db.loadJSON(dataload_loki);
+const coll = db.getCollection('Weapon');
+results = coll.find({
+  'name': {'$contains': query}
+});
+if (!results.length) {
+  const lists = {
+    raritys: coll.find({'raritys': {'$containsAny': query}}),
+    weapontype: coll.find({'weapontype': {'$containsAny': query}}),
+    substats: coll.find({'substats': {'$containsAny': query}})
+  } 
+  results = Object.values(lists).filter(w => w.length > 0);
+  results = intersectionWith((a, b) => a['$loki'] == b['$loki'], ...results);
+}
+console.log(results);

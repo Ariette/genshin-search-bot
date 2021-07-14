@@ -39,12 +39,12 @@ module.exports = {
                 { name: 'CV', value:`\`KR\` ${chr.cv.ko} 　\`JP\` ${chr.cv.jp} 　\`EN\` ${chr.cv.en} 　\`CN\` ${chr.cv.cn}`},
                 { name: '속성', value: chr.element, inline: true },
                 { name: '운명의 자리', value: chr.constellation, inline: true },
-                { name: '소속', value: chr.association, inline: true },
+                { name: '소속', value: chr.affiliation, inline: true },
                 { name: '생일', value: chr.birthday, inline: true },
                 { name: '무기', value: chr.weapontype, inline: true },
                 { name: '돌파 스탯', value: chr.substat, inline: true },
                 { name: '특산물', value: chr.material.level, inline: true },
-                { name: '특성 재료', value: chr.material.talent, inline: true }
+                { name: '특성 재료', value: '「' + chr.material.talent + '」', inline: true }
             ]
         };
         if (chr.days) embed.fields.push({name: '파밍 요일', value: chr.days, inline: true}); // 여행자를 위한 예외
@@ -101,12 +101,13 @@ module.exports = {
                 return lineIndex === 1;
             },
             columnDefault: {
-                alignment: 'right'
+                alignment: 'right',
+                width: 7
             },
             columns: {
                 0: {
-                    width: 15,
-                    alignment: 'left'
+                    alignment: 'left',
+                    width: 14
                 }
             },
           }
@@ -114,17 +115,9 @@ module.exports = {
         const table2 = [[' ', 'lv.6', 'lv.7', 'lv.8', 'lv.9', 'lv.10']];
         const table3 = [[' ', 'lv.11', 'lv.12', 'lv.13', 'lv.14', 'lv.15']];
         t[type].info.forEach(data => {
-            data.params.forEach((param, index) => {
-                if (index === 0) {
-                    table1.push([data.label, ...param.slice(0, 5)]);
-                    table2.push([data.label, ...param.slice(5, 10)]);
-                    table3.push([data.label, ...param.slice(10)]);
-                } else {
-                    table1.push([' ', ...param.slice(0, 5)]);
-                    table2.push([' ', ...param.slice(5, 10)]);
-                    table3.push([' ', ...param.slice(10)]);
-                }
-            })
+            table1.push([data.label, ...data.params.slice(0, 5)]);
+            table2.push([data.label, ...data.params.slice(5, 10)]);
+            table3.push([data.label, ...data.params.slice(10)]);
         });
 
         const embed1 = {

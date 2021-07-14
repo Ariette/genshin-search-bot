@@ -2,11 +2,12 @@
   "name": "genshin-search-bot",
   "version": "1.0.0",
   "description": "디스코드 원신 서치봇",
-  "main": "./src/worker.js",
+  "main": "./dist/worker.js",
   "scripts": {
     "start": "wrangler preview",
     "dev": "wrangler preview --watch",
     "deploy": "wrangler publish",
+    "build": "node ./build.js",
     "database": "node ./src/prebuild.js && wrangler kv:key put --binding=DB data loki.json --path",
     "command": "wrangler dev --env staging"
   },
@@ -19,16 +20,14 @@
   "author": "Ariette",
   "license": "MIT",
   "dependencies": {
-    "@google-cloud/logging-bunyan": "^3.1.0",
-    "@google-cloud/logging-min": "^9.5.2",
-    "bunyan": "^1.8.15",
     "discord-interactions": "^2.3.0",
     "lokijs": "^1.5.12",
+    "sql.js-fts5": "^1.4.0",
     "table": "^6.7.1"
   },
   "devDependencies": {
     "@cloudflare/wrangler": "^1.17.0",
-    "node-fetch": "^2.6.1",
-    "tweetnacl": "^1.0.3"
+    "discord.js": "^13.0.0-dev.1dcad05.1626178061",
+    "esbuild": "^0.12.15"
   }
 }

@@ -52,6 +52,7 @@ async function handleRequest(request) {
               const data = await findCharacter(query);
               return response({ type: 4, data: data });
             } catch (err) {
+              console.log(err.message);
               return response({ type: 4, data: {content:'에러 발생!'} });
             }
           } else if (options.name === '특성') {
@@ -59,6 +60,7 @@ async function handleRequest(request) {
               const data = await findTalent(query);
               return response({ type: 4, data: data });
             } catch (err) {
+              console.log(err.message);
               return response({ type: 4, data: {content:'에러 발생!'} });
             }
           } else if (options.name === '별자리') {
@@ -66,6 +68,7 @@ async function handleRequest(request) {
               const data = await findConstellation(query);
               return response({ type: 4, data: data });
             } catch (err) {
+              console.log(err.message);
               return response({ type: 4, data: {content:'에러 발생!'} });
             }
           } else {
@@ -77,6 +80,7 @@ async function handleRequest(request) {
             const data = await findWeapon(query);
             return response({ type: 4, data: data });
           } catch (err) {
+            console.log(err.message);
             return response({ type: 4, data: {content:'에러 발생!'} });
           }
         }
@@ -85,6 +89,7 @@ async function handleRequest(request) {
             const data = await findMaterial(query);
             return response({ type: 4, data: data });
           } catch (err) {
+            console.log(err.message);
             return response({ type: 4, data: {content:'에러 발생!'} });
           }
         }
@@ -93,6 +98,7 @@ async function handleRequest(request) {
             const data = await findFood(query);
             return response({ type: 4, data: data });
           } catch (err) {
+            console.log(err.message);
             return response({ type: 4, data: {content:'에러 발생!'} });
           }
         }
@@ -101,6 +107,7 @@ async function handleRequest(request) {
             const data = await findDay(query);
             return response({ type: 4, data: data });
           } catch (err) {
+            console.log(err.message);
             return response({ type: 4, data: {content:'에러 발생!'} });
           }
         }
@@ -117,6 +124,7 @@ async function handleRequest(request) {
             const data = await findCharacter(query);
             return response({ type: 7, data: data });
           } catch (err) {
+            console.log(err.message);
             return response({ type: 4, data: {content:'에러 발생!'} });
           }
         }
@@ -125,6 +133,7 @@ async function handleRequest(request) {
             const data = await findTalent(query);
             return response({ type: 7, data: data });
           } catch (err) {
+            console.log(err.message);
             return response({ type: 4, data: {content:'에러 발생!'} });
           }
         }
@@ -133,6 +142,7 @@ async function handleRequest(request) {
             const data = await findConstellation(query);
             return response({ type: 7, data: data });
           } catch (err) {
+            console.log(err.message);
             return response({ type: 4, data: {content:'에러 발생!'} });
           }
         }
@@ -141,6 +151,7 @@ async function handleRequest(request) {
             const data = await findTalentStat(query, 'normal');
             return response({ type: 4, data: data });
           } catch (err) {
+            console.log(err.message);
             return response({ type: 4, data: {content:'에러 발생!'} });
           }
         }
@@ -149,6 +160,7 @@ async function handleRequest(request) {
             const data = await findTalentStat(query, 'elemental');
             return response({ type: 4, data: data });
           } catch (err) {
+            console.log(err.message);
             return response({ type: 4, data: {content:'에러 발생!'} });
           }
         }
@@ -157,6 +169,7 @@ async function handleRequest(request) {
             const data = await findTalentStat(query, 'burst');
             return response({ type: 4, data: data });
           } catch (err) {
+            console.log(err.message);
             return response({ type: 4, data: {content:'에러 발생!'} });
           }
         }
