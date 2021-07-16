@@ -16,7 +16,8 @@ const data = {
     talents: [],
     constellations: [],
     stats: [],
-    curves: []
+    curves: [],
+    talentstats: {}
 }
 
 function escapeDesc(desc) {
@@ -105,6 +106,15 @@ function dayTransform(days) {
 }
 
 function talentTransform(talent) {
+    if (!talent) return undefined;
+    return {
+        name: talent.name,
+        desc: escapeDesc(talent.desc),
+        icon: talent.icon,
+    }
+}
+
+function talentstatTransform(talent) {
     if (!talent) return;
 
     function parseParam(value, type) {
@@ -144,11 +154,7 @@ function talentTransform(talent) {
         }
     }
 
-    return {
-        name: talent.name,
-        desc: escapeDesc(talent.desc),
-        info: result.length ? result : undefined
-    }
+    return result.length ? result : undefined
 }
 
 function nameTransform(name) {
@@ -187,8 +193,8 @@ for (const Character of Characters) {
         substats: subStatTransform(Character.stat.upgrade[1].props[3].type),
         raritys: Character.rarity + '성'
     };
-    if (Character.id === 10000005) character.names += '|아이테르|남행자';
-    if (Character.id === 10000007) character.names += '|루미네';
+    if (Character.id === 10000005) character.names += '|아이테르|남행자|(바위)|(바람)';
+    if (Character.id === 10000007) character.names += '|루미네|(바위)|(바람)';
     if (Character.id === 4) character.names += '|남행자|바람남행자';
     if (Character.id === 6) character.names += '|남행자|바위남행자';
     if (Character.id === 14) character.names += '|여행자|바람행자|바람여행자';
@@ -197,7 +203,6 @@ for (const Character of Characters) {
     // 특성/별자리 정보가 없는 여행자 기본 정보를 제외
     if (Character.name != '여행자') {
         const talent = {
-            icon: Character.icon,
             character: Character.name,
             element: Character.element,
             normal: talentTransform(Character.skills.talent.normal),
@@ -208,6 +213,12 @@ for (const Character of Characters) {
             passive3: talentTransform(Character.skills.passive[2]),
             characters: character.names
         };
+        const talentstat = {
+            element: Character.element,
+            normal: talentstatTransform(Character.skills.talent.normal),
+            elemental: talentstatTransform(Character.skills.talent.elemental),
+            burst: talentstatTransform(Character.skills.talent.burst),
+        }
         const constellation = {
             icon: Character.icon,
             character: Character.name,
@@ -223,6 +234,7 @@ for (const Character of Characters) {
         };
         data.talents.push(talent);
         data.constellations.push(constellation);
+        data.talentstats[Character.name] = talentstat;
     }
     const stat = {
         characters: character.names,
@@ -362,6 +374,7 @@ const output = {
             content: Object.assign(w, {characters: undefined})
         }
     }),
+    talentstat: data.talentstats,
     constellation: data.constellations.map(w => {
         return {
             name: w.characters,

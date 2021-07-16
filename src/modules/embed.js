@@ -85,22 +85,40 @@ module.exports = {
             color: hexElement(t.element),
             title: t.character,
             fields: [
-                { name: "일반공격 :arrow_right: " + t.normal.name, value: t.normal.desc },
-                { name: "원소스킬 :arrow_right: " + t.elemental.name, value: t.elemental.desc },
-                { name: "원소폭발 :arrow_right: " + t.burst.name, value: t.burst.desc },
-                { name: "패시브1 :arrow_right: " + t.passive1.name, value: t.passive1.desc },
-                { name: "패시브2 :arrow_right: " + t.passive2.name, value: t.passive2.desc },
+                { name: "1⭐️" + t.passive1.name, value: t.passive1.desc },
+                { name: "4⭐️" + t.passive2.name, value: t.passive2.desc },
             ]
         };
-        if (t.passive3) embed.fields.push({ name: "패시브3 :arrow_right: " + t.passive3.name, value: t.passive3.desc })
+        if (t.passive3) embed.fields.push({ name: "생활⭐️" + t.passive3.name, value: t.passive3.desc });
+        const normal = {
+            color: hexElement(t.element),
+            author: { name: '일반 공격' },
+            title: t.normal.name,
+            description: t.normal.desc,
+            thumbnail: {url: 'https://genshin-impact.fandom.com/wiki/Special:Redirect/file/Talent_' + t.normal.icon +'.png'}
+        };
+        const elemental = {
+            color: hexElement(t.element),
+            author: { name: '원소 전투 스킬' },
+            title: t.elemental.name,
+            description: t.elemental.desc,
+            thumbnail: {url: 'https://genshin-impact.fandom.com/wiki/Special:Redirect/file/Talent_' + t.elemental.icon +'.png'}
+        };
+        const burst = {
+            color: hexElement(t.element),
+            author: { name: '원소 폭발' },
+            title: t.burst.name,
+            description: t.burst.desc,
+            thumbnail: {url: 'https://genshin-impact.fandom.com/wiki/Special:Redirect/file/Talent_' + t.burst.icon +'.png'}
+        };
 
-        return embed;
+        return [embed, normal, elemental, burst];
     },
 
     csEmbed: (cs) => {
         const embed = {
             color: hexElement(cs.element),
-            title: cs.character + ' 운명의 자리',
+            title: cs.character,
             fields: []
         };
         cs.value.forEach((v, i) => {
@@ -130,7 +148,7 @@ module.exports = {
         const table1 = [[' ', 'lv.1', 'lv.2', 'lv.3', 'lv.4', 'lv.5']];
         const table2 = [[' ', 'lv.6', 'lv.7', 'lv.8', 'lv.9', 'lv.10']];
         const table3 = [[' ', 'lv.11', 'lv.12', 'lv.13', 'lv.14', 'lv.15']];
-        t[type].info.forEach(data => {
+        t[type].forEach(data => {
             table1.push([data.label, ...data.params.slice(0, 5)]);
             table2.push([data.label, ...data.params.slice(5, 10)]);
             table3.push([data.label, ...data.params.slice(10)]);
@@ -196,7 +214,7 @@ module.exports = {
         stats.push([90, r(0, 6, st.upgrade[5]), r(1, 6, st.upgrade[5]), r(2, 6, st.upgrade[5]), st.upgrade[5][3]]);
         const embed = {
             color: hexElement(st.element),
-            title: st.character + ' 스탯',
+            title: st.character,
             description: '```' + table(stats, config) + '```',
             footer: {
                 text: '* 위 스탯은 캐릭터 기본 스탯(치확 5%, 치피 50%, 원충 100%)이 제외된 수치입니다.'
@@ -269,10 +287,10 @@ module.exports = {
             ]
         };
         Object.keys(characters).forEach(key => {
-            embed.fields.push({name: key, value: characters[key].join(', ')});
+            embed.fields.push({name: ':arrow_right: ' + key, value: characters[key].join(', ')});
         })
         Object.keys(weapons).forEach(key => {
-            embed.fields.push({name: key, value: weapons[key].join(', ')});
+            embed.fields.push({name: ':arrow_right: ' + key, value: weapons[key].join(', ')});
         })
 
         return embed;
