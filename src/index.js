@@ -1,5 +1,5 @@
 const { verifyKey } = require('discord-interactions');
-const { findCharacter, findWeapon, findTalent, findTalentStat, findConstellation, findMaterial, findFood, findDay } = require("./modules/find.js");
+const { findCharacter, findWeapon, findTalent, findTalentStat, findConstellation, findMaterial, findFood, findDay, findCharacterStat } = require("./modules/find.js");
 
 addEventListener('fetch', event => {
     event.respondWith(handleRequest(event.request))
@@ -28,7 +28,7 @@ async function handleRequest(request) {
   }
 
   // Now Start Logic
-  if (headers.get('content-type') && headers.get('content-type').indexOf('application') != -1) {
+  if (headers.get('content-type')?.indexOf('application') != -1) {
     const body = JSON.parse(rawBody);
     
     // type 1 : Discord Webhook Validation
@@ -53,7 +53,7 @@ async function handleRequest(request) {
               return response({ type: 4, data: data });
             } catch (err) {
               console.log(err.message);
-              return response({ type: 4, data: {content:'에러 발생!'} });
+              return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
             }
           } else if (options.name === '특성') {
             try {
@@ -61,7 +61,7 @@ async function handleRequest(request) {
               return response({ type: 4, data: data });
             } catch (err) {
               console.log(err.message);
-              return response({ type: 4, data: {content:'에러 발생!'} });
+              return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
             }
           } else if (options.name === '별자리') {
             try {
@@ -69,10 +69,16 @@ async function handleRequest(request) {
               return response({ type: 4, data: data });
             } catch (err) {
               console.log(err.message);
-              return response({ type: 4, data: {content:'에러 발생!'} });
+              return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
             }
           } else {
-            return response({type: 4, data: {content: '이건 아직 준비 중이야ㅠㅠ'}});
+            try {
+              const data = await findCharacterStat(query);
+              return response({ type: 4, data: data });
+            } catch (err) {
+              console.log(err.message);
+              return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
+            }
           }
         }
         case '무기': {
@@ -81,7 +87,7 @@ async function handleRequest(request) {
             return response({ type: 4, data: data });
           } catch (err) {
             console.log(err.message);
-            return response({ type: 4, data: {content:'에러 발생!'} });
+            return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
           }
         }
         case '아이템': {
@@ -90,7 +96,7 @@ async function handleRequest(request) {
             return response({ type: 4, data: data });
           } catch (err) {
             console.log(err.message);
-            return response({ type: 4, data: {content:'에러 발생!'} });
+            return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
           }
         }
         case '레시피': {
@@ -99,7 +105,7 @@ async function handleRequest(request) {
             return response({ type: 4, data: data });
           } catch (err) {
             console.log(err.message);
-            return response({ type: 4, data: {content:'에러 발생!'} });
+            return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
           }
         }
         case '파밍': {
@@ -108,7 +114,7 @@ async function handleRequest(request) {
             return response({ type: 4, data: data });
           } catch (err) {
             console.log(err.message);
-            return response({ type: 4, data: {content:'에러 발생!'} });
+            return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
           }
         }
         default:
@@ -117,7 +123,7 @@ async function handleRequest(request) {
     }
     // type 3 : Discord Component Based Interaction
     else if (body.type === 3 ) {
-      const query = body.message.embeds[0].title.split(' ')[0];
+      const query = body.message.embeds?.[0]?.title.split(' ')[0]
       switch (body.data.custom_id) {
         case 'character': {
           try {
@@ -125,7 +131,7 @@ async function handleRequest(request) {
             return response({ type: 7, data: data });
           } catch (err) {
             console.log(err.message);
-            return response({ type: 4, data: {content:'에러 발생!'} });
+            return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
           }
         }
         case 'talent': {
@@ -134,7 +140,7 @@ async function handleRequest(request) {
             return response({ type: 7, data: data });
           } catch (err) {
             console.log(err.message);
-            return response({ type: 4, data: {content:'에러 발생!'} });
+            return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
           }
         }
         case 'constellation': {
@@ -143,7 +149,16 @@ async function handleRequest(request) {
             return response({ type: 7, data: data });
           } catch (err) {
             console.log(err.message);
-            return response({ type: 4, data: {content:'에러 발생!'} });
+            return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
+          }
+        }
+        case 'stat': {
+          try {
+            const data = await findCharacterStat(query);
+            return response({ type: 7, data: data });
+          } catch (err) {
+            console.log(err.message);
+            return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
           }
         }
         case 'normal': {
@@ -152,7 +167,7 @@ async function handleRequest(request) {
             return response({ type: 4, data: data });
           } catch (err) {
             console.log(err.message);
-            return response({ type: 4, data: {content:'에러 발생!'} });
+            return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
           }
         }
         case 'elemental': {
@@ -161,7 +176,7 @@ async function handleRequest(request) {
             return response({ type: 4, data: data });
           } catch (err) {
             console.log(err.message);
-            return response({ type: 4, data: {content:'에러 발생!'} });
+            return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
           }
         }
         case 'burst': {
@@ -170,10 +185,50 @@ async function handleRequest(request) {
             return response({ type: 4, data: data });
           } catch (err) {
             console.log(err.message);
-            return response({ type: 4, data: {content:'에러 발생!'} });
+            return response({ type: 4, data: {content: '에러 발생!', flags: 64} });
           }
         }
         default:
+          // 캐릭터 목록의 경우
+          if (body.data.custom_id.indexOf('_c') == 0) {
+            try {
+              const data = await findCharacter(body.data.custom_id.slice(2));
+              return response({ type: 7, data: data})
+            } catch (err) {
+              console.log(err.message);
+              return response({ type: 7, data: {content: '에러 발생!', flags: 64} });
+            }
+          }
+          // 무기 목록의 경우
+          else if (body.data.custom_id.indexOf('_w') == 0) {
+            try {
+              const data = await findWeapon(body.data.custom_id.slice(2));
+              return response({ type: 7, data: data})
+            } catch (err) {
+              console.log(err.message);
+              return response({ type: 7, data: {content: '에러 발생!', flags: 64} });
+            }
+          }
+          // 특성 목록의 경우
+          else if (body.data.custom_id.indexOf('_t') == 0) {
+            try {
+              const data = await findTalent(body.data.custom_id.slice(2));
+              return response({ type: 7, data: data})
+            } catch (err) {
+              console.log(err.message);
+              return response({ type: 7, data: {content: '에러 발생!', flags: 64} });
+            }
+          }
+          // 별자리 목록의 경우
+          else if (body.data.custom_id.indexOf('_s') == 0) {
+            try {
+              const data = await findConstellation(body.data.custom_id.slice(2));
+              return response({ type: 7, data: data})
+            } catch (err) {
+              console.log(err.message);
+              return response({ type: 7, data: {content: '에러 발생!', flags: 64} });
+            }
+          }
           return new Response('Bad Request', { status: 400 });
       }
     }

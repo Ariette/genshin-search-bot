@@ -7,8 +7,8 @@
     "start": "wrangler preview",
     "dev": "wrangler preview --watch",
     "deploy": "wrangler publish",
-    "build": "node ./build.js",
-    "database": "node ./src/prebuild.js && wrangler kv:key put --binding=DB data loki.json --path",
+    "build": "node ./esbuild.config.js",
+    "database": "node ./src/prebuild.js",
     "command": "wrangler dev --env staging"
   },
   "keywords": [
@@ -21,13 +21,12 @@
   "license": "MIT",
   "dependencies": {
     "discord-interactions": "^2.3.0",
-    "lokijs": "^1.5.12",
-    "sql.js-fts5": "^1.4.0",
     "table": "^6.7.1"
   },
   "devDependencies": {
     "@cloudflare/wrangler": "^1.17.0",
     "discord.js": "^13.0.0-dev.1dcad05.1626178061",
-    "esbuild": "^0.12.15"
+    "esbuild": "^0.12.15",
+    "shelljs": "^0.8.4"
   }
 }

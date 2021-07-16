@@ -1,7 +1,8 @@
 const fs = require('fs');
 const pa = require('path');
 
-/*
+/* sql.js time test
+
 const initSqlJs = require('sql.js-fts5');
 const dataload_sql = fs.readFileSync(pa.join(__dirname, '../sqlite.db'));
 initSqlJs().then(SQL => {
@@ -16,74 +17,108 @@ initSqlJs().then(SQL => {
 })
 */
 
-/*
-initSqlJs().then(function(SQL){
-  // Load the db
-  const db = new SQL.Database();
-  let sql = [`CREATE VIRTUAL TABLE Weapon USING FTS5(weapontype, raritys, names, substats, document UNINDEXED);`];
-  const lokidb = new loki();
-  lokidb.loadJSON(dataload_loki);
-  const coll = lokidb.getCollection('Weapon');
-  coll.data.forEach(w => {
-    sql.push(`INSERT INTO Weapon VALUES ('${w.weapontype}', '${w.raritys}', '${w.names}', '${w.substats}', '${JSON.stringify(w).replace(/'/g, "''")}');`);
-  });
-  db.run(sql.join(''));
-  const data = db.export();
-  const buffer = new Buffer(data);
-  fs.writeFileSync(pa.join(__dirname, '../sqlite.db'), buffer);
-});
-*/
-function intersectionWith(comp, ...arrays) {
-  if (arrays.length == 0) return arrays
-  if (arrays.length == 1) return arrays[0]
+/* lokijs time test
 
-  const first = arrays[0];
-  const others = arrays.slice(1);
-return first.filter(a => others.every(arr => arr.some(b => comp(a, b))));
-}
-/*
 const loki = require('lokijs');
-const dataload_loki = fs.readFileSync(pa.join(__dirname, '../loki.json'), 'utf-8');
+const dataload_loki = fs.readFileSync(pa.join(__dirname, '../loki_test.json'), 'utf-8');
+const query = ['4성', '법구'];
 const before = new Date();
 for (let i = 0; i < 1000; i++) {
-  const query = ['4성', '법구'];
   const db = new loki();
   db.loadJSON(dataload_loki);
   const coll = db.getCollection('Weapon');
-  results = coll.find({
-    'name': {'$contains': query}
+  coll.find({
+    'index': {'$contains': query}
   });
-  if (!results.length) {
-    const lists = {
-      raritys: coll.find({'raritys': {'$containsAny': query}}),
-      weapontype: coll.find({'weapontype': {'$containsAny': query}}),
-      substats: coll.find({'substats': {'$containsAny': query}})
-    } 
-    results = Object.values(lists).filter(w => w.length > 0);
-    results = intersectionWith((a, b) => a['$loki'] == b['$loki'], ...results);
-  }
 }
 const after = new Date();
 console.log(after - before);
 */
 
+/* lokijs value test
 
 const loki = require('lokijs');
-const dataload_loki = fs.readFileSync(pa.join(__dirname, '../loki.json'), 'utf-8');
+const dataload_loki = fs.readFileSync(pa.join(__dirname, '../loki_test.json'), 'utf-8');
 const query = ['4성', '법구'];
 const db = new loki();
 db.loadJSON(dataload_loki);
 const coll = db.getCollection('Weapon');
-results = coll.find({
-  'name': {'$contains': query}
+const results = coll.find({
+  'index': {'$contains': query}
 });
-if (!results.length) {
-  const lists = {
-    raritys: coll.find({'raritys': {'$containsAny': query}}),
-    weapontype: coll.find({'weapontype': {'$containsAny': query}}),
-    substats: coll.find({'substats': {'$containsAny': query}})
-  } 
-  results = Object.values(lists).filter(w => w.length > 0);
-  results = intersectionWith((a, b) => a['$loki'] == b['$loki'], ...results);
-}
 console.log(results);
+*/
+
+/* vanilla value test
+
+const dataload_vanilla = fs.readFileSync(pa.join(__dirname, '../vanilla.json'), 'utf-8');
+const query = ['4성', '법구'];
+const data = JSON.parse(dataload_vanilla);
+const results = data.filter(w => query.every(word => w.index.indexOf(word) != -1))
+console.log(results);
+*/
+
+/* vanilla time test
+
+const dataload_vanilla = fs.readFileSync(pa.join(__dirname, '../vanilla.json'), 'utf-8');
+const before = new Date();
+for (let i = 0; i < 1000; i++) {
+  const query = ['법구', '4성'];
+  const data = JSON.parse(dataload_vanilla);
+  data.filter(w => query.every(word => w.index.indexOf(word) != -1))
+}
+const after = new Date();
+console.log(after - before);
+*/
+
+/* flexsearch time test
+
+const { Document } = require('flexsearch');
+const files = fs.readdirSync(pa.join(__dirname, '../data/weapon'));
+const data = {};
+files.forEach(filename => {
+  const key = filename.slice(0, -4);
+  data[key] = fs.readFileSync(pa.join(__dirname, '../data/weapon/', filename), 'utf-8');
+});
+const keys = Object.keys(data);
+const before = new Date();
+for (let i = 0; i < 1000; i++) {
+  const Weapon = new Document({
+    tokenize: 'forward',
+    document: {
+        index: ['index'],
+        store: ['content']
+    }
+  });
+  for (const key of keys) {
+    Weapon.import(key, data[key]);
+  }
+  Weapon.search('4성 법구', {enrich: true});
+}
+const after = new Date();
+console.log(after - before);
+*/
+
+/* flexsearch value test
+
+const { Document } = require('flexsearch');
+const files = fs.readdirSync(pa.join(__dirname, '../data/weapon'));
+const data = {};
+files.forEach(filename => {
+  const key = filename.slice(0, -4);
+  data[key] = fs.readFileSync(pa.join(__dirname, '../data/weapon/', filename), 'utf-8');
+});
+const keys = Object.keys(data);
+const Weapon = new Document({
+  tokenize: 'forward',
+  document: {
+      index: ['index'],
+      store: ['content']
+  }
+});
+for (const key of keys) {
+  Weapon.import(key, data[key]);
+}
+const result = Weapon.search('4성 법구', {enrich: true});
+console.log(result[0].result.map(w => w.doc.content));
+*/

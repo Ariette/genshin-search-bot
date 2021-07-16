@@ -66,7 +66,7 @@ module.exports = {
                 url: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/' + wp.icon + '.png'
             },
             fields: [
-                { name: '기초 공격력', value: Math.round(wp.baseAtk), inline: true }
+                { name: '기초 공격력', value: wp.baseAtk, inline: true }
             ]
         };
         if (wp.substat) embed.fields.push({ name: wp.substat.name, value: wp.substat.value, inline: true });
@@ -88,8 +88,24 @@ module.exports = {
                 { name: "일반공격 :arrow_right: " + t.normal.name, value: t.normal.desc },
                 { name: "원소스킬 :arrow_right: " + t.elemental.name, value: t.elemental.desc },
                 { name: "원소폭발 :arrow_right: " + t.burst.name, value: t.burst.desc },
+                { name: "패시브1 :arrow_right: " + t.passive1.name, value: t.passive1.desc },
+                { name: "패시브2 :arrow_right: " + t.passive2.name, value: t.passive2.desc },
             ]
         };
+        if (t.passive3) embed.fields.push({ name: "패시브3 :arrow_right: " + t.passive3.name, value: t.passive3.desc })
+
+        return embed;
+    },
+
+    csEmbed: (cs) => {
+        const embed = {
+            color: hexElement(cs.element),
+            title: cs.character + ' 운명의 자리',
+            fields: []
+        };
+        cs.value.forEach((v, i) => {
+            embed.fields.push({ name: (i+1) + "⭐️" + v.name, value: v.desc });
+        });
 
         return embed;
     },
@@ -136,15 +152,56 @@ module.exports = {
         return [embed1, embed2, embed3];
     },
 
-    csEmbed: (cs) => {
-        const embed = {
-            color: hexElement(cs.element),
-            title: cs.character,
-            fields: []
+    chrstEmbed: (st, curve) => {
+        function r(statNum, i, up) {
+            if (!i) return Math.round(st.base[statNum]);
+            if (!up) return Math.round(st.base[statNum] * curve[lvlMap[i]][st.curve[statNum]]);
+            return Math.round(st.base[statNum] * curve[lvlMap[i]][st.curve[statNum]] + up[statNum]);
+        }
+        const lvlMap = {
+            "0": '20',
+            "1": '40',
+            "2": '50',
+            "3": '60',
+            "4": '70',
+            "5": '80',
+            "6": '90'
         };
-        cs.value.forEach((v, i) => {
-            embed.fields.push({ name: (i+1) + "⭐️" + v.name, value: v.desc });
+        const config = {
+            drawVerticalLine: () => false,
+            drawHorizontalLine: (lineIndex, columnCount) => {
+                return lineIndex === 1;
+            },
+            columnDefault: {
+                alignment: 'right'
+            },
+            columns: {
+                0: {
+                    alignment: 'left',
+                    width: 4
+                }
+            },
+          }
+        const stats = [['레벨', '기초 HP', '기초 방어력', '기초 공격력', st.substat]];
+        stats.push([1, r(0), r(1), r(2), 0]);
+        st.upgrade.forEach((up, i) => {
+            if (i === 0) {
+                stats.push([lvlMap[i], r(0, '0'), r(1, '0'), r(2, '0'), 0]);
+                stats.push([lvlMap[i] + '+', r(0, '0', up), r(1, '0', up), r(2, '0', up), 0]);
+            } else {
+                stats.push([lvlMap[i], r(0, i, st.upgrade[i-1]), r(1, i, st.upgrade[i-1]), r(2, i, st.upgrade[i-1]), st.upgrade[i-1][3] || 0]);
+                stats.push([lvlMap[i] + '+', r(0, i, up), r(1, i, up), r(2, i, up), up[3]]);
+            }
         });
+        stats.push([90, r(0, 6, st.upgrade[5]), r(1, 6, st.upgrade[5]), r(2, 6, st.upgrade[5]), st.upgrade[5][3]]);
+        const embed = {
+            color: hexElement(st.element),
+            title: st.character + ' 스탯',
+            description: '```' + table(stats, config) + '```',
+            footer: {
+                text: '* 위 스탯은 캐릭터 기본 스탯(치확 5%, 치피 50%, 원충 100%)이 제외된 수치입니다.'
+            }
+        }
 
         return embed;
     },
@@ -160,13 +217,16 @@ module.exports = {
             title: mat.name + ' ' + stars.join(''),
             description: mat.desc,
             fields: [
-                {name: '획득 방법', value: mat.source && mat.source.length ? mat.source.join('  \n') : '-'}
             ]
         };
+        if (mat.icon) embed.thumbnail = {
+            url: 'https://genshin-impact.fandom.com/wiki/Special:Redirect/file/Item_' + mat.icon +'.png'
+        }
         if (mat.effect) embed.fields.push({name: '효과', value: mat.effect});
-        if (mat.weapons) embed.fields.push({name: '사용 무기', value: mat.weapons.join(', '), inline: true});
-        if (mat.characters) embed.fields.push({name: '사용 캐릭터', value: mat.characters.join(', '), inline: true});
+        if (mat.source?.length) embed.fields.push({name: '획득 방법', value: mat.source.join('  \n'), inline: true});
         if (mat.days) embed.fields.push({name: '파밍 요일', value: mat.days, inline: true});
+        if (mat.weapons) embed.fields.push({name: '사용 무기', value: mat.weapons.join(', ')});
+        if (mat.characters) embed.fields.push({name: '사용 캐릭터', value: mat.characters.join(', ')});
 
         return embed;
     },
@@ -183,22 +243,37 @@ module.exports = {
             description: food.desc,
             fields: []
         };
+        if (food.icon) embed.thumbnail = {
+            url: 'https://genshin-impact.fandom.com/wiki/Special:Redirect/file/Item_' + food.icon +'.png'
+        }
         if (food.effect) embed.fields.push({name: '효과', value: food.effect});
         embed.fields.push({name: '재료', value: food.ingredients.map(w => w.name + 'x' + w.count).join(', '), inline: true});
-        if (food.characters) embed.fields.push({name: '특수 요리', value: food.characters, inline: true});
+        if (food.characters) embed.fields.push({name: '특수 요리', value: food.special + ' - ' + food.characters, inline: true});
 
         return embed;
     },
 
     dayEmbed: (results) => {
+        const characters = {};
+        const weapons = {};
+        results.character.forEach(chr => {
+            if (!characters[chr.material.talent]) characters[chr.material.talent] = [];
+            characters[chr.material.talent].push(chr.name);
+        });
+        results.weapon.forEach(wp => {
+            if (!weapons[wp.weapontype]) weapons[wp.weapontype] = [];
+            weapons[wp.weapontype].push(wp.name);
+        })
         const embed = {
-            title: null,
-            color: 3444715,
             fields: [
-                {name: '캐릭터', value: results.character.map(w => w.name).join(', ')},
-                {name: '무기', value: results.weapon.map(w => w.name).join(', ')}
             ]
         };
+        Object.keys(characters).forEach(key => {
+            embed.fields.push({name: key, value: characters[key].join(', ')});
+        })
+        Object.keys(weapons).forEach(key => {
+            embed.fields.push({name: key, value: weapons[key].join(', ')});
+        })
 
         return embed;
     }

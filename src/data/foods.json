@@ -8,7 +8,7 @@
     ],
     "rarity": 1,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_Recipe_1002",
+    "icon": "Chicken-Mushroom_Skewer",
     "ingredients": [
       {
         "id": 100011,
@@ -52,7 +52,7 @@
     ],
     "rarity": 1,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_Recipe_2001",
+    "icon": "Teyvat_Fried_Egg",
     "ingredients": [
       {
         "id": 100062,
@@ -91,7 +91,7 @@
     ],
     "rarity": 1,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_Recipe_3001",
+    "icon": "Steak",
     "ingredients": [
       {
         "id": 100061,
@@ -130,7 +130,7 @@
     ],
     "rarity": 1,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_Recipe_3002",
+    "icon": "Radish_Veggie_Soup",
     "ingredients": [
       {
         "id": 100014,
@@ -170,7 +170,7 @@
     ],
     "rarity": 1,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108096",
+    "icon": "Mondstadt_Grilled_Fish",
     "ingredients": [
       {
         "id": 100084,
@@ -213,7 +213,7 @@
     ],
     "rarity": 1,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108226",
+    "icon": "Mint_Jelly",
     "ingredients": [
       {
         "id": 100016,
@@ -253,7 +253,7 @@
     ],
     "rarity": 1,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108093",
+    "icon": "Mora_Meat",
     "ingredients": [
       {
         "id": 100061,
@@ -297,7 +297,7 @@
     ],
     "rarity": 1,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108099",
+    "icon": "Stir-Fried_Filet",
     "ingredients": [
       {
         "id": 100061,
@@ -340,7 +340,7 @@
     ],
     "rarity": 1,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108108",
+    "icon": "Grilled_Tiger_Fish",
     "ingredients": [
       {
         "id": 100084,
@@ -383,7 +383,7 @@
     ],
     "rarity": 1,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108198",
+    "icon": "Rice_Buns",
     "ingredients": [
       {
         "id": 100092,
@@ -423,7 +423,7 @@
     ],
     "rarity": 2,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_Recipe_1003",
+    "icon": "Flaming_Red_Bolognese",
     "ingredients": [
       {
         "id": 110001,
@@ -471,7 +471,7 @@
     ],
     "rarity": 2,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_Recipe_1004",
+    "icon": "Sweet_Madame",
     "ingredients": [
       {
         "id": 100064,
@@ -514,7 +514,7 @@
     ],
     "rarity": 2,
     "type": "모험류 요리",
-    "icon": "UI_ItemIcon_Recipe_2002",
+    "icon": "Northern_Smoked_Chicken",
     "ingredients": [
       {
         "id": 110003,
@@ -559,7 +559,7 @@
     ],
     "rarity": 2,
     "type": "모험류 요리",
-    "icon": "UI_ItemIcon_Recipe_2003",
+    "icon": "Cream_Stew",
     "ingredients": [
       {
         "id": 100061,
@@ -608,7 +608,7 @@
     ],
     "rarity": 2,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_Recipe_4001",
+    "icon": "Tea_Break_Pancake",
     "ingredients": [
       {
         "id": 100051,
@@ -657,7 +657,7 @@
     ],
     "rarity": 2,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_Recipe_4002",
+    "icon": "Fried_Radish_Balls",
     "ingredients": [
       {
         "id": 110001,
@@ -702,7 +702,7 @@
     ],
     "rarity": 2,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_Recipe_4003",
+    "icon": "Satisfying_Salad",
     "ingredients": [
       {
         "id": 100018,
@@ -755,7 +755,7 @@
       "다인 모드 시 자신의 캐릭터에만 적용됩니다"
     ],
     "rarity": 2,
-    "icon": "UI_ItemIcon_Recipe_1001",
+    "icon": "Fisherman's_Toast",
     "ingredients": [
       {
         "id": 110001,
@@ -809,7 +809,7 @@
     ],
     "rarity": 2,
     "type": "모험류 요리",
-    "icon": "UI_ItemIcon_108205",
+    "icon": "Goulash",
     "ingredients": [
       {
         "id": 100094,
@@ -854,7 +854,7 @@
     ],
     "rarity": 3,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_108242",
+    "icon": "Fragrant_Mashed_Potatoes",
     "ingredients": [
       {
         "id": 100080,
@@ -899,7 +899,7 @@
     ],
     "rarity": 2,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_100428",
+    "icon": "Almond_Tofu",
     "ingredients": [
       {
         "id": 100078,
@@ -948,7 +948,7 @@
     ],
     "rarity": 2,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_108084",
+    "icon": "Jueyun_Chili_Chicken",
     "ingredients": [
       {
         "id": 100064,
@@ -996,7 +996,7 @@
       "다인 모드 시 자신의 캐릭터에만 적용됩니다"
     ],
     "rarity": 2,
-    "icon": "UI_ItemIcon_108087",
+    "icon": "Jewelry_Soup",
     "ingredients": [
       {
         "id": 100015,
@@ -1040,7 +1040,7 @@
     ],
     "rarity": 2,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108090",
+    "icon": "Matsutake_Meat_Rolls",
     "ingredients": [
       {
         "id": 100063,
@@ -1080,7 +1080,7 @@
     ],
     "rarity": 2,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108105",
+    "icon": "Crystal_Shrimp",
     "ingredients": [
       {
         "id": 100092,
@@ -1129,7 +1129,7 @@
     ],
     "rarity": 2,
     "type": "모험류 요리",
-    "icon": "UI_ItemIcon_108120",
+    "icon": "Lotus_Seed_and_Bird_Egg_Soup",
     "ingredients": [
       {
         "id": 100026,
@@ -1174,7 +1174,7 @@
     ],
     "rarity": 3,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108126",
+    "icon": "Golden_Shrimp_Balls",
     "ingredients": [
       {
         "id": 100093,
@@ -1218,7 +1218,7 @@
     ],
     "rarity": 2,
     "type": "모험류 요리",
-    "icon": "UI_ItemIcon_108142",
+    "icon": "Noodles_with_Mountain_Delicacies",
     "ingredients": [
       {
         "id": 100011,
@@ -1267,7 +1267,7 @@
     ],
     "rarity": 2,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108189",
+    "icon": "Vegetarian_Abalone",
     "ingredients": [
       {
         "id": 100063,
@@ -1311,7 +1311,7 @@
     ],
     "rarity": 2,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_108192",
+    "icon": "Stone_Harbor_Delicacies",
     "ingredients": [
       {
         "id": 100080,
@@ -1356,7 +1356,7 @@
     ],
     "rarity": 2,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_108229",
+    "icon": "Mint_Salad",
     "ingredients": [
       {
         "id": 100016,
@@ -1396,7 +1396,7 @@
     ],
     "rarity": 2,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108177",
+    "icon": "Crab_Roe_Tofu",
     "ingredients": [
       {
         "id": 100074,
@@ -1440,7 +1440,7 @@
     ],
     "rarity": 2,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108186",
+    "icon": "Stir-Fried_Fish_Noodles",
     "ingredients": [
       {
         "id": 100084,
@@ -1484,7 +1484,7 @@
       "다인 모드 시 자신의 캐릭터에만 적용됩니다"
     ],
     "rarity": 3,
-    "icon": "UI_ItemIcon_Recipe_1006",
+    "icon": "Calla_Lily_Seafood_Soup",
     "ingredients": [
       {
         "id": 100073,
@@ -1533,7 +1533,7 @@
     ],
     "rarity": 3,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_Recipe_1007",
+    "icon": "Sautéed_Matsutake",
     "ingredients": [
       {
         "id": 100063,
@@ -1583,7 +1583,7 @@
     ],
     "rarity": 3,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_Recipe_2004",
+    "icon": "Cold_Cut_Platter",
     "ingredients": [
       {
         "id": 110005,
@@ -1637,7 +1637,7 @@
     ],
     "rarity": 3,
     "type": "모험류 요리",
-    "icon": "UI_ItemIcon_Recipe_2005",
+    "icon": "Sticky_Honey_Roast",
     "ingredients": [
       {
         "id": 100061,
@@ -1682,7 +1682,7 @@
     ],
     "rarity": 3,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_Recipe_2006",
+    "icon": "Crab,_Ham_&_Veggie_Bake",
     "ingredients": [
       {
         "id": 100074,
@@ -1736,7 +1736,7 @@
     ],
     "rarity": 3,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_Recipe_1005",
+    "icon": "Mushroom_Pizza",
     "ingredients": [
       {
         "id": 100011,
@@ -1789,7 +1789,7 @@
     ],
     "rarity": 3,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_Recipe_3003",
+    "icon": "Mondstadt_Hash_Brown",
     "ingredients": [
       {
         "id": 100020,
@@ -1838,7 +1838,7 @@
     ],
     "rarity": 3,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_Recipe_3004",
+    "icon": "\"Pile_'Em_Up\"",
     "ingredients": [
       {
         "id": 100061,
@@ -1892,7 +1892,7 @@
     ],
     "rarity": 3,
     "type": "모험류 요리",
-    "icon": "UI_ItemIcon_108111",
+    "icon": "Barbatos_Ratatouille",
     "ingredients": [
       {
         "id": 100013,
@@ -1941,7 +1941,7 @@
     ],
     "rarity": 3,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_108168",
+    "icon": "Adventurer's_Breakfast_Sandwich",
     "ingredients": [
       {
         "id": 100062,
@@ -1985,7 +1985,7 @@
     ],
     "rarity": 3,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108171",
+    "icon": "Northern_Apple_Stew",
     "ingredients": [
       {
         "id": 100061,
@@ -2034,7 +2034,7 @@
       "다인 모드 시 자신의 캐릭터에만 적용됩니다"
     ],
     "rarity": 3,
-    "icon": "UI_ItemIcon_108208",
+    "icon": "Sunshine_Sprat",
     "ingredients": [
       {
         "id": 110004,
@@ -2088,7 +2088,7 @@
     ],
     "rarity": 3,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108223",
+    "icon": "Crispy_Potato_Shrimp_Platter",
     "ingredients": [
       {
         "id": 100016,
@@ -2137,7 +2137,7 @@
     ],
     "rarity": 3,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108239",
+    "icon": "Golden_Chicken_Burger",
     "ingredients": [
       {
         "id": 100064,
@@ -2187,7 +2187,7 @@
     ],
     "rarity": 3,
     "type": "모험류 요리",
-    "icon": "UI_ItemIcon_108072",
+    "icon": "Zhongyuan_Chop_Suey",
     "ingredients": [
       {
         "id": 100061,
@@ -2237,7 +2237,7 @@
     ],
     "rarity": 3,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108075",
+    "icon": "Black-Back_Perch_Stew",
     "ingredients": [
       {
         "id": 100084,
@@ -2290,7 +2290,7 @@
     ],
     "rarity": 3,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108078",
+    "icon": "Squirrel_Fish",
     "ingredients": [
       {
         "id": 100084,
@@ -2340,7 +2340,7 @@
     ],
     "rarity": 3,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_108129",
+    "icon": "Qingce_Stir_Fry",
     "ingredients": [
       {
         "id": 100011,
@@ -2390,7 +2390,7 @@
     ],
     "rarity": 3,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_108132",
+    "icon": "Come_and_Get_It",
     "ingredients": [
       {
         "id": 100061,
@@ -2444,7 +2444,7 @@
     ],
     "rarity": 3,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108153",
+    "icon": "Bamboo_Shoot_Soup",
     "ingredients": [
       {
         "id": 100061,
@@ -2492,7 +2492,7 @@
       "다인 모드 시 자신의 캐릭터에만 적용됩니다"
     ],
     "rarity": 3,
-    "icon": "UI_ItemIcon_108156",
+    "icon": "Triple-Layered_Consommé",
     "ingredients": [
       {
         "id": 110005,
@@ -2541,7 +2541,7 @@
       "다인 모드 시 자신의 캐릭터에만 적용됩니다"
     ],
     "rarity": 3,
-    "icon": "UI_ItemIcon_108162",
+    "icon": "Lotus_Flower_Crisp",
     "ingredients": [
       {
         "id": 100089,
@@ -2590,7 +2590,7 @@
     ],
     "rarity": 3,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108202",
+    "icon": "Universal_Peace",
     "ingredients": [
       {
         "id": 100092,
@@ -2644,7 +2644,7 @@
     ],
     "rarity": 3,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_108211",
+    "icon": "Jueyun_Guoba",
     "ingredients": [
       {
         "id": 100032,
@@ -2694,7 +2694,7 @@
     ],
     "rarity": 3,
     "type": "회복류 요리",
-    "icon": "UI_ItemIcon_108180",
+    "icon": "Fullmoon_Egg",
     "ingredients": [
       {
         "id": 100084,
@@ -2744,7 +2744,7 @@
     ],
     "rarity": 3,
     "type": "모험류 요리",
-    "icon": "UI_ItemIcon_108232",
+    "icon": "Minty_Meat_Rolls",
     "ingredients": [
       {
         "id": 100016,
@@ -2789,7 +2789,7 @@
     ],
     "rarity": 3,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_108183",
+    "icon": "Cured_Pork_Dry_Hotpot",
     "ingredients": [
       {
         "id": 110005,
@@ -2838,7 +2838,7 @@
       "다인 모드 시 자신의 캐릭터에만 적용됩니다"
     ],
     "rarity": 3,
-    "icon": "UI_ItemIcon_108195",
+    "icon": "Stir-Fried_Shrimp",
     "ingredients": [
       {
         "id": 100093,
@@ -2882,7 +2882,7 @@
       "다인 모드 시 자신의 캐릭터에만 적용됩니다"
     ],
     "rarity": 4,
-    "icon": "UI_ItemIcon_108165",
+    "icon": "Moon_Pie",
     "ingredients": [
       {
         "id": 100061,
@@ -2936,7 +2936,7 @@
     ],
     "rarity": 4,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_108236",
+    "icon": "Golden_Fried_Chicken",
     "ingredients": [
       {
         "id": 100064,
@@ -2986,7 +2986,7 @@
     ],
     "rarity": 4,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_Recipe_4004",
+    "icon": "Jade_Parcels",
     "ingredients": [
       {
         "id": 100026,
@@ -3035,7 +3035,7 @@
       "다인 모드 시 자신의 캐릭터에만 적용됩니다"
     ],
     "rarity": 4,
-    "icon": "UI_ItemIcon_108102",
+    "icon": "Golden_Crab",
     "ingredients": [
       {
         "id": 100062,
@@ -3085,7 +3085,7 @@
     ],
     "rarity": 4,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_108159",
+    "icon": "Tianshu_Meat",
     "ingredients": [
       {
         "id": 100061,
@@ -3135,7 +3135,7 @@
     ],
     "rarity": 4,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_108247",
+    "icon": "Chicken_Tofu_Pudding",
     "ingredients": [
       {
         "id": 100064,
@@ -3185,7 +3185,7 @@
     ],
     "rarity": 5,
     "type": "공격류 요리",
-    "icon": "UI_ItemIcon_108123",
+    "icon": "Adeptus'_Temptation",
     "ingredients": [
       {
         "id": 110005,

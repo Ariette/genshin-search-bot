@@ -1,24 +1,5 @@
 const hints = require("./message.json");
-const { chrEmbed, wpEmbed, tEmbed, csEmbed, matEmbed, foodEmbed, dayEmbed, tsEmbed } = require('./embed.js');
-const loki = require('lokijs');
-
-
-async function load() {
-  const database = new loki();
-  const data = await DB.get('data');
-  database.loadJSON(data);
-
-  return database;
-}
-
-function intersectionWith(comp, ...arrays) {
-  if (arrays.length == 0) return arrays
-  if (arrays.length == 1) return arrays[0]
-
-  const first = arrays[0];
-  const others = arrays.slice(1);
-return first.filter(a => others.every(arr => arr.some(b => comp(a, b))));
-}
+const { chrEmbed, wpEmbed, tEmbed, csEmbed, matEmbed, foodEmbed, dayEmbed, tsEmbed, chrstEmbed } = require('./embed.js');
 
 function getStringDay() {
   const day = new Date().getDay();
@@ -40,30 +21,21 @@ function getStringDay() {
   }
 }
 
+async function findQuery(key, args) {
+  const text = await DB.get(key);
+  const db = JSON.parse(text);
+  const query = args.split(' ');
+  let result;
+  result = db.filter(w => query.every(word => w.name?.indexOf(word) != -1));
+  if (!result.length) result = db.filter(w => query.every(word => w.index?.indexOf(word) != -1));
+
+  return result.map(w => w.content);
+}
+
 module.exports = {
 
   findCharacter: async (args) => {
-    const db = await load();
-
-    // Find results
-    let results;
-    const coll = db.getCollection('Character');
-    results = coll.find({
-      'names': {'$contains': args}
-    });
-    if (!results.length) {
-      const query = args.split(' ');
-      const lists = {
-        element: coll.find({'element': {'$containsAny': query}}),
-        weapontype: coll.find({'weapontype': {'$containsAny': query}}),
-        substats: coll.find({'substats': {'$containsAny': query}}),
-        raritys: coll.find({'raritys': {'$containsAny': query}}),
-      } 
-      results = Object.values(lists).filter(w => w.length > 0);
-      results = intersectionWith((a, b) => a['$loki'] == b['$loki'], ...results);
-    }
-
-    // Show results
+    const results = await findQuery('character', args);
     if (!results.length) {
       return {content: hints.missingCharacter}
     } else if (results.length == 1) {
@@ -71,39 +43,45 @@ module.exports = {
       const buttons = [
         {type: 2, style: 1, custom_id: 'talent', label: '특성'},
         {type: 2, style: 1, custom_id: 'constellation', label: '별자리'},
-        {type: 2, style: 1, custom_id: 'stat', label: '스탯', disabled: true}
+        {type: 2, style: 1, custom_id: 'stat', label: '스탯'}
       ]
       return {embeds: [embed], components: [{ type: 1, components: buttons }]};
+    } else if (results.length < 6) {
+      const embed = {
+        title: args + ' 검색 결과',
+        footer: {
+          text: '아래 버튼을 누르시면 해당 캐릭터의 정보를 바로 보실 수 있습니다.'
+        }
+      }
+      const buttons = []
+      for (const result of results) {
+        buttons.push({type: 2, style: 2, custom_id: '_c' + result.name, label: result.name});
+      }
+      return {embeds: [embed], components: [{type: 1, components: buttons}]};
     } else {
       return {content: `\`검색 결과>>\` ${results.map(w => w.name).join(', ')}`};
     }
   },
 
   findWeapon: async (args) => {
-    const db = await load();
-    // Find results
-    let results;
-    const coll = db.getCollection('Weapon');
-    results = coll.find({
-      'name': {'$contains': args}
-    });
-    if (!results.length) {
-      const query = args.split(' ');
-      const lists = {
-        raritys: coll.find({'raritys': {'$containsAny': query}}),
-        weapontype: coll.find({'weapontype': {'$containsAny': query}}),
-        substats: coll.find({'substats': {'$containsAny': query}})
-      } 
-      results = Object.values(lists).filter(w => w.length > 0);
-      results = intersectionWith((a, b) => a['$loki'] == b['$loki'], ...results);
-    }
-
-    // Show results
+    const results = await findQuery('weapon', args);
     if (results.length < 1) {
       return {content: hints.missingWeapon};
     } else if (results.length == 1) {
       const embed = wpEmbed(results[0]);
       return {embeds: [embed]};
+    } else if (results.length < 6) {
+      const embed = {
+        title: args + ' 검색 결과',
+        footer: {
+          text: '아래 버튼을 누르시면 해당 캐릭터의 정보를 바로 보실 수 있습니다.'
+        }
+      }
+      const buttons = []
+      for (const result of results) {
+        buttons.push({type: 2, style: 2, custom_id: '_w' + result.name, label: result.name});
+      }
+      return {embeds: [embed], components: [{type: 1, components: buttons}]};
     } else {
       return {content: `\`검색 결과>>\` ${results.map(w => w.name).join(', ')}`};
     }
@@ -114,18 +92,11 @@ module.exports = {
   },
 
   findTalent: async (args) => {
-    const db = await load();
-    // Find results
-    const coll = db.getCollection('Talent');
-    const results = coll.find({
-      'characters': {'$contains': args}
-    });
-
-    // Show results
+    const results = await findQuery('talent', args);
     if (results.length < 1) {
-      res({content: hints.missingCharacter});
-    } else {
-      const embeds = [];
+      return {content: hints.missingCharacter};
+    } else if (results.length == 1) {
+      const embed = tEmbed(results[0]);
       const buttons = [
         {type: 2, style: 2, custom_id: 'normal', label: '평타 계수'},
         {type: 2, style: 2, custom_id: 'elemental', label: '스킬 계수'},
@@ -133,101 +104,96 @@ module.exports = {
         {type: 2, style: 1, custom_id: 'character', label: '캐릭터'},
         {type: 2, style: 1, custom_id: 'constellation', label: '별자리'},
       ];
-      for (const t of results) {
-        const embed = tEmbed(t);
-        embeds.push(embed);
+      return {embeds: [embed], components: [{ type: 1, components: buttons }]};
+    } else if (results.length < 6) {
+      const embed = {
+        title: args + ' 검색 결과',
+        footer: {
+          text: '아래 버튼을 누르시면 해당 캐릭터의 정보를 바로 보실 수 있습니다.'
+        }
       }
-      return {embeds: embeds, components: [{ type: 1, components: buttons }]};
+      const buttons = []
+      for (const result of results) {
+        buttons.push({type: 2, style: 2, custom_id: '_t' + result.character, label: result.character});
+      }
+      return {embeds: [embed], components: [{type: 1, components: buttons}]};
+    } else {
+      return {content: `\`검색 결과>>\` ${results.map(w => w.character).join(', ')}`};
     }
   },
 
-  findTalentStat: async (args, type) => {
-    const db = await load();
-    // Find results
-    const coll = db.getCollection('Talent');
-    const results = coll.find({
-      'characters': {'$contains': args}
-    });
+  findConstellation: async (args) => {
+    const results = await findQuery('constellation', args);
+    if (results.length < 1) {
+      res({content: hints.missingCharacter});
+    } else if (results.length == 1) {
+      const embed = csEmbed(results[0]);
+      const buttons = [
+        {type: 2, style: 1, custom_id: 'character', label: '캐릭터'},
+        {type: 2, style: 1, custom_id: 'talent', label: '특성'},
+        {type: 2, style: 1, custom_id: 'stat', label: '스탯'}
+      ];
+      return {embeds: [embed], components: [{ type: 1, components: buttons }]};
+    } else if (results.length < 6) {
+      const embed = {
+        title: args + ' 검색 결과',
+        footer: {
+          text: '아래 버튼을 누르시면 해당 캐릭터의 정보를 바로 보실 수 있습니다.'
+        }
+      }
+      const buttons = []
+      for (const result of results) {
+        buttons.push({type: 2, style: 2, custom_id: '_s' + result.character, label: result.character});
+      }
+      return {embeds: [embed], components: [{type: 1, components: buttons}]};
+    } else {
+      return {content: `\`검색 결과>>\` ${results.map(w => w.character).join(', ')}`};
+    }
+  },
 
-    // Show results
+  findCharacterStat: async (args) => {
+    const curve = await DB.get('curve');
+    const results = await findQuery('stat', args);
+    const embed = chrstEmbed(results[0], JSON.parse(curve));
+    const buttons = [
+      {type: 2, style: 1, custom_id: 'character', label: '캐릭터'},
+      {type: 2, style: 1, custom_id: 'talent', label: '특성'},
+      {type: 2, style: 1, custom_id: 'constellation', label: '별자리'}
+    ]
+    return {embeds: [embed], components: [{type: 1, components: buttons}]}
+  },
+
+  findTalentStat: async (args, type) => {
+    const results = await findQuery('talent', args);
     const embeds = tsEmbed(results[0], type);
     return {embeds: embeds, flags: 64};
   },
 
-  findConstellation: async (args) => {
-    const db = await load();
-    // Find results
-    const coll = db.getCollection('Constellation');
-    const results = coll.find({
-      'characters': {'$contains': args}
-    });
-
-    // Show results
-    if (results.length < 1) {
-      res({content: hints.missingCharacter});
-    } else {
-      const embeds = [];
-      const buttons = [
-        {type: 2, style: 1, custom_id: 'character', label: '캐릭터'},
-        {type: 2, style: 1, custom_id: 'talent', label: '특성'},
-        {type: 2, style: 1, custom_id: 'stat', label: '스탯', disabled: true}
-      ];
-      for (const cs of results) {
-        const embed = csEmbed(cs);
-        embeds.push(embed);
-      }
-      return {embeds: embeds, components: [{ type: 1, components: buttons }]};
-    }
-  },
-
   findMaterial: async (args) => {
-    const db = await load();
-    // Find results
-    let results;
-    const coll = db.getCollection('Material');
-    results = coll.find({
-      'names': {'$contains': args}
-    });
-    if (!results.length) {
-      results = [].concat(
-        coll.find({'characters': {'$contains': args}}), 
-        coll.find({'weapons': {'$contains': args}}), 
-        coll.find({'days': {'$contains': args}})
-      );
-    }
-
-    // Show results
+    const results = await findQuery('material', args);
     if (results.length < 1) {
       return {content: hints.missingItem};
-    } else if (results.length == 1) {
-      const embed = matEmbed(results[0]);
-      return {embeds: [embed]};
+    } else if (results.length < 4) {
+      const embeds = [];
+      for (const result of results) {
+        embeds.push(matEmbed(result));
+      }
+      return {embeds: embeds};
     } else {
       return {content: `\`검색 결과>>\` ${results.map(w => w.name).join(', ')}`};
     }
   },
 
   findFood: async (args) => {
-    const db = await load();
-    // Find results
-    let results;
-    const coll = db.getCollection('Food');
-    results = coll.find({
-      'name': {'$contains': args}
-    });
-    if (!results.length) {
-      results = [].concat(
-        coll.find({'characters': {'$contains': args}}), 
-        coll.find({'materials': {'$contains': args}}), 
-      );
-    }
-
-    // Show results
+    const results = await findQuery('food', args);
     if (results.length < 1) {
       return {content: hints.missingItem};
-    } else if (results.length == 1) {
-      const embed = foodEmbed(results[0]);
-      return {embeds: [embed]};
+    } else if (results.length < 4) {
+      const embeds = [];
+      for (const result of results) {
+        embeds.push(foodEmbed(result));
+      }
+      return {embeds: embeds};
     } else {
       return {content: `\`검색 결과>>\` ${results.map(w => w.name).join(', ')}`};
     }
@@ -235,27 +201,18 @@ module.exports = {
 
   findDay: async (args) => {
     const query = args ? args : getStringDay();
-    let results;
+    let embed;
     if ('일요일'.indexOf(query) != -1) {
-      results = {
-        character: ['일요일엔 모든 재료를 파밍 가능합니다.'],
-        weapon: ['일요일엔 모든 재료를 파밍 가능합니다.']
-      }
+      embed = { description: '일요일엔 모든 재료를 파밍 가능합니다.' }
     } else {
-      const db = await load();
-      const charaColl = db.getCollection('Character');
-      const wepColl = db.getCollection('Weapon');
-      results = {
-        character: charaColl.find({
-          'days': {'$contains': query}
-        }),
-        weapon: wepColl.find({
-          'days': {'$contains': query}
-        })
+      const results = {
+        character: await findQuery('character', query),
+        weapon: await findQuery('weapon', query)
       }
+      embed = dayEmbed(results);
     }
-    const embed = dayEmbed(results);
-    embed.title = query + '의 파밍 목록!'
+    embed.title = query + '의 파밍 목록!';
+    embed.color = 3444715;
     return {embeds: [embed]};
   }
   
