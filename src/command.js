@@ -32,7 +32,8 @@ addEventListener('fetch', event => {
  * Respond with hello worker text
  * @param {Request} request
  */
-function handleRequest(request) {
+async function handleRequest(request) {
+  const promises = [];
   const commands = [{
     name: '캐릭터',
     description: '원신의 캐릭터 정보를 검색합니다.',
@@ -114,12 +115,15 @@ function handleRequest(request) {
     }]
   }];
   for (const command of commands) {
-    Discord(`applications/${DISCORD_APPLICATION_ID}/guilds/561445185314095114/commands`, command).then(response => {
+    const promise = Discord(`applications/${DISCORD_APPLICATION_ID}/guilds/561445185314095114/commands`, command).then(response => {
         console.log('/' + command.name + ' 명령어 등록 완료');
       }).catch(err => {
         console.error(err);
-      })
+      });
+    
+      promises.push(promise);
   }
 
-  return new Response('Invalid Request', { status: 403 });
+  await Promise.all(promises);
+  return new Response('명령어 등록 완료', { status: 200 });
 }
