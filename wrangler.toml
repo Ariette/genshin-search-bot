@@ -1,18 +1,11 @@
 name = "genshin-search-bot"
 type = 'javascript'
-account_id = '542c3117425ad0a06405efa960e52339'
 workers_dev = true
-
-[vars]
-DISCORD_APPLICATION_ID = "861184372231897149"
 
 [[kv_namespaces]]
 binding = "DB"
 id = "948fd6d2c37d47b193f4e6461c3417d3"
 preview_id = "948fd6d2c37d47b193f4e6461c3417d3"
-
-[env.staging]
-name = "genshin-serach-bot-command"
 
 [dev]
 port = 3000

@@ -8,8 +8,7 @@
     "dev": "wrangler preview --watch",
     "deploy": "wrangler publish",
     "build": "node ./esbuild.config.js",
-    "database": "node ./src/prebuild.js",
-    "command": "wrangler dev --env staging"
+    "database": "node ./src/prebuild.js"
   },
   "keywords": [
     "genshin",
