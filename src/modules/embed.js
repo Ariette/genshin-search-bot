@@ -85,34 +85,16 @@ module.exports = {
             color: hexElement(t.element),
             title: t.character,
             fields: [
-                { name: "1⭐️" + t.passive1.name, value: t.passive1.desc },
-                { name: "4⭐️" + t.passive2.name, value: t.passive2.desc },
+                { name: "일반공격⭐️" + t.normal.name, value: t.normal.desc },
+                { name: "원소스킬⭐️" + t.elemental.name, value: t.elemental.desc },
+                { name: "원소폭발⭐️" + t.burst.name, value: t.burst.desc },
+                { name: "1돌파⭐️" + t.passive1.name, value: t.passive1.desc },
+                { name: "4돌파⭐️" + t.passive2.name, value: t.passive2.desc },
             ]
         };
         if (t.passive3) embed.fields.push({ name: "생활⭐️" + t.passive3.name, value: t.passive3.desc });
-        const normal = {
-            color: hexElement(t.element),
-            author: { name: '일반 공격' },
-            title: t.normal.name,
-            description: t.normal.desc,
-            thumbnail: {url: 'https://genshin-impact.fandom.com/wiki/Special:Redirect/file/Talent_' + t.normal.icon +'.png'}
-        };
-        const elemental = {
-            color: hexElement(t.element),
-            author: { name: '원소 전투 스킬' },
-            title: t.elemental.name,
-            description: t.elemental.desc,
-            thumbnail: {url: 'https://genshin-impact.fandom.com/wiki/Special:Redirect/file/Talent_' + t.elemental.icon +'.png'}
-        };
-        const burst = {
-            color: hexElement(t.element),
-            author: { name: '원소 폭발' },
-            title: t.burst.name,
-            description: t.burst.desc,
-            thumbnail: {url: 'https://genshin-impact.fandom.com/wiki/Special:Redirect/file/Talent_' + t.burst.icon +'.png'}
-        };
 
-        return [embed, normal, elemental, burst];
+        return embed;
     },
 
     csEmbed: (cs) => {

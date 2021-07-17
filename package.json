@@ -24,7 +24,7 @@
     "table": "^6.7.1"
   },
   "devDependencies": {
-    "@cloudflare/wrangler": "^1.17.0",
+    "@cloudflare/wrangler": "^1.18.0",
     "discord.js": "^13.0.0-dev.1dcad05.1626178061",
     "esbuild": "^0.12.15",
     "shelljs": "^0.8.4"

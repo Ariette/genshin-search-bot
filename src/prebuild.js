@@ -29,6 +29,27 @@ function escapeDesc(desc) {
     .replace(/\\n/g, '\n');
 }
 
+function effectTransform(desc) {
+    const template = {
+        r1: desc.r1?.split('>'),
+        r2: desc.r2?.split('>'),
+        r3: desc.r3?.split('>'),
+        r4: desc.r4?.split('>'),
+        r5: desc.r5?.split('>'),
+    };
+    const container = [];
+    template.r1.forEach((str, idx) => {
+        if (str.indexOf('</color') != -1) {
+            const out = Object.values(template).filter(w => w).map(r => r[idx]).join('/');
+            container.push(out.replace(/<\/color/g, '') + '</color');
+        } else {
+            container.push(str);
+        }
+    });
+    
+    return escapeDesc(container.join('>'));
+}
+
 function materialTransform(chara) {
     if (chara.id == 10000005 || chara.id == 10000007) {
         return {
@@ -109,8 +130,7 @@ function talentTransform(talent) {
     if (!talent) return undefined;
     return {
         name: talent.name,
-        desc: escapeDesc(talent.desc),
-        icon: talent.icon,
+        desc: escapeDesc(talent.desc)
     }
 }
 
@@ -287,7 +307,7 @@ for (const Weapon of Weapons) {
         material: Weapon.material.slice(0, 3).map(w => materials[w].name),
         skill: Weapon.skill ? {
             name: Weapon.skill.name,
-            effect: escapeDesc(Weapon.skill.desc.r1)
+            effect: effectTransform(Weapon.skill.desc)
         } : undefined,
         substats: subStatTransform(Weapon.stat[1]?.type),
         days: dayTransform(Weapon.day),
@@ -403,13 +423,11 @@ for (const key of keys) {
     promises.push(fs.writeFile('./data/' + key + '.json', JSON.stringify(output[key]), 'utf8'))
 }
 Promise.all(promises).then(w => {
-    /*
     for (const key of keys) {
         if(shell.exec(`npx wrangler kv:key put --binding=DB ${key} ./data/${key}.json --path`).code !== 0) {
             shell.echo('Error: command failed')
             shell.exit(1)
           }
     }
-    */
     console.log('Prebuild Done.')
 });

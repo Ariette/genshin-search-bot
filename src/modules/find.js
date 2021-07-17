@@ -96,7 +96,7 @@ module.exports = {
     if (results.length < 1) {
       return {content: hints.missingCharacter};
     } else if (results.length == 1) {
-      const embeds = tEmbed(results[0]);
+      const embed = tEmbed(results[0]);
       const buttons = [
         {type: 2, style: 2, custom_id: 'normal', label: '평타 계수'},
         {type: 2, style: 2, custom_id: 'elemental', label: '스킬 계수'},
@@ -104,7 +104,7 @@ module.exports = {
         {type: 2, style: 1, custom_id: 'character', label: '캐릭터'},
         {type: 2, style: 1, custom_id: 'constellation', label: '별자리'},
       ];
-      return {embeds: embeds, components: [{ type: 1, components: buttons }]};
+      return {embeds: [embed], components: [{ type: 1, components: buttons }]};
     } else if (results.length < 6) {
       const embed = {
         title: args + ' 검색 결과',
