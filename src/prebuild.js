@@ -193,7 +193,6 @@ function nameTransform(name) {
 
 const Characters = Object.values(characters);
 for (const Character of Characters) {
-    if (Character.id === 10000002) continue; // Skip Ayaka
     const character = {
         title: Character.title,
         name: Character.name,
@@ -211,7 +210,8 @@ for (const Character of Characters) {
         days: dayTransform(Character.day),
         names: nameTransform(Character.name),
         substats: subStatTransform(Character.stat.upgrade[1].props[3].type),
-        raritys: Character.rarity + '성'
+        raritys: Character.rarity + '성',
+        weapontypes: nameTransform(Character.weapontype)
     };
     if (Character.id === 10000005) character.names += '|아이테르|남행자|(바위)|(바람)';
     if (Character.id === 10000007) character.names += '|루미네|(바위)|(바람)';
@@ -312,7 +312,8 @@ for (const Weapon of Weapons) {
         substats: subStatTransform(Weapon.stat[1]?.type),
         days: dayTransform(Weapon.day),
         raritys: Weapon.rarity + '성',
-        names: nameTransform(Weapon.name)
+        names: nameTransform(Weapon.name),
+        weapontypes: nameTransform(Weapon.type)
     }
     data.weapons.push(weapon);
 }
@@ -363,15 +364,15 @@ const output = {
     character: data.characters.map(w => {
         return {
             name: w.names,
-            index: [w.element, w.weapontype, w.raritys, w.substats, w.days].filter(w => w).join('|'),
-            content: Object.assign(w, {names: undefined, raritys: undefined, substats: undefined})
+            index: [w.element, w.weapontypes, w.raritys, w.substats, w.days].filter(w => w).join('|'),
+            content: Object.assign(w, {names: undefined, raritys: undefined, substats: undefined, weapontypes: undefined})
         }
     }),
     weapon: data.weapons.map(w => {
         return {
             name: w.names,
-            index: [w.weapontype, w.raritys, w.substats, w.days].filter(w => w).join('|'),
-            content: Object.assign(w, {names: undefined, raritys: undefined, substats: undefined})
+            index: [w.weapontypes, w.raritys, w.substats, w.days].filter(w => w).join('|'),
+            content: Object.assign(w, {names: undefined, raritys: undefined, substats: undefined, weapontypes: undefined})
         }
     }),
     material: data.materials.map(w => {

@@ -111,7 +111,29 @@ async function handleRequest(request) {
     options: [{
         type: 3,
         name: '요일',
-        description: '원하는 요일을 지정하실 수 있습니다.'
+        description: '원하는 요일을 지정하실 수 있습니다.',
+        choices: [{
+          name: "월요일",
+          value: "월요일"
+        }, {
+          name: "화요일",
+          value: "화요일"
+        }, {
+          name: "수요일",
+          value: "수요일"
+        }, {
+          name: "목요일",
+          value: "목요일"
+        }, {
+          name: "금요일",
+          value: "금요일"
+        }, {
+          name: "토요일",
+          value: "토요일"
+        }, {
+          name: "일요일",
+          value: "일요일"
+        }]
     }]
   }];
   for (const command of commands) {

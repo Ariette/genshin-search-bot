@@ -24,7 +24,7 @@ function getStringDay() {
 async function findQuery(key, args) {
   const text = await DB.get(key);
   const db = JSON.parse(text);
-  const query = args.split(' ');
+  const query = args.split(' ').filter(w => w);
   let result;
   result = db.filter(w => query.every(word => w.name?.indexOf(word) != -1));
   if (!result.length) result = db.filter(w => query.every(word => w.index?.indexOf(word) != -1));

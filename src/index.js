@@ -123,7 +123,7 @@ async function handleRequest(request) {
     }
     // type 3 : Discord Component Based Interaction
     else if (body.type === 3 ) {
-      const query = body.message.embeds?.[0]?.title.replace(/⭐️/g, '');
+      const query = body.message.embeds?.[0]?.title.replace(/⭐️+/g, '');
       switch (body.data.custom_id) {
         case 'character': {
           try {

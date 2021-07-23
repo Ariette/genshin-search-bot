@@ -179,6 +179,9 @@ module.exports = {
                 0: {
                     alignment: 'left',
                     width: 4
+                },
+                4: {
+                    width: 18
                 }
             },
           }
