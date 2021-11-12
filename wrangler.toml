@@ -1,6 +1,7 @@
 name = "genshin-search-bot"
 type = 'javascript'
 workers_dev = true
+compatibility_date = "2021-11-12"
 
 [[kv_namespaces]]
 binding = "DB"

@@ -30,6 +30,7 @@ module.exports = {
         };
         const embed = {
             color: hexElement(chr.element),
+            url: 'https://genshin.gamedot.org/?mid=wiki&view=' + encodeURIComponent(chr.name),
             title: chr.name + ' ' + stars.join(''),
             description: chr.desc,
             thumbnail: {
@@ -61,6 +62,7 @@ module.exports = {
         };
         const embed = {
             color: 3442411,
+            url: 'https://genshin.gamedot.org/?mid=wiki&view=' + encodeURIComponent(wp.name),
             title: wp.name + ' ' + stars.join(''),
             thumbnail: {
                 url: 'https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/' + wp.icon + '.png'
@@ -83,6 +85,7 @@ module.exports = {
     tEmbed: (t) => {
         const embed = {
             color: hexElement(t.element),
+            url: 'https://genshin.gamedot.org/?mid=wiki&view=' + encodeURIComponent(t.character),
             title: t.character,
             fields: [
                 { name: "일반공격⭐️" + t.normal.name, value: t.normal.desc },
@@ -100,6 +103,7 @@ module.exports = {
     csEmbed: (cs) => {
         const embed = {
             color: hexElement(cs.element),
+            url: 'https://genshin.gamedot.org/?mid=wiki&view=' + encodeURIComponent(cs.character),
             title: cs.character,
             fields: []
         };
@@ -199,6 +203,7 @@ module.exports = {
         stats.push([90, r(0, 6, st.upgrade[5]), r(1, 6, st.upgrade[5]), r(2, 6, st.upgrade[5]), st.upgrade[5][3]]);
         const embed = {
             color: hexElement(st.element),
+            url: 'https://genshin.gamedot.org/?mid=wiki&view=' + encodeURIComponent(st.character),
             title: st.character,
             description: '```' + table(stats, config) + '```',
             footer: {
@@ -217,6 +222,7 @@ module.exports = {
         };
         const embed = {
             color: 3444715,
+            url: 'https://genshin.gamedot.org/?mid=wiki&view=' + encodeURIComponent(mat.name),
             title: mat.name + ' ' + stars.join(''),
             description: mat.desc,
             fields: [
@@ -228,6 +234,7 @@ module.exports = {
         if (mat.effect) embed.fields.push({name: '효과', value: mat.effect});
         if (mat.source?.length) embed.fields.push({name: '획득 방법', value: mat.source.join('  \n'), inline: true});
         if (mat.days) embed.fields.push({name: '파밍 요일', value: mat.days, inline: true});
+        if (mat.map) embed.fields.push({name: '지도 보기', value: '[게임닷](https://genshin.gamedot.org/?mid=genshinmaps&type=wiki&id=' + encodeURIComponent(mat.map) + ')', inline: true});
         if (mat.weapons) embed.fields.push({name: '사용 무기', value: mat.weapons.join(', ')});
         if (mat.characters) embed.fields.push({name: '사용 캐릭터', value: mat.characters.join(', ')});
 
@@ -242,6 +249,7 @@ module.exports = {
         }
         const embed = {
             color: 3444715,
+            url: 'https://genshin.gamedot.org/?mid=wiki&view=' + encodeURIComponent(food.name),
             title: food.name + ' ' + stars.join(''),
             description: food.desc,
             fields: []

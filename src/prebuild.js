@@ -333,7 +333,8 @@ for (const Material of Materials) {
         characters: Material.character?.map(w => characters[w].name),
         weapons: Material.weapon?.map(w => weapons[w].name),
         days: Material.day ? dayTransform(Material.day) : undefined,
-        names: nameTransform(Material.name)
+        names: nameTransform(Material.name),
+        map: Material.source.some(w => w.indexOf(' 채집') != -1) ? Material.name : undefined
     }
     data.materials.push(material);
 }
