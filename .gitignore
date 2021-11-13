@@ -1,7 +1,4 @@
 .vscode
 node_modules
-cloudflared.exe
-config.yml
 /data
 /dist
-/src/test.js

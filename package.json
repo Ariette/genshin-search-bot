@@ -6,9 +6,10 @@
   "scripts": {
     "start": "wrangler preview",
     "dev": "wrangler preview --watch",
-    "deploy": "node ./src/upload.js && wrangler publish",
+    "deploy": "wrangler publish && node ./src/upload.js",
     "build": "node ./esbuild.config.js",
-    "prebuild": "node ./src/prebuild.js"
+    "prebuild": "node ./src/prebuild.js",
+    "upload": "node ./src/upload.js"
   },
   "keywords": [
     "genshin",

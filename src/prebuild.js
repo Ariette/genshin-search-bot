@@ -420,11 +420,14 @@ const output = {
         90: curves.characters['90']
     }
 }
-const keys = Object.keys(output);
-const promises = [];
-for (const key of keys) {
-    promises.push(fs.writeFile('./data/' + key + '.json', JSON.stringify(output[key]), 'utf8'))
-}
-Promise.all(promises).then(w => {
-    console.log('Prebuild Done.')
-});
+
+fs.mkdir('./data').finally(() => {
+    const keys = Object.keys(output);
+    const promises = [];
+    for (const key of keys) {
+        promises.push(fs.writeFile('./data/' + key + '.json', JSON.stringify(output[key]), 'utf8'))
+    }
+    Promise.all(promises).then(w => {
+        console.log('Prebuild Done.')
+    });
+})
