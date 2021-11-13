@@ -1,4 +1,7 @@
 .vscode
+.npm
 node_modules
 /data
 /dist
+version.toml
+src/release.tar.gz
