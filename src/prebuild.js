@@ -1,5 +1,4 @@
 const fs = require('fs/promises');
-const shell = require('shelljs');
 const characters = require('./data/characters.json');
 const weapons = require('./data/weapons.json');
 const foods = require('./data/foods.json');
@@ -213,12 +212,14 @@ for (const Character of Characters) {
         raritys: Character.rarity + '성',
         weapontypes: nameTransform(Character.weapontype)
     };
-    if (Character.id === 10000005) character.names += '|아이테르|남행자|(바위)|(바람)';
-    if (Character.id === 10000007) character.names += '|루미네|(바위)|(바람)';
+    if (Character.id === 10000005) character.names += '|아이테르|남행자|(바위)|(바람)|(번개)';
+    if (Character.id === 10000007) character.names += '|루미네|(바위)|(바람)|(번개)';
     if (Character.id === 4) character.names += '|남행자|바람남행자';
     if (Character.id === 6) character.names += '|남행자|바위남행자';
+    if (Character.id === 7) character.names += '|남행자|번개남행자';
     if (Character.id === 14) character.names += '|여행자|바람행자|바람여행자';
     if (Character.id === 16) character.names += '|여행자|바위행자|바위여행자';
+    if (Character.id === 17) character.names += '|여행자|번개행자|번개여행자';
 
     // 특성/별자리 정보가 없는 여행자 기본 정보를 제외
     if (Character.name != '여행자') {
@@ -425,11 +426,5 @@ for (const key of keys) {
     promises.push(fs.writeFile('./data/' + key + '.json', JSON.stringify(output[key]), 'utf8'))
 }
 Promise.all(promises).then(w => {
-    for (const key of keys) {
-        if(shell.exec(`npx wrangler kv:key put --binding=DB ${key} ./data/${key}.json --path`).code !== 0) {
-            shell.echo('Error: command failed')
-            shell.exit(1)
-          }
-    }
     console.log('Prebuild Done.')
 });

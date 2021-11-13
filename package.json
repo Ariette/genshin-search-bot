@@ -6,9 +6,9 @@
   "scripts": {
     "start": "wrangler preview",
     "dev": "wrangler preview --watch",
-    "deploy": "wrangler publish",
+    "deploy": "node ./src/upload.js && wrangler publish",
     "build": "node ./esbuild.config.js",
-    "database": "node ./src/prebuild.js"
+    "prebuild": "node ./src/prebuild.js"
   },
   "keywords": [
     "genshin",
@@ -19,13 +19,12 @@
   "author": "Ariette",
   "license": "MIT",
   "dependencies": {
-    "discord-interactions": "^2.3.0",
-    "table": "^6.7.1"
+    "discord-interactions": "^2.4.1",
+    "table": "^6.7.3"
   },
   "devDependencies": {
     "@cloudflare/wrangler": "^1.19.5",
-    "discord.js": "^13.0.0-dev.1dcad05.1626178061",
-    "esbuild": "^0.12.15",
+    "esbuild": "^0.13.13",
     "shelljs": "^0.8.4"
   }
 }
