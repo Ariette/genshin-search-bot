@@ -1,121 +1,77 @@
 ## Genshin Search Bot
-Cloudflare Workers에서 동작하는 원신 정보 검색 디스코드 봇  
-DB 구성에 사용된 데이터는 [Ariette/genshin-data-parse](https://github.com/Ariette/genshin-data-parse)를 참고하세요.
 
-## How to
-레포지토리를 클론하고 다음의 순서로 Deploy하세요.
- + `npm install`
- + `wrangler secret put DISCORD_PUBLIC_KEY` 로 디스코드 애플리케이션 Public Key를 입력하세요. 디스코드 인터랙션 엔드포인트 등록에 필요합니다.
- + `wrangler.toml` 파일의 `kv_namespaces` 부분을 본인의 것으로 교체하세요.
- + `npm run deploy`로 publish 해줍니다.
- + Discord Develtoper Portal에서 앱의 엔드포인트를 본인의 워커 주소로 설정하고 사용하시면 됩니다.
+Cloudflare Workers에서 동작하는 한국어 원신 정보 검색 디스코드 봇
 
-## 커맨드 등록
-해당 봇은 슬래시 커맨드를 사용하며, 커맨드 등록은 수동으로 하셔야합니다.  
-Postman이나 Thunder Client 같은 API Testing Tool을 이용해주세요.
+- 초대 링크 : [서버에 초대하기](https://discord.com/api/oauth2/authorize?client_id=861184372231897149&permissions=0&scope=applications.commands%20bot)
+- 운영 정책(Terms of Service) : [문서 바로가기](TERMS_OF_SERVICE.md)
+- 개인정보 처리 방침(Privacy Policy) : [문서 바로가기](PRIVACY_POLICY.md)
 
-```javascript
-// deploy 전 등록이 필요한 커맨드 일람
-[{
-    name: '캐릭터',
-    description: '원신의 캐릭터 정보를 검색합니다.',
-    options: [{
-      type: 1,
-      name: '프로필',
-      description: '원신의 캐릭터 프로필 정보를 검색합니다.',
-      options: [{
-        type: 3,
-        name: '검색어',
-        description: '캐릭터의 이름, 속성, 무기, 부스탯, 등급으로 검색할 수 있습니다.',
-        required: true
-      }]
-    }, {
-      type: 1,
-      name: '특성',
-      description: '원신의 캐릭터 특성 정보를 검색합니다.',
-      options: [{
-        type: 3,
-        name: '검색어',
-        description: '캐릭터의 이름으로 검색할 수 있습니다.',
-        required: true
-      }]
-    }, {
-      type: 1,
-      name: '별자리',
-      description: '원신의 캐릭터 별자리 정보를 검색합니다.',
-      options: [{
-        type: 3,
-        name: '검색어',
-        description: '캐릭터의 이름으로 검색할 수 있습니다.',
-        required: true
-      }]
-    }, {
-      type: 1,
-      name: '스탯',
-      description: '원신의 캐릭터 스탯 정보를 검색합니다.',
-      options: [{
-        type: 3,
-        name: '검색어',
-        description: '캐릭터의 이름으로 검색할 수 있습니다.',
-        required: true
-      }]
-    }]
-  }, {
-    name: '무기',
-    description: '원신의 무기 정보를 검색합니다.',
-    options: [{
-        type: 3,
-        name: '검색어',
-        description: '무기의 이름, 종류, 부스탯, 등급으로 검색할 수 있습니다.',
-        required: true
-    }]
-  }, {
-    name: '아이템',
-    description: '원신의 아이템 정보를 검색합니다.',
-    options: [{
-        type: 3,
-        name: '검색어',
-        description: '아이템의 이름, 사용 캐릭터, 사용 무기, 파밍 가능 요일로 검색할 수 있습니다.',
-        required: true
-    }]
-  }, {
-    name: '레시피',
-    description: '원신의 레시피 정보를 검색합니다.',
-    options: [{
-        type: 3,
-        name: '검색어',
-        description: '레시피의 이름, 재료, 특수 요리 제작 캐릭터 이름으로 검색할 수 있습니다.',
-        required: true
-    }]
-  }, {
-    name: '파밍',
-    description: '오늘 파밍 가능한 원신 캐릭터, 무기 리스트를 검색합니다.',
-    options: [{
-        type: 3,
-        name: '요일',
-        description: '원하는 요일을 지정하실 수 있습니다.',
-        choices: [{
-          name: "월요일",
-          value: "월요일"
-        }, {
-          name: "화요일",
-          value: "화요일"
-        }, {
-          name: "수요일",
-          value: "수요일"
-        }, {
-          name: "목요일",
-          value: "목요일"
-        }, {
-          name: "금요일",
-          value: "금요일"
-        }, {
-          name: "토요일",
-          value: "토요일"
-        }, {
-          name: "일요일",
-          value: "일요일"
-        }]
-    }]
-  }]
-```
+---
+
+## 커맨드 일람
+
+### 캐릭터
+
+- `/캐릭터 프로필`
+  - 캐릭터는 이름, 속성, 등급, 무기종류, 돌파스탯으로 검색할 수 있으며, 둘 이상 요소의 복합 검색도 지원합니다.
+  - ex) `/캐릭터 프로필 불 법구`, `/캐릭터 프로필 다이루크`
+- `/캐릭터 특성`
+  - 특성은 캐릭터 이름으로만 검색할 수 있습니다.
+  - ex) `/캐릭터 특성 바바라`
+- `/별자리`
+  - 별자리는 캐릭터 이름으로만 검색할 수 있습니다.
+  - ex) `/캐릭터 별자리 향릉`
+- `/스탯`
+  - 스탯은 캐릭터 이름으로만 검색할 수 있습니다.
+  - ex) `/캐릭터 스탯 진`
+
+### 무기
+
+- `/무기`
+  - 무기는 이름, 등급, 종류, 돌파스탯으로 검색할 수 있으며, 둘 이상의 복합 검색도 지원합니다.
+  - 데이터마이닝된 자료를 기준으로 DB가 구성되므로 아직 미출시된 무기가 검색될 수 있습니다.
+  - ex) `/무기 5성 한손검`, `/무기 여명신검`
+
+### 아이템
+
+- `/아이템`
+  - 아이템은 이름, 사용 캐릭터, 사용 무기, 파밍 요일로 검색할 수 있습니다.
+  - ex) `/아이템 구라구라 꽃꿀`, `/아이템 연비`
+
+### 레시피
+
+- `/레시피`
+  - 레시피는 이름, 특수 요리 캐릭터, 재료로 검색할 수 있습니다.
+  - ex) `/레시피 닭꼬치`, `/레시피 베이컨`, `/레시피 벤티`
+
+### 파밍
+
+- `/파밍`
+  - 해당하는 요일에 파밍할 수 있는 캐릭터, 무기 목록을 열람합니다.
+  - 아무것도 입력하지 않으면 오늘의 파밍 목록을 출력합니다.
+  - ex) `/파밍`, `/파밍 목요일`
+
+### 호요랩
+
+- `/호요랩 전적`
+  - 호요랩 전적 정보를 출력합니다.
+  - 일반 전적, 실시간 노트, 나선 비경 전적을 조회할 수 있습니다.
+  - ex) `/호요랩 전적 일반`, `/호요랩 전적 실시간`, `/호요랩 전적 나선비경`
+- `/호요랩 리딤`
+  - 리딤 코드를 입력합니다.
+  - ex) `/호요랩 리딤 GENSHINGIFT`
+- `/호요랩 쿠키`
+  - 호요랩 로그인 쿠키를 등록합니다. 호요랩 기능을 이용하기 위해서는 반드시 쿠키를 등록해야합니다.
+  - 등록된 쿠키는 암호화되어 저장되며, 쿠키 등록으로 인해 발생하는 문제에 대해 개발자는 아무런 책임도 지지 않습니다.  
+    자세한 사항은 [개인정보 처리 방침](PRIVACY_POLICY.md)을 참고하십시오.
+  - 아무것도 입력하지 않으면 등록된 쿠키를 삭제합니다.
+  - ex) `/호요랩 쿠키 <쿠키값>`, `/호요랩 쿠키`
+
+## 쿠키 등록 방법
+
+1. [호요랩 전적 페이지](https://webstatic-sea.mihoyo.com/app/community-game-records-sea/index.html?v=101&gid=2#/ys)에 접속합니다.
+2. 호요랩에 로그인합니다.
+3. 단축키 `F12`를 눌러 개발자 도구를 여세요.
+4. 개발자 도구의 `콘솔(Console)` 탭으로 이동하세요.
+5. `copy(document.cookie)`를 입력하세요. 쿠키값이 자동으로 복사됩니다.
+6. `/호요랩 쿠키 <여기에 값을 붙여넣으세요>` 커맨드로 쿠키를 등록하실 수 있습니다.

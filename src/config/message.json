@@ -3,5 +3,6 @@
     "missingCharacter": "그런 캐릭터는 몰라!",
     "missingWeapon": "그런 무기는 몰라!",
     "missingArtifact": "그런 성유물은 몰라!",
-    "missingItem": "그런 아이템은 몰라!"
+    "missingItem": "그런 아이템은 몰라!",
+    "hoyolabFooter": "데이터는 호요랩 갱신 시점을 기준으로 하며, 실제 인게임 데이터와 오차가 있을 수 있습니다."
 }

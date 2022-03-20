@@ -4,7 +4,7 @@ const weapons = require('./data/weapons.json');
 const foods = require('./data/foods.json');
 const materials = require('./data/materials.json');
 const curves = require('./data/curve.json');
-const alias = require('./modules/alias.json');
+const alias = require('./config/alias.json');
 
 const data = {
     characters: [],
@@ -421,13 +421,36 @@ const output = {
     }
 }
 
-fs.mkdir('./data').finally(() => {
-    const keys = Object.keys(output);
-    const promises = [];
-    for (const key of keys) {
-        promises.push(fs.writeFile('./data/' + key + '.json', JSON.stringify(output[key]), 'utf8'))
-    }
-    Promise.all(promises).then(w => {
-        console.log('Prebuild Done.')
+if (process.env.NODE_ENV === 'development') {
+    fs.mkdir('./kv/DB')
+        .catch(e => {
+            if (e.code === 'EEXIST') return;
+            throw e;
+        })
+        .finally(() => {
+        const keys = Object.keys(output);
+        const promises = [];
+        for (const key of keys) {
+            promises.push(fs.writeFile('./kv/DB/' + key, JSON.stringify(output[key]), 'utf8'))
+        }
+        Promise.all(promises).then(w => {
+            console.log('Prebuild Done.')
+        });
     });
-})
+} else {
+    fs.mkdir('./data')
+        .catch(e => {
+            if (e.code === 'EEXIST') return;
+            throw e;
+        })
+        .finally(() => {
+        const keys = Object.keys(output);
+        const promises = [];
+        for (const key of keys) {
+            promises.push(fs.writeFile('./data/' + key + '.json', JSON.stringify(output[key]), 'utf8'))
+        }
+        Promise.all(promises).then(w => {
+            console.log('Prebuild Done.')
+        });
+    });
+}
