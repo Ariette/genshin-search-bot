@@ -3,7 +3,6 @@ import { APIEmbed } from 'discord-api-types/v10';
 import { DailyNote } from '../interface';
 
 export const dnEmbed = (dn: DailyNote) => {
-  console.log(dn);
   const ongoingExpedition = dn.expeditions.filter((w) => w.status === 'Ongoing');
   const expeditionLeftTime =
     ongoingExpedition.length > 0 ? Math.max(...ongoingExpedition.map((w) => parseInt(w.remained_time))) : 0;
@@ -59,8 +58,14 @@ const convertSecToHour = (sec) => {
   }
   const date = new Date(0);
   date.setSeconds(time);
+  const day = date.getUTCDate() - 1;
   const hour = date.getUTCHours();
   const min = date.getUTCMinutes();
 
-  return hour > 0 ? `까지 ${hour}시간 ${min}분` : `까지 ${min}분`;
+  const strs: string[] = [];
+  if (day > 0) strs.push(day + '일');
+  if (hour > 0) strs.push(hour + '시간');
+  if (min > 0) strs.push(min + '분');
+
+  return strs.length > 0 ? '까지 ' + strs.join(' ') : '까지 1분 미만';
 };
