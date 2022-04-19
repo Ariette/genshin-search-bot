@@ -4,6 +4,7 @@
   "description": "디스코드 원신 서치봇",
   "main": "./dist/worker.js",
   "scripts": {
+    "update-package": "ncu -u && npm i",
     "start": "NODE_ENV=development miniflare ./dist/worker.js --watch --debug --binding DISCORD_PUBLIC_KEY=$DISCORD_PUBLIC_KEY",
     "deploy": "wrangler publish && node ./src/upload.js",
     "build": "node ./esbuild.config.js",
@@ -19,18 +20,19 @@
   "author": "Ariette",
   "license": "MIT",
   "dependencies": {
-    "cookie": "^0.4.2",
-    "discord-interactions": "^3.0.0",
+    "cookie": "^0.5.0",
+    "discord-interactions": "^3.2.0",
     "table": "^6.8.0"
   },
   "devDependencies": {
-    "@cloudflare/wrangler": "^1.19.9",
-    "@types/cookie": "^0.4.1",
-    "discord-api-types": "^0.29.0",
-    "esbuild": "^0.14.27",
+    "@cloudflare/wrangler": "^1.19.11",
+    "@types/cookie": "^0.5.0",
+    "discord-api-types": "^0.31.2",
+    "esbuild": "^0.14.36",
     "esbuild-node-externals": "^1.4.1",
-    "miniflare": "^2.3.0",
+    "miniflare": "^2.4.0",
+    "npm-check-updates": "^12.5.9",
     "shelljs": "^0.8.5",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.3"
   }
 }

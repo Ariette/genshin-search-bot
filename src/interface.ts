@@ -288,6 +288,17 @@ export interface DailyNote {
   max_home_coin: number;
   home_coin_recovery_time: string;
   calendar_url: string;
+  transformer: {
+    obtained: boolean;
+    recovery_time: {
+      Day: number;
+      Hour: number;
+      Minute: number;
+      Second: number;
+      reached: false;
+    };
+    wiki: string;
+  };
 }
 
 export interface SpiralAbyss {

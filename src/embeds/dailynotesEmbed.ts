@@ -42,6 +42,11 @@ export const dnEmbed = (dn: DailyNote) => {
         value: `${dn.resin_discount_num_limit - dn.remain_resin_discount_num}/${dn.resin_discount_num_limit} 완료`,
         inline: true,
       },
+      {
+        name: '변환기',
+        value: dn.transformer.obtained ? stringifyRecoveryTime(dn.transformer.recovery_time) : '미획득',
+        inline: true,
+      },
     ],
     footer: {
       text: hoyolabFooter,
@@ -68,4 +73,16 @@ const convertSecToHour = (sec) => {
   if (min > 0) strs.push(min + '분');
 
   return strs.length > 0 ? '까지 ' + strs.join(' ') : '까지 1분 미만';
+};
+
+const stringifyRecoveryTime = (data: DailyNote['transformer']['recovery_time']) => {
+  const { Day, Hour, Minute, reached } = data;
+  if (reached) return '변환 가능';
+
+  const strs: string[] = [];
+  if (Day > 0) strs.push(Day + '일');
+  if (Hour > 0) strs.push(Hour + '시간');
+  if (Minute > 0) strs.push(Minute + '분');
+
+  return strs.length > 0 ? '앞으로 ' + strs.join(' ') : '앞으로 1분 미만';
 };
