@@ -182,9 +182,8 @@ function talentstatTransform(talent) {
   return result.length ? result : undefined;
 }
 
-function nameTransform(chr) {
+function nameTransform(name) {
   const names = new Set();
-  const name = chr.name;
   const regExp = /[ 「」]/g;
   const adds = alias[name];
   if (adds) {
@@ -214,7 +213,7 @@ for (const Character of Characters) {
     cv: Character.cv,
     birthday: Character.birthday || '-',
     days: dayTransform(Character.day),
-    names: nameTransform(Character),
+    names: nameTransform(Character.name),
     substats: subStatTransform(Character.stat.upgrade[1].props[3].type),
     raritys: Character.rarity + '성',
     weapontypes: nameTransform(Character.weapontype),
