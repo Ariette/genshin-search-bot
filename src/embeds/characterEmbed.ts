@@ -25,7 +25,7 @@ export const chrEmbed = (chr: Character) => {
       { name: '무기', value: chr.weapontype, inline: true },
       { name: '돌파 스탯', value: chr.substat, inline: true },
       { name: '특산물', value: chr.material.level, inline: true },
-      { name: '특성 재료', value: '「' + chr.material.talent + '」', inline: true },
+      { name: '특성 재료', value: `「${chr.material.talent}」, ${chr.material.boss}`, inline: true },
     ],
   };
   if (chr.days) embed.fields.push({ name: '파밍 요일', value: chr.days, inline: true }); // 여행자를 위한 예외

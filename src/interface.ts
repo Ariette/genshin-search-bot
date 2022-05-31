@@ -56,6 +56,7 @@ export interface Character {
   material: {
     level: string;
     talent: string;
+    boss: string;
   };
   icon: string;
   substat: string;
