@@ -115,12 +115,12 @@ export default class GenshinClient {
     async getRedeem(code) {
       const card = await this.getCard();
       const uid = card.list[0].game_role_id;
-      const data = await this.request('get', 'https://hk4e-api-os.hoyoverse.com/common/apicdkey/api/webExchangeCdkey', {
+      const data = await this.request('get', 'https://sg-hk4e-api.hoyoverse.com/common/apicdkey/api/webExchangeCdkey', {
         uid,
         region: this.serverType,
         lang: 'ko',
         cdkey: code,
-        game_biz: 'hk4e_global'
+        game_biz: 'hk4e_global',
       });
 
       if (data.retcode !== 0) {
