@@ -100,7 +100,7 @@ export interface Constellation {
   icon: string;
   character: string;
   element: string;
-  value?: {
+  value: {
     name: string;
     desc: string;
     icon: string;
@@ -161,7 +161,7 @@ export interface Food {
   rarity: number;
   icon: string;
   effect?: string;
-  ingredients?: {
+  ingredients: {
     name: string;
     count: number;
   }[];

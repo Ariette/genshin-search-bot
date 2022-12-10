@@ -3,7 +3,7 @@ import { APIEmbed } from 'discord-api-types/v10';
 import { Character } from '../interface';
 
 export const chrEmbed = (chr: Character) => {
-  const stars = [];
+  const stars: string[] = [];
   const rarity = chr.rarity;
   for (let i = 0; i < rarity; i++) {
     stars.push('⭐️');
@@ -28,7 +28,7 @@ export const chrEmbed = (chr: Character) => {
       { name: '특성 재료', value: `「${chr.material.talent}」, ${chr.material.boss}`, inline: true },
     ],
   };
-  if (chr.days) embed.fields.push({ name: '파밍 요일', value: chr.days, inline: true }); // 여행자를 위한 예외
+  if (chr.days) embed.fields?.push({ name: '파밍 요일', value: chr.days, inline: true }); // 여행자를 위한 예외
   if (chr.title) embed.author = { name: chr.title }; // 여행자를 위한 예외
 
   return embed;

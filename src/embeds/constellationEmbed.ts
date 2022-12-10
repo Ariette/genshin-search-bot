@@ -10,7 +10,7 @@ export const csEmbed = (cs: Constellation) => {
     fields: [],
   };
   cs.value.forEach((v, i) => {
-    embed.fields.push({ name: i + 1 + '⭐️' + v.name, value: v.desc });
+    embed.fields?.push({ name: i + 1 + '⭐️' + v.name, value: v.desc });
   });
 
   return embed;

@@ -28,6 +28,7 @@ export function getStringDay() {
     case 5:
       return '금요일';
     case 6:
+    default:
       return '토요일';
   }
 }
@@ -42,10 +43,12 @@ export async function findQuery<
   T extends Character | Talent | TalentStat | Constellation | Stat | Weapon | Material | Food,
 >(key: string, args: string) {
   const db = await DB.get<DataWrapper<T>[]>(key, { type: 'json' });
-  const query = args.split(' ').filter(w => w);
-  let result: DataWrapper<T>[];
-  result = db.filter(w => query.every(word => w.name?.indexOf(word) != -1));
-  if (!result.length) result = db.filter(w => query.every(word => w.index?.indexOf(word) != -1));
+  if (!db) return [];
 
-  return result.map(w => w.content);
+  const query = args.split(' ').filter((w) => w);
+  let result: DataWrapper<T>[];
+  result = db.filter((w) => query.every((word) => w.name?.indexOf(word) != -1));
+  if (!result.length) result = db.filter((w) => query.every((word) => w.index?.indexOf(word) != -1));
+
+  return result.map((w) => w.content);
 }

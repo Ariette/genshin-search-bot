@@ -1,12 +1,13 @@
 import { APIMessage } from 'discord-api-types/v10';
 import { chrstEmbed } from '../../embeds';
-import { CloudflareKV, Stat } from '../../interface';
+import { CloudflareKV, Curve, Stat } from '../../interface';
 import { findQuery } from './common';
 
 declare const DB: CloudflareKV;
 
 export const findCharacterStat = async (args: string): Promise<Partial<APIMessage>> => {
-  const curve = await DB.get<object>('curve', { type: 'json' });
+  const curve = await DB.get<Curve>('curve', { type: 'json' });
+  if (!curve) return { content: '에러 발생!' };
   const results = await findQuery<Stat>('stat', args);
   const embed = chrstEmbed(results[0], curve);
   const buttons = [

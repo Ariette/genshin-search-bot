@@ -15,7 +15,7 @@ export const tEmbed = (t: Talent) => {
       { name: '4돌파⭐️' + t.passive2.name, value: t.passive2.desc },
     ],
   };
-  if (t.passive3) embed.fields.push({ name: '생활⭐️' + t.passive3.name, value: t.passive3.desc });
+  if (t.passive3) embed.fields?.push({ name: '생활⭐️' + t.passive3.name, value: t.passive3.desc });
 
   return embed;
 };

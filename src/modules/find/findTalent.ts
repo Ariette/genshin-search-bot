@@ -1,4 +1,4 @@
-import { APIMessage } from 'discord-api-types/v10';
+import { APIButtonComponent, APIMessage } from 'discord-api-types/v10';
 import { missingCharacter } from '../../config/message.json';
 import { tEmbed } from '../../embeds';
 import { Talent } from '../../interface';
@@ -25,12 +25,12 @@ export const findTalent = async (args: string): Promise<Partial<APIMessage>> => 
         text: '아래 버튼을 누르시면 해당 캐릭터의 정보를 바로 보실 수 있습니다.',
       },
     };
-    const buttons = [];
+    const buttons: APIButtonComponent[] = [];
     for (const result of results) {
       buttons.push({ type: 2, style: 2, custom_id: '_t' + result.character, label: result.character });
     }
     return { embeds: [embed], components: [{ type: 1, components: buttons }] };
   } else {
-    return { content: `\`검색 결과>>\` ${results.map(w => w.character).join(', ')}` };
+    return { content: `\`검색 결과>>\` ${results.map((w) => w.character).join(', ')}` };
   }
 };
