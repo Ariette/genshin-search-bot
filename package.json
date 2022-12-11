@@ -20,6 +20,8 @@
   "author": "Ariette",
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.2.1",
+    "axios-extensions": "^3.1.6",
     "cookie": "^0.5.0",
     "discord-interactions": "^3.2.0",
     "genshin-db": "^4.3.4",
