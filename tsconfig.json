@@ -1,0 +1,14 @@
+{
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "module": "NodeNext",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"]
+    }
+  }
+}
