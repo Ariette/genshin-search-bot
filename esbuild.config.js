@@ -6,8 +6,12 @@ build({
   bundle: true,
   outfile: './dist/worker.js',
   minify: true,
-  sourcemap: true,
+  sourcemap: false,
   platform: 'browser',
   target: 'esnext',
-	external: [nodeExternalsPlugin()],
-}).catch(() => process.exit(1))
+  plugins: [
+    nodeExternalsPlugin({
+      dependencies: false,
+    }),
+  ],
+}).catch(() => process.exit(1));
