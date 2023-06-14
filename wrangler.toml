@@ -1,5 +1,4 @@
 name = "genshin-search-bot"
-type = 'javascript'
 workers_dev = true
 compatibility_date = "2021-11-12"
 
@@ -16,8 +15,6 @@ port = 3000
 
 [build]
 command = "npm run build"
-[build.upload]
-format = "service-worker"
 
 [miniflare]
 kv_persist = "./kv/"
