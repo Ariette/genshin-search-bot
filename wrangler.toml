@@ -6,12 +6,10 @@ compatibility_date = "2021-11-12"
 [[kv_namespaces]]
 binding = "DB"
 id = "948fd6d2c37d47b193f4e6461c3417d3"
-preview_id = "948fd6d2c37d47b193f4e6461c3417d3"
 
 [[kv_namespaces]]
 binding = "Cookie"
 id = "08b0f0b7eb394f2ca1e3454ae7af8532"
-preview_id = "08b0f0b7eb394f2ca1e3454ae7af8532"
 
 [dev]
 port = 3000

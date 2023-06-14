@@ -49,8 +49,8 @@ jobs:
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          publish: false
           preCommands: npm run upload
+          command: whoami
 
       - name: Commit Updates
         run: |
