@@ -21,14 +21,14 @@
   "license": "MIT",
   "dependencies": {
     "cookie": "^0.6.0",
-    "discord-api-types": "^0.37.70",
-    "hoyoapi": "^1.2.0",
     "table": "^6.8.1"
   },
   "devDependencies": {
     "@types/cookie": "^0.6.0",
+    "discord-api-types": "^0.37.70",
     "esbuild": "^0.20.1",
     "esbuild-node-externals": "^1.13.0",
+    "hoyoapi": "^1.2.0",
     "npm-check-updates": "^16.14.15",
     "shelljs": "^0.8.5",
     "typescript": "^5.3.3",
