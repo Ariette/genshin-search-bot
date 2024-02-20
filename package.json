@@ -6,7 +6,7 @@
   "scripts": {
     "update-package": "ncu -u && npm i",
     "dev": "wrangler dev --var DISCORD_PUBLIC_KEY:$DISCORD_PUBLIC_KEY --persist-to ./kv/",
-    "deploy": "wrangler publish && node ./src/upload.js",
+    "deploy": "wrangler deploy",
     "build": "node ./esbuild.config.js",
     "prebuild": "node ./src/prebuild.js",
     "upload": "node ./src/upload.js"
