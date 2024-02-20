@@ -1,10 +1,12 @@
+import { encoder } from './verifyKey';
+
 declare const DISCORD_PUBLIC_KEY: string;
 
-const keyData = new TextEncoder().encode(DISCORD_PUBLIC_KEY).slice(0, 16);
+const keyData = encoder.encode(DISCORD_PUBLIC_KEY).slice(0, 16);
 const cryptoKey = crypto.subtle.importKey('raw', keyData, 'AES-CTR', false, ['encrypt', 'decrypt']);
 
 export const encode = async (str: string) => {
-  const strData = new TextEncoder().encode(str);
+  const strData = encoder.encode(str);
   const key_encoded = await cryptoKey;
   const result: ArrayBuffer = await crypto.subtle.encrypt(
     {

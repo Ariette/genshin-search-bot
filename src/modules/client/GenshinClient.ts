@@ -10,6 +10,7 @@ import type {
 import { ErrorMessage } from '../messages';
 import { CustomError, decode } from '../utils/common';
 import { GameId, GamesEnum, GenshinRegion, LanguageEnum, SpiralAbyssScheduleEnum } from './enums';
+import { encoder } from '../utils/verifyKey';
 
 interface IGameRecordCardList {
   list: IGameRecordCard[];
@@ -80,7 +81,7 @@ export class GenshinClient {
     const salt = '6s25p5ox5y14umn1p61aqyyvbvvl3lrt';
     const time = Math.floor(Date.now() / 1000);
     const random = Math.random().toString(36).substring(2, 8);
-    const msgUint8 = new TextEncoder().encode(`salt=${salt}&t=${time}&r=${random}`);
+    const msgUint8 = encoder.encode(`salt=${salt}&t=${time}&r=${random}`);
     const hashBuffer = await crypto.subtle.digest({ name: 'MD5' }, msgUint8);
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
@@ -104,7 +105,7 @@ export class GenshinClient {
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.46',
       'x-rpc-app_version': '1.5.0',
       'x-rpc-client_type': '5',
-      'x-rpc-language': 'en-us',
+      'x-rpc-language': this.serverLocale,
       Origin: DEFAULT_REFERER,
       Referer: DEFAULT_REFERER,
       Cookie: this.cookie!,
