@@ -1,6 +1,5 @@
 import { isChatInputApplicationCommandInteraction } from 'discord-api-types/utils/v10';
 import { APIInteraction, APIInteractionResponse, InteractionType } from 'discord-api-types/v10';
-import { verifyKey } from 'discord-interactions';
 import {
   findCharacter,
   findCharacterStat,
@@ -14,6 +13,7 @@ import {
 } from './modules/find';
 import { assignCookie, getRecord, getRedeem } from './modules/hoyolab';
 import { getOptionValue } from './modules/utils/getOptionValue';
+import { verifyKey } from './modules/utils/verifyKey';
 
 declare const DISCORD_PUBLIC_KEY: string;
 

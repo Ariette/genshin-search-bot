@@ -22,7 +22,6 @@
   "dependencies": {
     "cookie": "^0.6.0",
     "discord-api-types": "^0.37.70",
-    "discord-interactions": "^3.4.0",
     "hoyoapi": "^1.2.0",
     "table": "^6.8.1"
   },
