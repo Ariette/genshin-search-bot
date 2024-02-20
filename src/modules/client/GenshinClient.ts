@@ -20,7 +20,7 @@ const BBS_API = 'https://bbs-api-os.hoyolab.com';
 const HK4E_API = 'https://sg-hk4e-api.hoyolab.com';
 // const PUBLIC_API = 'https://sg-public-api.hoyolab.com';
 
-const DEFAULT_REFERER = 'https://webstatic-sea.mihoyo.com/';
+const DEFAULT_REFERER = 'https://act.hoyolab.com';
 const GAME_RECORD_CARD_API = `${BBS_API}/game_record/card/wapi/getGameRecordCard`;
 const GAME_RECORD_DATA_SWITCH_API = `${BBS_API}/game_record/card/wapi/changeDataSwitch`;
 const GENSHIN_RECORD_DAILY_NOTE_API = `${BBS_API}/game_record/genshin/api/dailyNote`;
@@ -113,7 +113,7 @@ export class GenshinClient {
 
   async request<T>(method: 'get' | 'post', url: string, data?: any): Promise<T> {
     const headers = await this._getHttpHeaders();
-    const fetchConfig: RequestInit & { headers: HeadersInit } = {
+    const fetchConfig: RequestInit & { headers: Record<string, string> } = {
       method,
       headers,
     };
@@ -125,7 +125,6 @@ export class GenshinClient {
 
     const query = method === 'get' && data ? `?${this._qsStringify(data)}` : '';
     const fetchUrl = `${url}${query}`;
-
     const resp = await fetch(fetchUrl, fetchConfig);
 
     try {
@@ -146,7 +145,7 @@ export class GenshinClient {
       throw new CustomError(ErrorMessage.MISSING_COOKIE_ERROR);
     }
 
-    const uid = this.cookies.ltuid;
+    const uid = this.cookies.ltuid ?? this.cookies.ltuid_v2;
     const data = await this.request<HTTPResponse>('get', GAME_RECORD_CARD_API, {
       uid,
     });

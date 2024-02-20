@@ -7,3 +7,4 @@ node_modules
 version.toml
 src/release.tar.gz
 .cache
+.wrangler

@@ -108,7 +108,7 @@ async function handleRequest(request: Request) {
         }
       } catch (err) {
         console.log(err);
-        return response({ type: 4, data: { content: '에러 발생!\n - ' + err.message, flags: 64 } });
+        return response({ type: 4, data: { content: '에러 발생! - ' + err.message, flags: 64 } });
       }
     }
     // type 3 : Discord Component Based Interaction
@@ -173,7 +173,7 @@ async function handleRequest(request: Request) {
         }
       } catch (err) {
         console.log(err);
-        return response({ type: 4, data: { content: '에러 발생!\n - ' + err.message, flags: 64 } });
+        return response({ type: 4, data: { content: '에러 발생! - ' + err.message, flags: 64 } });
       }
     }
   }

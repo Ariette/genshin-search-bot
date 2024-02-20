@@ -13,15 +13,17 @@ export const assignCookie = async (body: APIChatInputApplicationCommandInteracti
   const key = `${body.guild_id}/${body.member?.user.id}`;
   const value = getOptionValue(body.data.options?.[0]!) as string;
   const requiredKeys = ['ltuid', 'ltoken', 'account_id', 'cookie_token'];
+  const requiredKeys_v2 = ['ltuid_v2', 'ltoken_v2', 'ltmid_v2', 'cookie_token_v2', 'account_id_v2'];
   if (value) {
     // 쿠키로 파싱 되는지 먼저 확인
     const cookies = parse(value);
     if (typeof cookies === 'string') throw new Error();
-    if (requiredKeys.some((key) => !cookies[key])) throw new Error();
 
     try {
       // 호요랩 로그인을 시도해봄
-      const rawCookie = requiredKeys.map((key) => `${key}=${cookies[key]}`).join('; ');
+      const rawCookie = cookies[requiredKeys[0]]
+        ? requiredKeys.map((key) => `${key}=${cookies[key]}`).join(';')
+        : requiredKeys_v2.map((key) => `${key}=${cookies[key]}`).join(';');
       const client = new GenshinClient(rawCookie);
       const { list: cards } = await client.getCards();
       const card = cards.find((w) => w.game_id === GameId.GenshinImpact);
@@ -41,6 +43,7 @@ export const assignCookie = async (body: APIChatInputApplicationCommandInteracti
       if (err instanceof CustomError) {
         throw err;
       }
+      console.error(err);
       throw new Error(ErrorMessage.WRONG_COOKIE_ERROR);
     }
   } else {
