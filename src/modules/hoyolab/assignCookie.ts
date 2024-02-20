@@ -1,35 +1,50 @@
 import { parse } from 'cookie';
-import GenshinClient from './GenshinClient';
-import { encode } from './common';
+import { APIChatInputApplicationCommandInteraction } from 'discord-api-types/v10';
 import { CloudflareKV } from '../../interface';
+import { GenshinClient, GameId } from '../client';
+import { clientCache } from '../client/cache';
+import { ErrorMessage } from '../messages';
+import { CustomError, encode } from '../utils/common';
+import { getOptionValue } from '../utils/getOptionValue';
 
 declare const Cookie: CloudflareKV;
 
-export const assignCookie = async (body) => {
-    const key = `${body.guild_id}/${body.member.user.id}`
-    const value = body.data.options[0]?.options[0]?.value;
-    const requiredKeys = ['ltuid', 'ltoken', 'account_id', 'cookie_token'];
-    if (value) {
-        // 쿠키로 파싱 되는지 먼저 확인
-        const cookies = parse(value);
-        if (typeof cookies === 'string') throw new Error('쿠키 형식이 잘못되었습니다.');
-        if (requiredKeys.some(key => !cookies[key])) throw new Error('쿠키 형식이 잘못되었습니다. 다시 입력해주세요.');
-        
-        try {
-          // 호요랩 로그인을 시도해봄
-          const rawCookie = requiredKeys.map(key => `${key}=${cookies[key]}`).join('; ');
-          const client = new GenshinClient(rawCookie);
-          const data = await client.getCard();
+export const assignCookie = async (body: APIChatInputApplicationCommandInteraction) => {
+  const key = `${body.guild_id}/${body.member?.user.id}`;
+  const value = getOptionValue(body.data.options?.[0]!) as string;
+  const requiredKeys = ['ltuid', 'ltoken', 'account_id', 'cookie_token'];
+  if (value) {
+    // 쿠키로 파싱 되는지 먼저 확인
+    const cookies = parse(value);
+    if (typeof cookies === 'string') throw new Error();
+    if (requiredKeys.some((key) => !cookies[key])) throw new Error();
 
-          // 로그인 성공시 쿠키 저장
-          const encryptedCookie = await encode(rawCookie);
-          await Cookie.put(key, encryptedCookie);
-          return {content: `쿠키 저장 완료! - 로그인 유저 : ${data.list[0].nickname}`, flags: 64}
-        } catch (err) {
-          throw new Error('쿠키 값이 잘못되었습니다. 다시 입력해주세요.');
-        }
-    } else {
-        await Cookie.delete(key);
-        return {content: `쿠키 삭제 완료!`, flags: 64}
+    try {
+      // 호요랩 로그인을 시도해봄
+      const rawCookie = requiredKeys.map((key) => `${key}=${cookies[key]}`).join('; ');
+      const client = new GenshinClient(rawCookie);
+      const { list: cards } = await client.getCards();
+      const card = cards.find((w) => w.game_id === GameId.GenshinImpact);
+
+      if (!card) throw new CustomError(ErrorMessage.CANNOT_FIND_CARD_ERROR);
+
+      // 로그인 성공시 쿠키 저장
+      const encryptedCookie = await encode(rawCookie);
+      await Cookie.put(key, encryptedCookie);
+
+      // 다음 세션을 위해 캐시를 채워둠
+      client.setUid(card.game_role_id);
+      clientCache.set(key, client);
+
+      return { content: `쿠키 저장 완료! - 로그인 유저 : ${card.nickname}`, flags: 64 };
+    } catch (err) {
+      if (err instanceof CustomError) {
+        throw err;
+      }
+      throw new Error(ErrorMessage.WRONG_COOKIE_ERROR);
     }
-}
+  } else {
+    await Cookie.delete(key);
+    return { content: `쿠키 삭제 완료!`, flags: 64 };
+  }
+};

@@ -1,8 +1,8 @@
 import { hoyolabFooter } from '../config/message.json';
 import { APIEmbed } from 'discord-api-types/v10';
-import { SpiralAbyss } from '../interface';
+import type { IGenshinSpiralAbyss } from 'hoyoapi';
 
-export const saEmbed = (sa: SpiralAbyss) => {
+export const saEmbed = (sa: IGenshinSpiralAbyss) => {
   const floors = sa.floors.map((w) => {
     const levels = w.levels.map((l) => {
       return `${l.index}번 방(${l.star}/${l.max_star})`;

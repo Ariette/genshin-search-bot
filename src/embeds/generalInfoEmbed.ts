@@ -1,8 +1,8 @@
 import { hoyolabFooter } from '../config/message.json';
 import { APIEmbed } from 'discord-api-types/v10';
-import { GeneralInfo } from '../interface';
+import type { IGenshinRecord } from 'hoyoapi';
 
-export const giEmbed = (gi: GeneralInfo) => {
+export const giEmbed = (gi: IGenshinRecord) => {
   const explorations = gi.world_explorations.map((w) => {
     const strs = [`탐사도 : ${w.exploration_percentage / 10}%`];
     if (w.offerings.length > 0) {

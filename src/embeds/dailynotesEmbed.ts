@@ -1,8 +1,8 @@
 import { hoyolabFooter } from '../config/message.json';
 import { APIEmbed } from 'discord-api-types/v10';
-import { DailyNote } from '../interface';
+import type { IGenshinDailyNote } from 'hoyoapi';
 
-export const dnEmbed = (dn: DailyNote) => {
+export const dnEmbed = (dn: IGenshinDailyNote) => {
   const ongoingExpedition = dn.expeditions.filter((w) => w.status === 'Ongoing');
   const expeditionLeftTime =
     ongoingExpedition.length > 0 ? Math.max(...ongoingExpedition.map((w) => parseInt(w.remained_time))) : 0;
@@ -75,7 +75,7 @@ const convertSecToHour = (sec) => {
   return strs.length > 0 ? '까지 ' + strs.join(' ') : '까지 1분 미만';
 };
 
-const stringifyRecoveryTime = (data: DailyNote['transformer']['recovery_time']) => {
+const stringifyRecoveryTime = (data: IGenshinDailyNote['transformer']['recovery_time']) => {
   const { Day, Hour, Minute, reached } = data;
   if (reached) return '변환 가능';
 

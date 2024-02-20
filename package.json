@@ -5,7 +5,7 @@
   "main": "./dist/worker.js",
   "scripts": {
     "update-package": "ncu -u && npm i",
-    "start": "NODE_ENV=development miniflare ./dist/worker.js --watch --debug --binding DISCORD_PUBLIC_KEY=$DISCORD_PUBLIC_KEY",
+    "dev": "wrangler dev --var DISCORD_PUBLIC_KEY:$DISCORD_PUBLIC_KEY --persist-to ./kv/",
     "deploy": "wrangler publish && node ./src/upload.js",
     "build": "node ./esbuild.config.js",
     "prebuild": "node ./src/prebuild.js",
@@ -20,20 +20,19 @@
   "author": "Ariette",
   "license": "MIT",
   "dependencies": {
-    "cookie": "^0.5.0",
-    "discord-api-types": "^0.37.35",
-    "discord-interactions": "^3.3.0",
-    "genshin-db": "^4.3.6",
+    "cookie": "^0.6.0",
+    "discord-api-types": "^0.37.70",
+    "discord-interactions": "^3.4.0",
+    "hoyoapi": "^1.2.0",
     "table": "^6.8.1"
   },
   "devDependencies": {
-    "@types/cookie": "^0.5.1",
-    "esbuild": "^0.17.10",
-    "esbuild-node-externals": "^1.6.0",
-    "miniflare": "^2.12.1",
-    "npm-check-updates": "^16.7.10",
+    "@types/cookie": "^0.6.0",
+    "esbuild": "^0.20.1",
+    "esbuild-node-externals": "^1.13.0",
+    "npm-check-updates": "^16.14.15",
     "shelljs": "^0.8.5",
-    "typescript": "^4.9.5",
-    "wrangler": "^2.12.0"
+    "typescript": "^5.3.3",
+    "wrangler": "^3.28.3"
   }
 }
