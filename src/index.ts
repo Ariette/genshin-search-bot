@@ -36,8 +36,10 @@ async function handleRequest(request: Request) {
   const signature = headers.get('X-Signature-Ed25519');
   const timestamp = headers.get('X-Signature-Timestamp');
   if (signature && timestamp) {
-    const isVerified = verifyKey(rawBody, signature, timestamp, DISCORD_PUBLIC_KEY);
-    if (!isVerified) return new Response('Invalid Request', { status: 401 });
+    const isVerified = await verifyKey(rawBody, signature, timestamp, DISCORD_PUBLIC_KEY);
+    if (!isVerified) {
+      return new Response('Invalid Request', { status: 401 });
+    }
   }
 
   // Now Start Logic
