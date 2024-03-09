@@ -91,10 +91,9 @@ export class GenshinClient {
 
   async _getHttpHeaders() {
     return {
-      DS: await this._getDS(),
-      Accept: 'application/json, text/plain, */*',
-      'Content-Type': 'application/json',
-      'Accept-Encoding': 'gzip, deflate, br',
+      ds: await this._getDS(),
+      accept: 'application/json, text/plain, */*',
+      'accept-encoding': 'gzip, deflate, br',
       'sec-ch-ua': '"Chromium";v="112", "Microsoft Edge";v="112", "Not:A-Brand";v="99"',
       'sec-ch-ua-mobile': '?0',
       'sec-ch-ua-platform': '"Windows"',
@@ -106,9 +105,9 @@ export class GenshinClient {
       'x-rpc-app_version': '1.5.0',
       'x-rpc-client_type': '5',
       'x-rpc-language': this.serverLocale,
-      Origin: DEFAULT_REFERER,
-      Referer: DEFAULT_REFERER,
-      Cookie: this.cookie!,
+      origin: DEFAULT_REFERER,
+      referer: DEFAULT_REFERER,
+      cookie: this.cookie!,
     };
   }
 
