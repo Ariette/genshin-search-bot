@@ -72,9 +72,7 @@ export class GenshinClient {
 
   private async _getHttpHeaders() {
     if (!this.cookie) {
-      const encryptedCookie = await Cookie.get<string>(this.key);
-      if (!encryptedCookie) throw new CustomError(ErrorMessage.MISSING_COOKIE_ERROR);
-      await this.setCookie(encryptedCookie);
+      await this.loadCookie();
     }
 
     return {
@@ -121,6 +119,12 @@ export class GenshinClient {
   async saveCookie(cookie: string) {
     const encryptedCookie = await encode(cookie);
     await Cookie.put(this.key, encryptedCookie);
+  }
+
+  async loadCookie() {
+    const encryptedCookie = await Cookie.get<string>(this.key);
+    if (!encryptedCookie) throw new CustomError(ErrorMessage.MISSING_COOKIE_ERROR);
+    await this.setCookie(encryptedCookie);
   }
 
   async deleteCookie() {
@@ -176,10 +180,10 @@ export class GenshinClient {
     }
 
     if (!this.cookies) {
-      throw new CustomError(ErrorMessage.MISSING_COOKIE_ERROR);
+      await this.loadCookie();
     }
 
-    const uid = this.cookies.ltuid ?? this.cookies.ltuid_v2;
+    const uid = this.cookies!.ltuid ?? this.cookies!.ltuid_v2;
     const data = await this.request<HTTPResponse>('get', GAME_RECORD_CARD_API, {
       uid,
     });
