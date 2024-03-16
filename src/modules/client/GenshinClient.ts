@@ -8,9 +8,12 @@ import type {
   IRedeemCode,
 } from 'hoyoapi';
 import { ErrorMessage } from '../messages';
-import { CustomError, decode } from '../utils/common';
+import { CustomError, decode, encode } from '../utils/common';
 import { GameId, GamesEnum, GenshinRegion, LanguageEnum, SpiralAbyssScheduleEnum } from './enums';
 import { encoder } from '../utils/verifyKey';
+import { CloudflareKV } from '../../interface';
+
+declare const Cookie: CloudflareKV;
 
 interface IGameRecordCardList {
   list: IGameRecordCard[];
@@ -34,50 +37,28 @@ export class GenshinClient {
   readonly serverLocale: LanguageEnum;
   readonly gameType: GamesEnum;
   readonly _cache: Map<string, any>;
+  readonly key: string;
   cookie?: string;
   cookies?: {
     [key: string]: string;
   };
   uid?: string;
 
-  constructor(cookie?: string) {
+  constructor(key: string) {
+    this.key = key;
     this.serverType = GenshinRegion.ASIA;
     this.serverLocale = LanguageEnum.KOREAN;
     this.gameType = GamesEnum.GENSHIN_IMPACT;
     this._cache = new Map();
-
-    if (cookie) {
-      this.cookie = cookie;
-      this.cookies = parse(cookie);
-    }
   }
 
-  async setCookie(encryptedCookie: string) {
-    this.cookie = await decode(encryptedCookie);
-    this.cookies = parse(this.cookie);
-  }
-
-  async setUid(uid: string) {
-    this.uid = uid;
-  }
-
-  async fetchUid() {
-    const { list: cards } = await this.getCards();
-    const card = cards.find((w) => w.game_id === GameId.GenshinImpact);
-
-    if (!card) throw new CustomError(ErrorMessage.CANNOT_FIND_CARD_ERROR);
-
-    this.uid = card.game_role_id;
-    return this.uid;
-  }
-
-  _qsStringify(query: Record<string, string>) {
+  private _qsStringify(query: Record<string, string>) {
     return Object.keys(query)
       .map((key) => `${key}=${encodeURIComponent(query[key])}`)
       .join('&');
   }
 
-  async _getDS() {
+  private async _getDS() {
     const salt = '6s25p5ox5y14umn1p61aqyyvbvvl3lrt';
     const time = Math.floor(Date.now() / 1000);
     const random = Math.random().toString(36).substring(2, 8);
@@ -89,7 +70,13 @@ export class GenshinClient {
     return `${time},${random},${hashHex}`;
   }
 
-  async _getHttpHeaders() {
+  private async _getHttpHeaders() {
+    if (!this.cookie) {
+      const encryptedCookie = await Cookie.get<string>(this.key);
+      if (!encryptedCookie) throw new CustomError(ErrorMessage.MISSING_COOKIE_ERROR);
+      await this.setCookie(encryptedCookie);
+    }
+
     return {
       ds: await this._getDS(),
       accept: 'application/json, text/plain, */*',
@@ -111,6 +98,35 @@ export class GenshinClient {
     };
   }
 
+  private _updateCookie(cookie: string) {
+    const parsed = parse(cookie);
+    this.cookies = {
+      ...this.cookies,
+      ...parsed,
+    };
+    this.cookie = Object.entries(this.cookies)
+      .map(([key, value]) => `${key}=${value}`)
+      .join(';');
+  }
+
+  setUid(uid: string) {
+    this.uid = uid;
+  }
+
+  async setCookie(encryptedCookie: string) {
+    this.cookie = await decode(encryptedCookie);
+    this.cookies = parse(this.cookie);
+  }
+
+  async saveCookie(cookie: string) {
+    const encryptedCookie = await encode(cookie);
+    await Cookie.put(this.key, encryptedCookie);
+  }
+
+  async deleteCookie() {
+    await Cookie.delete(this.key);
+  }
+
   async request<T>(method: 'get' | 'post', url: string, data?: any): Promise<T> {
     const headers = await this._getHttpHeaders();
     const fetchConfig: RequestInit & { headers: Record<string, string> } = {
@@ -127,12 +143,30 @@ export class GenshinClient {
     const fetchUrl = `${url}${query}`;
     const resp = await fetch(fetchUrl, fetchConfig);
 
+    // update cookie
+    const cookies = resp.headers.getSetCookie();
+    if (cookies.length) {
+      this._updateCookie(cookies.join(';'));
+      await this.saveCookie(this.cookie!);
+    }
+
     try {
-      return await resp.clone().json();
+      const data = resp.clone().json();
+      return data;
     } catch (err) {
       console.log('JSON 파싱 실패\n' + (await resp.text()));
       throw new CustomError(ErrorMessage.JSON_PARSE_ERROR);
     }
+  }
+
+  async getUid() {
+    const { list: cards } = await this.getCards();
+    const card = cards.find((w) => w.game_id === GameId.GenshinImpact);
+
+    if (!card) throw new CustomError(ErrorMessage.CANNOT_FIND_CARD_ERROR);
+
+    this.uid = card.game_role_id;
+    return this.uid;
   }
 
   async getCards(noCache?: boolean): Promise<IGameRecordCardList> {
@@ -161,7 +195,7 @@ export class GenshinClient {
   }
 
   async getRedeem(code: string) {
-    const uid = this.uid ?? (await this.fetchUid());
+    const uid = this.uid ?? (await this.getUid());
     const data = await this.request<IRedeemCode>('get', REDEEM_CLAIM_API, {
       region: this.serverType,
       lang: this.serverLocale.split('-')[0],
@@ -186,7 +220,7 @@ export class GenshinClient {
       return temp;
     }
 
-    const uid = this.uid ?? (await this.fetchUid());
+    const uid = this.uid ?? (await this.getUid());
     const data = await this.request<HTTPResponse>('get', GENSHIN_RECORD_INDEX_API, {
       server: this.serverType,
       lang: this.serverLocale,
@@ -209,7 +243,7 @@ export class GenshinClient {
       return temp;
     }
 
-    const uid = this.uid ?? (await this.fetchUid());
+    const uid = this.uid ?? (await this.getUid());
     const data = await this.request<HTTPResponse>('get', GENSHIN_RECORD_SPIRAL_ABYSS_API, {
       server: this.serverType,
       role_id: uid,
