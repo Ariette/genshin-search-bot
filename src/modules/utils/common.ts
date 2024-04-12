@@ -1,6 +1,7 @@
-import { encoder } from './verifyKey';
-
 declare const DISCORD_PUBLIC_KEY: string;
+
+export const encoder = new TextEncoder();
+export const decoder = new TextDecoder();
 
 const keyData = encoder.encode(DISCORD_PUBLIC_KEY).slice(0, 16);
 const cryptoKey = crypto.subtle.importKey('raw', keyData, 'AES-CTR', false, ['encrypt', 'decrypt']);
@@ -33,7 +34,13 @@ export const decode = async (encrypted: string) => {
     strData,
   );
 
-  return new TextDecoder().decode(result);
+  return decoder.decode(result);
 };
 
 export class CustomError extends Error {}
+
+export const qsStringify = (query: Record<string, string>) => {
+  return Object.keys(query)
+    .map((key) => `${key}=${encodeURIComponent(query[key])}`)
+    .join('&');
+};

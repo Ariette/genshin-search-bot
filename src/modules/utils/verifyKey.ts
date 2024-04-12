@@ -1,4 +1,4 @@
-export const encoder = new TextEncoder();
+import { encoder } from './common';
 
 const KEYS: Record<string, CryptoKey> = {};
 

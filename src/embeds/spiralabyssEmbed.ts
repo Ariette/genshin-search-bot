@@ -1,6 +1,6 @@
-import { hoyolabFooter } from '../config/message.json';
 import { APIEmbed } from 'discord-api-types/v10';
 import type { IGenshinSpiralAbyss } from 'hoyoapi';
+import { Message } from '../modules/messages';
 
 export const saEmbed = (sa: IGenshinSpiralAbyss) => {
   const floors = sa.floors.map((w) => {
@@ -34,7 +34,7 @@ export const saEmbed = (sa: IGenshinSpiralAbyss) => {
       ...floors,
     ],
     footer: {
-      text: hoyolabFooter,
+      text: Message.FOOTER_TEXT,
     },
   };
 

@@ -1,13 +1,13 @@
 import { APIMessage, APIButtonComponent } from 'discord-api-types/v10';
-import { missingCharacter } from '../../config/message.json';
 import { chrEmbed } from '../../embeds';
 import { Character } from '../../interface';
 import { findQuery } from './common';
+import { Message } from '../messages';
 
 export const findCharacter = async (args: string): Promise<Partial<APIMessage>> => {
   const results = await findQuery<Character>('character', args);
   if (!results.length) {
-    return { content: missingCharacter };
+    return { content: Message.MISSING_CHARACTER_ERROR };
   } else if (results.length == 1) {
     const embed = chrEmbed(results[0]);
     const buttons = [

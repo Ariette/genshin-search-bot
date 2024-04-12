@@ -1,13 +1,13 @@
 import { APIButtonComponent, APIMessage } from 'discord-api-types/v10';
-import { missingCharacter } from '../../config/message.json';
 import { csEmbed } from '../../embeds';
 import { Constellation } from '../../interface';
 import { findQuery } from './common';
+import { Message } from '../messages';
 
 export const findConstellation = async (args: string): Promise<Partial<APIMessage>> => {
   const results = await findQuery<Constellation>('constellation', args);
   if (results.length < 1) {
-    return { content: missingCharacter };
+    return { content: Message.MISSING_CHARACTER_ERROR };
   } else if (results.length == 1) {
     const embed = csEmbed(results[0]);
     const buttons = [

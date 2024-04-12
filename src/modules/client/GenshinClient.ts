@@ -6,12 +6,13 @@ import type {
   IGenshinRecord,
   IGenshinSpiralAbyss,
   IRedeemCode,
+  IGamesList,
 } from 'hoyoapi';
-import { ErrorMessage } from '../messages';
-import { CustomError, decode, encode } from '../utils/common';
+import { Message } from '../messages';
+import { CustomError, decode, encode, qsStringify } from '../utils/common';
 import { GameId, GamesEnum, GenshinRegion, LanguageEnum, SpiralAbyssScheduleEnum } from './enums';
-import { encoder } from '../utils/verifyKey';
 import { CloudflareKV } from '../../interface';
+import { getDS } from '../utils/getDS';
 
 declare const Cookie: CloudflareKV;
 
@@ -20,63 +21,63 @@ interface IGameRecordCardList {
 }
 
 const BBS_API = 'https://bbs-api-os.hoyolab.com';
-// const ACCOUNT_API = 'https://api-account-os.hoyolab.com';
+const ACCOUNT_API = 'https://api-account-os.hoyolab.com';
 const HK4E_API = 'https://sg-hk4e-api.hoyolab.com';
 // const PUBLIC_API = 'https://sg-public-api.hoyolab.com';
 
 const DEFAULT_REFERER = 'https://act.hoyolab.com';
 const GAME_RECORD_CARD_API = `${BBS_API}/game_record/card/wapi/getGameRecordCard`;
+const GAME_ROLE_API = `${ACCOUNT_API}/binding/api/getUserGameRolesByLtoken`;
 const GAME_RECORD_DATA_SWITCH_API = `${BBS_API}/game_record/card/wapi/changeDataSwitch`;
 const GENSHIN_RECORD_DAILY_NOTE_API = `${BBS_API}/game_record/genshin/api/dailyNote`;
 const GENSHIN_RECORD_INDEX_API = `${BBS_API}/game_record/genshin/api/index`;
 const GENSHIN_RECORD_SPIRAL_ABYSS_API = `${BBS_API}/game_record/genshin/api/spiralAbyss`;
-const REDEEM_CLAIM_API = `${HK4E_API}/common/apicdkey/api/webExchangeCdkey`;
+// const REDEEM_CLAIM_API = `${HK4E_API}/common/apicdkey/api/webExchangeCdkey`;
+const REDEEM_CLAIM_BY_LTOKEN_API = `${HK4E_API}/common/apicdkey/api/webExchangeCdkeyHyl`;
 
 export class GenshinClient {
   readonly serverType: GenshinRegion;
   readonly serverLocale: LanguageEnum;
   readonly gameType: GamesEnum;
-  readonly _cache: Map<string, any>;
   readonly key: string;
-  cookie?: string;
-  cookies?: {
+  readonly cookie: string;
+  readonly cookies: {
     [key: string]: string;
   };
-  uid?: string;
 
-  constructor(key: string) {
+  constructor(key: string, cookie: string) {
     this.key = key;
     this.serverType = GenshinRegion.ASIA;
     this.serverLocale = LanguageEnum.KOREAN;
     this.gameType = GamesEnum.GENSHIN_IMPACT;
-    this._cache = new Map();
+    this.cookie = cookie;
+    this.cookies = parse(cookie);
   }
 
-  private _qsStringify(query: Record<string, string>) {
-    return Object.keys(query)
-      .map((key) => `${key}=${encodeURIComponent(query[key])}`)
-      .join('&');
+  static async saveCookie(key: string, cookie: string) {
+    const encryptedCookie = await encode(cookie);
+    await Cookie.put(key, encryptedCookie);
   }
 
-  private async _getDS() {
-    const salt = '6s25p5ox5y14umn1p61aqyyvbvvl3lrt';
-    const time = Math.floor(Date.now() / 1000);
-    const random = Math.random().toString(36).substring(2, 8);
-    const msgUint8 = encoder.encode(`salt=${salt}&t=${time}&r=${random}`);
-    const hashBuffer = await crypto.subtle.digest({ name: 'MD5' }, msgUint8);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
+  static async loadCookie(key: string) {
+    const encryptedCookie = await Cookie.get<string>(key);
+    if (!encryptedCookie) throw new CustomError(Message.MISSING_COOKIE_ERROR);
 
-    return `${time},${random},${hashHex}`;
+    return await decode(encryptedCookie);
+  }
+
+  static async deleteCookie(key: string) {
+    await Cookie.delete(key);
+  }
+
+  static async fromKey(key: string) {
+    const cookie = await GenshinClient.loadCookie(key);
+    return new GenshinClient(key, cookie);
   }
 
   private async _getHttpHeaders() {
-    if (!this.cookie) {
-      await this.loadCookie();
-    }
-
     return {
-      ds: await this._getDS(),
+      ds: await getDS(),
       accept: 'application/json, text/plain, */*',
       'accept-encoding': 'gzip, deflate, br',
       'sec-ch-ua': '"Chromium";v="112", "Microsoft Edge";v="112", "Not:A-Brand";v="99"',
@@ -92,46 +93,11 @@ export class GenshinClient {
       'x-rpc-language': this.serverLocale,
       origin: DEFAULT_REFERER,
       referer: DEFAULT_REFERER,
-      cookie: this.cookie!,
+      cookie: this.cookie,
     };
   }
 
-  private _updateCookie(cookie: string) {
-    const parsed = parse(cookie);
-    this.cookies = {
-      ...this.cookies,
-      ...parsed,
-    };
-    this.cookie = Object.entries(this.cookies)
-      .map(([key, value]) => `${key}=${value}`)
-      .join(';');
-  }
-
-  setUid(uid: string) {
-    this.uid = uid;
-  }
-
-  async setCookie(encryptedCookie: string) {
-    this.cookie = await decode(encryptedCookie);
-    this.cookies = parse(this.cookie);
-  }
-
-  async saveCookie(cookie: string) {
-    const encryptedCookie = await encode(cookie);
-    await Cookie.put(this.key, encryptedCookie);
-  }
-
-  async loadCookie() {
-    const encryptedCookie = await Cookie.get<string>(this.key);
-    if (!encryptedCookie) throw new CustomError(ErrorMessage.MISSING_COOKIE_ERROR);
-    await this.setCookie(encryptedCookie);
-  }
-
-  async deleteCookie() {
-    await Cookie.delete(this.key);
-  }
-
-  async request<T>(method: 'get' | 'post', url: string, data?: any): Promise<T> {
+  private async _request<T>(method: 'get' | 'post', url: string, data?: any): Promise<T> {
     const headers = await this._getHttpHeaders();
     const fetchConfig: RequestInit & { headers: Record<string, string> } = {
       method,
@@ -143,167 +109,107 @@ export class GenshinClient {
       fetchConfig.headers['content-type'] = 'application/json';
     }
 
-    const query = method === 'get' && data ? `?${this._qsStringify(data)}` : '';
+    const query = method === 'get' && data ? `?${qsStringify(data)}` : '';
     const fetchUrl = `${url}${query}`;
     const resp = await fetch(fetchUrl, fetchConfig);
 
-    // update cookie
-    const cookies = resp.headers.getSetCookie();
-    if (cookies.length) {
-      this._updateCookie(cookies.join(';'));
-      await this.saveCookie(this.cookie!);
-    }
-
-    try {
-      const data = resp.clone().json();
-      return data;
-    } catch (err) {
-      console.log('JSON 파싱 실패\n' + (await resp.text()));
-      throw new CustomError(ErrorMessage.JSON_PARSE_ERROR);
-    }
-  }
-
-  async getUid() {
-    const { list: cards } = await this.getCards();
-    const card = cards.find((w) => w.game_id === GameId.GenshinImpact);
-
-    if (!card) throw new CustomError(ErrorMessage.CANNOT_FIND_CARD_ERROR);
-
-    this.uid = card.game_role_id;
-    return this.uid;
-  }
-
-  async getCards(noCache?: boolean): Promise<IGameRecordCardList> {
-    const temp = this._cache.get('getCardResult');
-    if (temp && !noCache) {
-      return temp;
-    }
-
-    if (!this.cookies) {
-      await this.loadCookie();
-    }
-
-    const uid = this.cookies!.ltuid ?? this.cookies!.ltuid_v2;
-    const data = await this.request<HTTPResponse>('get', GAME_RECORD_CARD_API, {
-      uid,
-    });
-
-    if (data.retcode !== 0 || !data.data) {
+    const res: HTTPResponse = await resp.json();
+    if (res.retcode !== 0 || !res.data) {
       throw {
-        code: data.retcode,
-        message: data.message,
+        code: res.retcode,
+        message: res.message,
       };
     }
-    this._cache.set('getCardResult', data.data);
-    return data.data as IGameRecordCardList;
+    return res.data as T;
   }
 
-  async getRedeem(code: string) {
-    const uid = this.uid ?? (await this.getUid());
-    const data = await this.request<IRedeemCode>('get', REDEEM_CLAIM_API, {
+  //#region basic APIS
+
+  async getGameRoles() {
+    return await this._request<IGamesList>('get', GAME_ROLE_API, {
+      game_biz: this.gameType,
+      region: this.serverType,
+    });
+  }
+
+  async getCards() {
+    return await this._request<IGameRecordCardList>('get', GAME_RECORD_CARD_API, {
+      uid: this.cookies.ltuid ?? this.cookies.ltuid_v2, // requires hoyolab uid (not game role id)
+      game_biz: this.gameType,
+    });
+  }
+
+  async getRedeem(uid: string, code: string) {
+    return await this._request<IRedeemCode['data']>('get', REDEEM_CLAIM_BY_LTOKEN_API, {
       region: this.serverType,
       lang: this.serverLocale.split('-')[0],
-      sLangKey: this.serverLocale,
       game_biz: this.gameType,
       cdkey: code.replace(/\uFFFD/g, '').trim(),
       uid,
+      t: Date.now(),
     });
-
-    if (data.retcode !== 0) {
-      throw {
-        code: data.retcode,
-        message: data.message,
-      };
-    }
-    return data;
   }
 
-  async getGeneralRecord(noCache?: boolean): Promise<IGenshinRecord> {
-    const temp = this._cache.get('getGeneralRecord');
-    if (temp && !noCache) {
-      return temp;
-    }
-
-    const uid = this.uid ?? (await this.getUid());
-    const data = await this.request<HTTPResponse>('get', GENSHIN_RECORD_INDEX_API, {
+  async getGeneralRecord(uid: string) {
+    return await this._request<IGenshinRecord>('get', GENSHIN_RECORD_INDEX_API, {
       server: this.serverType,
       lang: this.serverLocale,
       role_id: uid,
     });
-
-    if (data.retcode !== 0 || !data.data) {
-      throw {
-        code: data.retcode,
-        message: data.message,
-      };
-    }
-    this._cache.set('getGeneralRecord', data.data);
-    return data.data as IGenshinRecord;
   }
 
-  async getSpiralabyssRecord(noCache?: boolean): Promise<IGenshinSpiralAbyss> {
-    const temp = this._cache.get('getSpiralabyssRecord');
-    if (temp && !noCache) {
-      return temp;
-    }
-
-    const uid = this.uid ?? (await this.getUid());
-    const data = await this.request<HTTPResponse>('get', GENSHIN_RECORD_SPIRAL_ABYSS_API, {
+  async getSpiralabyssRecord(uid: string) {
+    return await this._request<IGenshinSpiralAbyss>('get', GENSHIN_RECORD_SPIRAL_ABYSS_API, {
       server: this.serverType,
       role_id: uid,
       schedule_type: SpiralAbyssScheduleEnum.CURRENT,
     });
-
-    if (data.retcode !== 0 || !data.data) {
-      throw {
-        code: data.retcode,
-        message: data.message,
-      };
-    }
-    this._cache.set('getSpiralabyssRecord', data.data);
-    return data.data as IGenshinSpiralAbyss;
   }
 
-  async getRealtimeRecord(): Promise<IGenshinDailyNote> {
-    const { list: cards } = await this.getCards();
-    const card = cards.find((w) => w.game_id === GameId.GenshinImpact);
+  async updateGameRecordSwitch(value: boolean, switchId: number, gameId: number) {
+    return await this._request<{}>('post', GAME_RECORD_DATA_SWITCH_API, {
+      is_public: value,
+      switch_id: switchId,
+      game_id: gameId,
+    });
+  }
 
-    if (!card) throw new CustomError(ErrorMessage.CANNOT_FIND_CARD_ERROR);
-
-    // dailyNote switch id = 3
-    // @ts-expect-error wrong switch_id type
-    const dataSwitch = card.data_switches.find((w) => w.switch_id === 3)!;
-    if (!dataSwitch?.is_public) {
-      // 실시간 메모 기능이 꺼있을 경우 우선 활성화
-      const resp = await this.request<HTTPResponse>('post', GAME_RECORD_DATA_SWITCH_API, {
-        is_public: true,
-        switch_id: 3,
-        game_id: card.game_id,
-      });
-
-      if (resp.retcode !== 0) {
-        throw {
-          code: resp.retcode,
-          message: resp.message,
-        };
-      }
-      // 캐시 갱신
-      dataSwitch.is_public = true;
-      console.log('실시간 노트 활성화');
-    }
-
-    const uid = card.game_role_id;
-    const data = await this.request<HTTPResponse>('get', GENSHIN_RECORD_DAILY_NOTE_API, {
+  async getDailynote(uid: string) {
+    return await this._request<IGenshinDailyNote>('get', GENSHIN_RECORD_DAILY_NOTE_API, {
       server: this.serverType,
       role_id: uid,
     });
-
-    if (data.retcode !== 0 || !data.data) {
-      throw {
-        code: data.retcode,
-        message: data.message,
-      };
-    }
-    return data.data as IGenshinDailyNote;
   }
+
+  //#endregion
+
+  //#region advanced API chain
+
+  async fetchRealtimeRecord() {
+    const { list: cards } = await this.getCards();
+
+    // select the first account
+    const card = cards.find((w) => w.game_id === GameId.GenshinImpact);
+    if (!card) throw new CustomError(Message.CANNOT_FIND_CARD_ERROR);
+
+    // 실시간 메모 기능이 꺼있을 경우 우선 활성화
+    // dailyNote의 switch_id = 3
+    // 원신의 game_id = 2
+    // @ts-expect-error wrong switch_id type
+    const dataSwitch = card.data_switches.find((w) => w.switch_id === 3);
+    if (!dataSwitch?.is_public) {
+      await this.updateGameRecordSwitch(true, 3, card.game_id);
+      console.log('실시간 노트 활성화');
+    }
+
+    return await this.getDailynote(card.game_role_id);
+  }
+
+  async fetchUid() {
+    const { list } = await this.getGameRoles();
+    // select the first account
+    return list[0].game_uid;
+  }
+
+  //#endregion
 }

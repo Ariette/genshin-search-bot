@@ -1,6 +1,6 @@
-import { hoyolabFooter } from '../config/message.json';
 import { APIEmbed } from 'discord-api-types/v10';
 import type { IGenshinRecord } from 'hoyoapi';
+import { Message } from '../modules/messages';
 
 export const giEmbed = (gi: IGenshinRecord) => {
   const explorations = gi.world_explorations.map((w) => {
@@ -98,7 +98,7 @@ export const giEmbed = (gi: IGenshinRecord) => {
       },
     ],
     footer: {
-      text: hoyolabFooter,
+      text: Message.FOOTER_TEXT,
     },
   };
 
@@ -124,7 +124,7 @@ export const giEmbed = (gi: IGenshinRecord) => {
       },
     ],
     footer: {
-      text: hoyolabFooter,
+      text: Message.FOOTER_TEXT,
     },
   };
 

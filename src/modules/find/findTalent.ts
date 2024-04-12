@@ -1,13 +1,13 @@
 import { APIButtonComponent, APIMessage } from 'discord-api-types/v10';
-import { missingCharacter } from '../../config/message.json';
 import { tEmbed } from '../../embeds';
 import { Talent } from '../../interface';
 import { findQuery } from './common';
+import { Message } from '../messages';
 
 export const findTalent = async (args: string): Promise<Partial<APIMessage>> => {
   const results = await findQuery<Talent>('talent', args);
   if (results.length < 1) {
-    return { content: missingCharacter };
+    return { content: Message.MISSING_CHARACTER_ERROR };
   } else if (results.length == 1) {
     const embed = tEmbed(results[0]);
     const buttons = [

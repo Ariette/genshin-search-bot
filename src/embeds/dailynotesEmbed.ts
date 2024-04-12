@@ -1,6 +1,6 @@
-import { hoyolabFooter } from '../config/message.json';
 import { APIEmbed } from 'discord-api-types/v10';
 import type { IGenshinDailyNote } from 'hoyoapi';
+import { Message } from '../modules/messages';
 
 export const dnEmbed = (dn: IGenshinDailyNote) => {
   const ongoingExpedition = dn.expeditions.filter((w) => w.status === 'Ongoing');
@@ -49,7 +49,7 @@ export const dnEmbed = (dn: IGenshinDailyNote) => {
       },
     ],
     footer: {
-      text: hoyolabFooter,
+      text: Message.FOOTER_TEXT,
     },
   };
 
