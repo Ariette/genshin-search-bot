@@ -1,10 +1,10 @@
-import { APIButtonComponent, APIMessage } from 'discord-api-types/v10';
+import { APIButtonComponent } from 'discord-api-types/v10';
 import { wpEmbed } from '../../embeds';
-import { Weapon } from '../../interface';
+import { Weapon, InteractionHandler } from '../../interface';
 import { findQuery } from './common';
 import { Message } from '../messages';
 
-export const findWeapon = async (args: string): Promise<Partial<APIMessage>> => {
+export const findWeapon: InteractionHandler<string> = async (args) => {
   const results = await findQuery<Weapon>('weapon', args);
   if (results.length < 1) {
     return { content: Message.MISSING_WEAPON_ERROR };

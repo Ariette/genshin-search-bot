@@ -1,9 +1,9 @@
-import { APIEmbed, APIMessage } from 'discord-api-types/v10';
+import { APIEmbed } from 'discord-api-types/v10';
 import { dayEmbed } from '../../embeds';
-import { Character, Weapon } from '../../interface';
+import { Character, InteractionHandler, Weapon } from '../../interface';
 import { findQuery, getStringDay } from './common';
 
-export const findDay = async (args: string): Promise<Partial<APIMessage>> => {
+export const findDay: InteractionHandler<string> = async (args) => {
   const query = args ? args : getStringDay();
   let embed: APIEmbed;
   if ('일요일'.indexOf(query) != -1) {

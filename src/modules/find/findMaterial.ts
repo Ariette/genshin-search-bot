@@ -1,10 +1,10 @@
-import { APIEmbed, APIMessage } from 'discord-api-types/v10';
+import { APIEmbed } from 'discord-api-types/v10';
 import { matEmbed } from '../../embeds';
-import { Material } from '../../interface';
+import { InteractionHandler, Material } from '../../interface';
 import { findQuery } from './common';
 import { Message } from '../messages';
 
-export const findMaterial = async (args: string): Promise<Partial<APIMessage>> => {
+export const findMaterial: InteractionHandler<string> = async (args) => {
   const results = await findQuery<Material>('material', args);
   if (results.length < 1) {
     return { content: Message.MISSING_ITEM_ERROR };

@@ -1,3 +1,5 @@
+import { APIChatInputApplicationCommandInteraction, APIInteractionResponseCallbackData } from 'discord-api-types/v10';
+
 export interface CloudflareKV {
   put: (
     key: string,
@@ -36,6 +38,12 @@ export interface CloudflareKV {
     cursor: string;
   }>;
 }
+
+export type InteractionHandler<
+  T = APIChatInputApplicationCommandInteraction,
+  U extends any[] = never[],
+  V = APIInteractionResponseCallbackData,
+> = (body: T, ...args: U) => Promise<V>;
 
 interface Skill {
   name: string;

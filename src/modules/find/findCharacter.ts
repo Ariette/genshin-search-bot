@@ -1,10 +1,10 @@
-import { APIMessage, APIButtonComponent } from 'discord-api-types/v10';
+import { APIButtonComponent } from 'discord-api-types/v10';
 import { chrEmbed } from '../../embeds';
-import { Character } from '../../interface';
+import { Character, InteractionHandler } from '../../interface';
 import { findQuery } from './common';
 import { Message } from '../messages';
 
-export const findCharacter = async (args: string): Promise<Partial<APIMessage>> => {
+export const findCharacter: InteractionHandler<string> = async (args) => {
   const results = await findQuery<Character>('character', args);
   if (!results.length) {
     return { content: Message.MISSING_CHARACTER_ERROR };

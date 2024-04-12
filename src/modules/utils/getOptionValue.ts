@@ -4,7 +4,8 @@ export const getOptionValue = (option: APIApplicationCommandInteractionDataOptio
   switch (option.type) {
     case ApplicationCommandOptionType.Subcommand:
     case ApplicationCommandOptionType.SubcommandGroup:
-      return getOptionValue(option.options?.[0]!);
+      if (option.options?.length) return getOptionValue(option.options[0]);
+      return '';
     default:
       return option.value;
   }

@@ -23,17 +23,22 @@ interface IGameRecordCardList {
 const BBS_API = 'https://bbs-api-os.hoyolab.com';
 const ACCOUNT_API = 'https://api-account-os.hoyolab.com';
 const HK4E_API = 'https://sg-hk4e-api.hoyolab.com';
-// const PUBLIC_API = 'https://sg-public-api.hoyolab.com';
+const HKRPG_API = 'https://sg-hkrpg-api.hoyolab.com';
+const PUBLIC_API = 'https://sg-public-api.hoyolab.com';
 
 const DEFAULT_REFERER = 'https://act.hoyolab.com';
-const GAME_RECORD_CARD_API = `${BBS_API}/game_record/card/wapi/getGameRecordCard`;
+
 const GAME_ROLE_API = `${ACCOUNT_API}/binding/api/getUserGameRolesByLtoken`;
+const GAME_REGION_API = `${ACCOUNT_API}/binding/api/getAllRegions`;
+
+const GAME_RECORD_CARD_API = `${BBS_API}/game_record/card/wapi/getGameRecordCard`;
 const GAME_RECORD_DATA_SWITCH_API = `${BBS_API}/game_record/card/wapi/changeDataSwitch`;
 const GENSHIN_RECORD_DAILY_NOTE_API = `${BBS_API}/game_record/genshin/api/dailyNote`;
 const GENSHIN_RECORD_INDEX_API = `${BBS_API}/game_record/genshin/api/index`;
 const GENSHIN_RECORD_SPIRAL_ABYSS_API = `${BBS_API}/game_record/genshin/api/spiralAbyss`;
+
 // const REDEEM_CLAIM_API = `${HK4E_API}/common/apicdkey/api/webExchangeCdkey`;
-const REDEEM_CLAIM_BY_LTOKEN_API = `${HK4E_API}/common/apicdkey/api/webExchangeCdkeyHyl`;
+const REDEEM_CLAIM_BY_LTOKEN_API = `/common/apicdkey/api/webExchangeCdkeyHyl`;
 
 export class GenshinClient {
   readonly serverType: GenshinRegion;
@@ -125,10 +130,16 @@ export class GenshinClient {
 
   //#region basic APIS
 
-  async getGameRoles() {
+  async getGameRegions(gameBiz?: GamesEnum) {
+    return await this._request<{ list: { name: string; region: string }[] }>('get', GAME_REGION_API, {
+      game_biz: gameBiz ?? this.gameType,
+    });
+  }
+
+  async getGameRoles(gameBiz?: GamesEnum, region?: GenshinRegion) {
     return await this._request<IGamesList>('get', GAME_ROLE_API, {
-      game_biz: this.gameType,
-      region: this.serverType,
+      game_biz: gameBiz ?? this.gameType,
+      region: region ?? this.serverType,
     });
   }
 
@@ -139,11 +150,17 @@ export class GenshinClient {
     });
   }
 
-  async getRedeem(uid: string, code: string) {
-    return await this._request<IRedeemCode['data']>('get', REDEEM_CLAIM_BY_LTOKEN_API, {
-      region: this.serverType,
+  async getRedeem(uid: string, code: string, gameBiz?: GamesEnum, region?: GenshinRegion) {
+    const endpoint =
+      gameBiz === GamesEnum.HONKAI_STAR_RAIL
+        ? HKRPG_API
+        : gameBiz === GamesEnum.TEARS_OF_THEMIS
+        ? PUBLIC_API
+        : HK4E_API;
+    return await this._request<IRedeemCode['data']>('get', endpoint + REDEEM_CLAIM_BY_LTOKEN_API, {
+      region: region ?? this.serverType,
       lang: this.serverLocale.split('-')[0],
-      game_biz: this.gameType,
+      game_biz: gameBiz ?? this.gameType,
       cdkey: code.replace(/\uFFFD/g, '').trim(),
       uid,
       t: Date.now(),
@@ -166,11 +183,11 @@ export class GenshinClient {
     });
   }
 
-  async updateGameRecordSwitch(value: boolean, switchId: number, gameId: number) {
+  async updateGameRecordSwitch(value: boolean, switchId: number, gameId: GameId) {
     return await this._request<{}>('post', GAME_RECORD_DATA_SWITCH_API, {
       is_public: value,
       switch_id: switchId,
-      game_id: gameId,
+      game_id: gameId satisfies number,
     });
   }
 

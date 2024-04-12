@@ -1,10 +1,10 @@
-import { APIEmbed, APIMessage } from 'discord-api-types/v10';
+import { APIEmbed } from 'discord-api-types/v10';
 import { foodEmbed } from '../../embeds';
-import { Food } from '../../interface';
+import { Food, InteractionHandler } from '../../interface';
 import { findQuery } from './common';
 import { Message } from '../messages';
 
-export const findFood = async (args: string): Promise<Partial<APIMessage>> => {
+export const findFood: InteractionHandler<string> = async (args) => {
   const results = await findQuery<Food>('food', args);
   if (results.length < 1) {
     return { content: Message.MISSING_ITEM_ERROR };

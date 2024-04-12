@@ -1,9 +1,10 @@
 import { APIChatInputApplicationCommandInteraction } from 'discord-api-types/v10';
 import { dnEmbed, giEmbed, saEmbed } from '../../embeds';
 import { getOptionValue } from '../utils/getOptionValue';
-import { GenshinClient } from '../client';
+import { GameId, GenshinClient } from '../client';
+import { InteractionHandler } from '../../interface';
 
-export const getRecord = async (body: APIChatInputApplicationCommandInteraction) => {
+export const getRecord: InteractionHandler = async (body) => {
   const key = `${body.guild_id}/${body.member?.user.id}`;
   const value = getOptionValue(body.data.options?.[0]!);
   const client = await GenshinClient.fromKey(key);
@@ -29,7 +30,7 @@ export const getRecord = async (body: APIChatInputApplicationCommandInteraction)
         const embed = dnEmbed(data);
         return { embeds: [embed] };
       } catch (err) {
-        await client.updateGameRecordSwitch(true, 3, 2);
+        await client.updateGameRecordSwitch(true, 3, GameId.GenshinImpact);
         const data = await client.getDailynote(uid);
         const embed = dnEmbed(data);
         return { embeds: [embed] };
