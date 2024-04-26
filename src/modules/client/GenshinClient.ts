@@ -157,7 +157,7 @@ export class GenshinClient {
         : gameBiz === GamesEnum.TEARS_OF_THEMIS
         ? PUBLIC_API
         : HK4E_API;
-    return await this._request<IRedeemCode['data']>('get', endpoint + REDEEM_CLAIM_BY_LTOKEN_API, {
+    return await this._request<{ msg: string } | null>('get', endpoint + REDEEM_CLAIM_BY_LTOKEN_API, {
       region: region ?? this.serverType,
       lang: this.serverLocale.split('-')[0],
       game_biz: gameBiz ?? this.gameType,

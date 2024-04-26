@@ -22,7 +22,7 @@ export const getRedeem: InteractionHandler = async (body) => {
   if (value) {
     const uid = await client.fetchUid();
     const result = await client.getRedeem(uid, value);
-    return { content: result ?? Message.WRONG_RESPONSE_ERROR, flags: MessageFlags.Ephemeral };
+    return { content: result?.msg ?? Message.WRONG_RESPONSE_ERROR, flags: MessageFlags.Ephemeral };
   } else {
     return {
       content: '원하는 게임을 선택하세요',
@@ -160,5 +160,5 @@ export const getRedeemAdvanced: InteractionHandler<APIModalSubmitInteraction> = 
   const cdKey = body.data.components[0].components[0].value;
   const client = await GenshinClient.fromKey(key);
   const result = await client.getRedeem(uid, cdKey, gameBiz, region);
-  return { content: result ?? Message.WRONG_RESPONSE_ERROR, flags: MessageFlags.Ephemeral };
+  return { content: result?.msg ?? Message.WRONG_RESPONSE_ERROR, flags: MessageFlags.Ephemeral };
 };
