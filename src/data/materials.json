@@ -192,6 +192,7 @@
       "3220",
       "3316",
       "3407",
+      "3507",
       "4501"
     ]
   },
@@ -691,6 +692,7 @@
       "2310",
       "2407",
       "2408",
+      "2505",
       "3004",
       "3008",
       "3011",
@@ -1009,6 +1011,7 @@
       "3417",
       "3420",
       "3503",
+      "3507",
       "4901"
     ]
   },
@@ -1059,6 +1062,7 @@
       "2110",
       "2303",
       "2305",
+      "2505",
       "3007",
       "3008",
       "3009",
@@ -1601,7 +1605,8 @@
     ],
     "character": [
       "10000002",
-      "10000066"
+      "10000066",
+      "10000901"
     ]
   },
   "101203": {
@@ -2251,6 +2256,7 @@
       "2501",
       "2503",
       "2504",
+      "2505",
       "3501",
       "3502",
       "4501",
@@ -2300,6 +2306,7 @@
     "recipe": [
       "3501",
       "3503",
+      "3507",
       "4501",
       "4502"
     ]
@@ -2331,7 +2338,10 @@
       "추천: 장작 언덕 채집",
       "추천: 성화 경기장 주변 채집"
     ],
-    "available": true
+    "available": true,
+    "character": [
+      "10000103"
+    ]
   },
   "101249": {
     "id": 101249,
@@ -2452,9 +2462,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104113": {
@@ -2465,9 +2473,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104114": {
@@ -2478,9 +2484,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104121": {
@@ -2504,9 +2508,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104123": {
@@ -2517,9 +2519,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104124": {
@@ -2530,9 +2530,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104131": {
@@ -2554,9 +2552,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104133": {
@@ -2567,9 +2563,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104134": {
@@ -2580,9 +2574,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104141": {
@@ -2606,9 +2598,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104143": {
@@ -2619,9 +2609,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104144": {
@@ -2632,9 +2620,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104151": {
@@ -2658,9 +2644,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104153": {
@@ -2671,9 +2655,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104154": {
@@ -2684,9 +2666,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104161": {
@@ -2710,9 +2690,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104163": {
@@ -2723,9 +2701,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104164": {
@@ -2736,9 +2712,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104171": {
@@ -2762,9 +2736,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104173": {
@@ -2775,9 +2747,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104174": {
@@ -2788,9 +2758,7 @@
     "type": "캐릭터 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true
   },
   "104301": {
@@ -2829,9 +2797,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -2859,9 +2825,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -2913,9 +2877,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -2943,9 +2905,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -2997,9 +2957,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -3027,9 +2985,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -3083,9 +3039,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -3111,9 +3065,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -3152,7 +3104,8 @@
       "10000046",
       "10000047",
       "10000064",
-      "10000077"
+      "10000077",
+      "10000901"
     ]
   },
   "104314": {
@@ -3163,9 +3116,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -3180,7 +3131,8 @@
       "10000046",
       "10000047",
       "10000064",
-      "10000077"
+      "10000077",
+      "10000901"
     ]
   },
   "104315": {
@@ -3191,9 +3143,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -3208,7 +3158,8 @@
       "10000046",
       "10000047",
       "10000064",
-      "10000077"
+      "10000077",
+      "10000901"
     ]
   },
   "104316": {
@@ -3243,9 +3194,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -3271,9 +3220,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -3336,9 +3283,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -3362,9 +3307,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -3410,9 +3353,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -3436,9 +3377,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -3484,9 +3423,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -3510,9 +3447,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -3557,9 +3492,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -3580,9 +3513,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -3625,9 +3556,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -3649,9 +3578,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -3695,9 +3622,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -3719,9 +3644,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -3764,9 +3687,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -3787,9 +3708,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -3831,9 +3750,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -3854,9 +3771,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -3899,9 +3814,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -3923,9 +3836,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -3965,9 +3876,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -3985,9 +3894,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -4012,7 +3919,8 @@
     ],
     "available": true,
     "character": [
-      "10000101"
+      "10000101",
+      "10000103"
     ]
   },
   "104351": {
@@ -4023,16 +3931,15 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
     ],
     "available": true,
     "character": [
-      "10000101"
+      "10000101",
+      "10000103"
     ]
   },
   "104352": {
@@ -4043,16 +3950,15 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
     ],
     "available": true,
     "character": [
-      "10000101"
+      "10000101",
+      "10000103"
     ]
   },
   "104353": {
@@ -4081,9 +3987,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -4101,9 +4005,7 @@
     "type": "캐릭터 특성 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -9529,7 +9431,7 @@
   "108175": {
     "id": 108175,
     "name": "낚시의 극치",
-    "desc": "타르탈리아의 특제 요리. 피바다를 표류하는 야수가 죽기 직전에 울부짖는 것 같이 끔찍하다…그러나 타르탈리아는 웃으며 바다에서 건진 전리품에 고향 특산품을 곁들였을 뿐이라고 설명한다",
+    "desc": "타르탈리아의 특제 요리. 피바다를 표류하는 야수가 죽기 직전에 울부짖는 것 같이 끔찍하다…. 그러나 타르탈리아는 웃으며 바다에서 건진 전리품에 고향 특산품을 곁들였을 뿐이라고 설명한다",
     "effect": "파티 내 모든 캐릭터의 방어력이 282pt 증가한다. 지속 시간: 300초. 다인 모드 시 자신의 캐릭터에만 적용된다",
     "icon": "A_Prize_Catch",
     "type": "음식",
@@ -26881,7 +26783,7 @@
   "108725": {
     "id": 108725,
     "name": "초콜릿",
-    "desc": "둥근 모양의 간식. 카카오 자란 환경에 따라 초콜릿에 다양한 맛이 나타난다고 한다. 거친 광석의 향기와 달콤한 과일 향기 같은…. 과연 다음에는 어떤 맛을 느낄 수 있을까?",
+    "desc": "둥근 모양의 간식. 카카오가 자란 환경에 따라 초콜릿에 다양한 맛이 나타난다고 한다. 거친 광석의 향기와 달콤한 과일 향기 같은…. 과연 다음에는 어떤 맛을 느낄 수 있을까?",
     "effect": "스태미나를 85pt 회복한다",
     "icon": "Chocolate",
     "type": "음식",
@@ -27395,7 +27297,7 @@
   "108741": {
     "id": 108741,
     "name": "맛있는 콩볼 새우튀김",
-    "desc": "기름에 튀긴 간식. 튀김이라는 요리 마법을 거친 후, 노릇노릇한 빛깔에 바삭한 튀김옷이 육즙을 꽉 싸고 있어 씹으면 바삭거리는 소니와 함께 강렬한 만족감이 느껴진다. 아쉽게도 한 접시에 딱 두 개뿐이라 한참 부족하다!",
+    "desc": "기름에 튀긴 간식. 튀김이라는 요리 마법을 거친 후, 노릇노릇한 빛깔에 바삭한 튀김옷이 육즙을 꽉 싸고 있어 씹으면 바삭거리는 소리와 함께 강렬한 만족감이 느껴진다. 아쉽게도 한 접시에 딱 두 개뿐이라 한참 부족하다!",
     "effect": "파티 내 모든 캐릭터의 보호막 강화 효과가 30% 증가한다. 지속 시간: 300초. 다인 모드 시 자신의 캐릭터에만 적용된다",
     "icon": "Delicious_Fried_Shrimp_Beanballs",
     "type": "음식",
@@ -27844,6 +27746,233 @@
       ]
     }
   },
+  "108754": {
+    "id": 108754,
+    "name": "이상한 소 염통 꼬치",
+    "desc": "길거리에서 흔히 볼 수 있는 꼬치구이. 불 조절에 실패해서 센불에 겉은 검게 타버렸지만 속은 설익었다. 탄 부분을 잘라내고 다시 숯에 올려 약불에 좀 더 굽도록 하자…",
+    "effect": "스태미나를 40pt 회복한다",
+    "icon": "Suspicious_BBQ_Beef_Heart_Skewers",
+    "type": "음식",
+    "rarity": 2,
+    "stackLimit": 2000,
+    "source": [
+      "요리 획득"
+    ],
+    "food": {
+      "type": "모험류 요리",
+      "ingredients": [
+        {
+          "id": 100061,
+          "count": 2
+        },
+        {
+          "id": 100080,
+          "count": 2
+        },
+        {
+          "id": 101243,
+          "count": 1
+        }
+      ]
+    },
+    "available": true
+  },
+  "108755": {
+    "id": 108755,
+    "name": "소 염통 꼬치",
+    "desc": "길거리에서 흔히 볼 수 있는 꼬치구이. 양념한 소 염통을 꼬치에 끼운 다음, 숯 위에 올려 먹음직스럽게 구워준다. 여기에 구운 알갱이 열매와 감자를 곁들이면 나타 먹거리계의 영원한 황금 조합이 탄생한다!",
+    "effect": "스태미나를 50pt 회복한다",
+    "icon": "BBQ_Beef_Heart_Skewers",
+    "type": "음식",
+    "rarity": 2,
+    "stackLimit": 2000,
+    "source": [
+      "요리 획득"
+    ],
+    "food": {
+      "type": "모험류 요리",
+      "ingredients": [
+        {
+          "id": 100061,
+          "count": 2
+        },
+        {
+          "id": 100080,
+          "count": 2
+        },
+        {
+          "id": 101243,
+          "count": 1
+        }
+      ]
+    },
+    "available": true
+  },
+  "108756": {
+    "id": 108756,
+    "name": "맛있는 소 염통 꼬치",
+    "desc": "길거리에서 흔히 볼 수 있는 꼬치구이. 숯불 위에서 나는 치지직 소리가 나팔 소리처럼 식욕을 부추긴다. 못 이기고 한입 베어 물면 두툼하고 쫄깃한 육질과 풍부한 육즙이 어우러져 엄청난 만족감을 선사한다",
+    "effect": "스태미나를 60pt 회복한다",
+    "icon": "Delicious_BBQ_Beef_Heart_Skewers",
+    "type": "음식",
+    "rarity": 2,
+    "stackLimit": 2000,
+    "source": [
+      "요리 획득"
+    ],
+    "available": true,
+    "food": {
+      "type": "모험류 요리",
+      "ingredients": [
+        {
+          "id": 100061,
+          "count": 2
+        },
+        {
+          "id": 100080,
+          "count": 2
+        },
+        {
+          "id": 101243,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "108757": {
+    "id": 108757,
+    "name": "이상한 쓴물",
+    "desc": "카카오로 만든 나타 음료. 단맛이나 쓴맛이 날 것이란 예상과 다르게 혀끝에선 신맛이 느껴진다…. 설마 식자재를 잘못 넣은 것일까?",
+    "effect": "파티 내 모든 캐릭터의 방어력이 165pt 증가한다. 지속 시간: 300초. 다인 모드 시 자신의 캐릭터에만 적용된다",
+    "icon": "Suspicious_Xocoatl",
+    "type": "음식",
+    "rarity": 3,
+    "stackLimit": 2000,
+    "source": [
+      "요리 획득"
+    ],
+    "food": {
+      "ingredients": [
+        {
+          "id": 101246,
+          "count": 3
+        },
+        {
+          "id": 100016,
+          "count": 3
+        },
+        {
+          "id": 100078,
+          "count": 3
+        },
+        {
+          "id": 110006,
+          "count": 1
+        }
+      ]
+    },
+    "available": true
+  },
+  "108758": {
+    "id": 108758,
+    "name": "쓴물",
+    "desc": "카카오로 만든 나타 음료. 원래는 카카오를 갈아서 각종 향신료를 넣고 만든 음료라서 쓴맛이 나기 때문에 이런 이름이 붙었다. 여러 번의 개량을 거쳐 설탕을 첨가한 결과, 달콤하고 맛있는 인기 음료로 재탄생했으나 쓴물(쇼코아틀)이라는 이름은 그대로다",
+    "effect": "파티 내 모든 캐릭터의 방어력이 200pt 증가한다. 지속 시간: 300초. 다인 모드 시 자신의 캐릭터에만 적용된다",
+    "icon": "Xocoatl",
+    "type": "음식",
+    "rarity": 3,
+    "stackLimit": 2000,
+    "source": [
+      "요리 획득"
+    ],
+    "food": {
+      "ingredients": [
+        {
+          "id": 101246,
+          "count": 3
+        },
+        {
+          "id": 100016,
+          "count": 3
+        },
+        {
+          "id": 100078,
+          "count": 3
+        },
+        {
+          "id": 110006,
+          "count": 1
+        }
+      ]
+    },
+    "available": true
+  },
+  "108759": {
+    "id": 108759,
+    "name": "맛있는 쓴물",
+    "desc": "카카오로 만든 나타 음료. 짙은 카카오 향기 속에서 순수한 우유 향이 느껴진다. 비단처럼 부드럽게 혀끝을 스치고 남기는 달콤한 여운은 마음을 사르르 녹이기에 충분하다",
+    "effect": "파티 내 모든 캐릭터의 방어력이 235pt 증가한다. 지속 시간: 300초. 다인 모드 시 자신의 캐릭터에만 적용된다",
+    "icon": "Delicious_Xocoatl",
+    "type": "음식",
+    "rarity": 3,
+    "stackLimit": 2000,
+    "source": [
+      "요리 획득"
+    ],
+    "available": true,
+    "food": {
+      "ingredients": [
+        {
+          "id": 101246,
+          "count": 3
+        },
+        {
+          "id": 100016,
+          "count": 3
+        },
+        {
+          "id": 100078,
+          "count": 3
+        },
+        {
+          "id": 110006,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "108760": {
+    "id": 108760,
+    "name": "과일 맛 우유 사탕",
+    "desc": "실로닌의 특제 요리. 큰 나무 위에 앉아 도란도란 이야기를 나누고 있을 때 실로닌이 정교한 상자 하나를 건네왔다. 상자 안에 든 것은 다양한 모양의… 사탕? 「카카오도 과일로 분류되니까, 카카오에 우유와 설탕을 넣고 만든 사탕도——과일 맛 우유 사탕이라고 할 수 있겠지. 같이 먹자」 실로닌은 말하면서 먼저 사탕 한 알을 집어서 위로 던지더니 입으로 받아먹었다",
+    "effect": "스태미나를 130pt 회복한다",
+    "icon": "Fruit-Flavored_Milk_Candies",
+    "type": "음식",
+    "rarity": 3,
+    "stackLimit": 2000,
+    "source": [
+      "요리 획득"
+    ],
+    "available": true,
+    "food": {
+      "type": "모험류 요리",
+      "ingredients": [
+        {
+          "id": 101246,
+          "count": 4
+        },
+        {
+          "id": 100078,
+          "count": 3
+        },
+        {
+          "id": 110006,
+          "count": 1
+        }
+      ],
+      "character": 10000103
+    }
+  },
   "110001": {
     "id": 110001,
     "name": "밀가루",
@@ -28067,6 +28196,7 @@
       "3419",
       "3420",
       "3503",
+      "3507",
       "3901",
       "4103",
       "4403",
@@ -28395,6 +28525,20 @@
     ],
     "available": true
   },
+  "111032": {
+    "id": 111032,
+    "name": "「힘센 물」",
+    "desc": "출처가 신비롭지만 제조법이 단순하고 건강 음료라 부를 수 있을 정도다. 이름 그대로 마시면 강해진다",
+    "effect": "파티 내 모든 캐릭터의 물리 피해가 45%, 치명타 확률이 10%, 받는 피해가 20% 증가한다. 지속 시간: 30초. 다인 모드 시 자신의 캐릭터에만 적용된다",
+    "icon": "Strength_Tonic",
+    "type": "음식",
+    "rarity": 3,
+    "stackLimit": 2000,
+    "source": [
+      "합성 획득"
+    ],
+    "available": true
+  },
   "112002": {
     "id": 112002,
     "name": "슬라임 응축액",
@@ -28413,7 +28557,8 @@
       "10000030",
       "10000057",
       "10000077",
-      "10000092"
+      "10000092",
+      "10000901"
     ],
     "weapon": [
       "11302",
@@ -28448,9 +28593,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000006",
@@ -28460,7 +28603,8 @@
       "10000030",
       "10000057",
       "10000077",
-      "10000092"
+      "10000092",
+      "10000901"
     ],
     "weapon": [
       "11302",
@@ -28495,9 +28639,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000006",
@@ -28507,7 +28649,8 @@
       "10000030",
       "10000057",
       "10000077",
-      "10000092"
+      "10000092",
+      "10000901"
     ],
     "weapon": [
       "11302",
@@ -28590,9 +28733,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "4",
@@ -28642,9 +28783,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "4",
@@ -28738,9 +28877,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "4",
@@ -28786,9 +28923,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "4",
@@ -28878,9 +29013,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "6",
@@ -28926,9 +29059,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "6",
@@ -29007,9 +29138,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11101",
@@ -29047,9 +29176,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11301",
@@ -29098,9 +29225,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11416",
@@ -29118,9 +29243,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11416",
@@ -29174,9 +29297,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11302",
@@ -29212,9 +29333,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11302",
@@ -29281,9 +29400,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11303",
@@ -29318,9 +29435,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11303",
@@ -29385,9 +29500,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11305",
@@ -29419,9 +29532,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11305",
@@ -29482,9 +29593,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11304",
@@ -29513,9 +29622,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11304",
@@ -29583,9 +29690,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000016",
@@ -29624,9 +29729,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000016",
@@ -29708,9 +29811,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000015",
@@ -29753,9 +29854,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000015",
@@ -29816,6 +29915,7 @@
       "13302",
       "13405",
       "13424",
+      "13430",
       "13507",
       "13513",
       "14405",
@@ -29833,9 +29933,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000037",
@@ -29855,6 +29953,7 @@
       "13302",
       "13405",
       "13424",
+      "13430",
       "13507",
       "13513",
       "14405",
@@ -29872,9 +29971,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000037",
@@ -29894,6 +29991,7 @@
       "13302",
       "13405",
       "13424",
+      "13430",
       "13507",
       "13513",
       "14405",
@@ -29938,9 +30036,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11306",
@@ -29967,9 +30063,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11306",
@@ -30005,7 +30099,8 @@
       "10000052",
       "10000058",
       "10000066",
-      "10000075"
+      "10000075",
+      "10000901"
     ],
     "weapon": [
       "11414",
@@ -30029,9 +30124,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "7",
@@ -30040,7 +30133,8 @@
       "10000052",
       "10000058",
       "10000066",
-      "10000075"
+      "10000075",
+      "10000901"
     ],
     "weapon": [
       "11414",
@@ -30064,9 +30158,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "7",
@@ -30075,7 +30167,8 @@
       "10000052",
       "10000058",
       "10000066",
-      "10000075"
+      "10000075",
+      "10000901"
     ],
     "weapon": [
       "11414",
@@ -30119,9 +30212,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11414",
@@ -30141,9 +30232,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11414",
@@ -30182,9 +30271,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "14414",
@@ -30203,9 +30290,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "14414",
@@ -30255,9 +30340,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000054",
@@ -30288,9 +30371,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000054",
@@ -30340,9 +30421,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "12416",
@@ -30361,9 +30440,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "12416",
@@ -30410,9 +30487,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000069",
@@ -30440,9 +30515,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000069",
@@ -30488,9 +30561,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "14416",
@@ -30508,9 +30579,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "14416",
@@ -30557,9 +30626,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000068",
@@ -30588,9 +30655,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000068",
@@ -30637,9 +30702,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11417",
@@ -30657,9 +30720,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11417",
@@ -30694,9 +30755,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11418",
@@ -30713,9 +30772,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11418",
@@ -30749,9 +30806,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11512",
@@ -30768,9 +30823,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11512",
@@ -30804,9 +30857,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "13424",
@@ -30823,9 +30874,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "13424",
@@ -30871,9 +30920,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000085",
@@ -30902,9 +30949,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000085",
@@ -30962,9 +31007,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000083",
@@ -30993,9 +31036,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000083",
@@ -31043,9 +31084,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11425",
@@ -31064,9 +31103,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11425",
@@ -31104,9 +31141,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "12425",
@@ -31125,9 +31160,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "12425",
@@ -31165,9 +31198,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11427",
@@ -31186,9 +31217,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11427",
@@ -31224,9 +31253,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "13426",
@@ -31243,9 +31270,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "13426",
@@ -31279,9 +31304,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11431",
@@ -31298,9 +31321,7 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "11431",
@@ -31324,6 +31345,8 @@
     ],
     "weapon": [
       "11431",
+      "11516",
+      "12430",
       "14427",
       "14516",
       "15431"
@@ -31337,15 +31360,15 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000101"
     ],
     "weapon": [
       "11431",
+      "11516",
+      "12430",
       "14427",
       "14516",
       "15431"
@@ -31359,15 +31382,15 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000101"
     ],
     "weapon": [
       "11431",
+      "11516",
+      "12430",
       "14427",
       "14516",
       "15431"
@@ -31385,9 +31408,11 @@
     "available": true,
     "character": [
       "10000100",
-      "10000102"
+      "10000102",
+      "10000103"
     ],
     "weapon": [
+      "11430",
       "12431",
       "12513",
       "13431"
@@ -31401,15 +31426,15 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 2,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000100",
-      "10000102"
+      "10000102",
+      "10000103"
     ],
     "weapon": [
+      "11430",
       "12431",
       "12513",
       "13431"
@@ -31423,15 +31448,15 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "character": [
       "10000100",
-      "10000102"
+      "10000102",
+      "10000103"
     ],
     "weapon": [
+      "11430",
       "12431",
       "12513",
       "13431"
@@ -31448,6 +31473,7 @@
     "source": [],
     "available": true,
     "weapon": [
+      "11430",
       "14431",
       "14516"
     ]
@@ -31460,11 +31486,10 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
+      "11430",
       "14431",
       "14516"
     ]
@@ -31477,11 +31502,10 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
+      "11430",
       "14431",
       "14516"
     ]
@@ -31498,7 +31522,8 @@
     "available": true,
     "weapon": [
       "12431",
-      "12513"
+      "12513",
+      "13430"
     ]
   },
   "112111": {
@@ -31509,13 +31534,12 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "12431",
-      "12513"
+      "12513",
+      "13430"
     ]
   },
   "112112": {
@@ -31526,13 +31550,12 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
       "12431",
-      "12513"
+      "12513",
+      "13430"
     ]
   },
   "112113": {
@@ -31546,6 +31569,8 @@
     "source": [],
     "available": true,
     "weapon": [
+      "11516",
+      "12430",
       "13431",
       "14427"
     ]
@@ -31558,11 +31583,11 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 3,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
+      "11516",
+      "12430",
       "13431",
       "14427"
     ]
@@ -31575,11 +31600,11 @@
     "type": "캐릭터와 무기 육성 소재",
     "rarity": 4,
     "stackLimit": 9999,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "available": true,
     "weapon": [
+      "11516",
+      "12430",
       "13431",
       "14427"
     ]
@@ -31648,7 +31673,8 @@
       "10000006",
       "10000020",
       "10000023",
-      "10000034"
+      "10000034",
+      "10000901"
     ]
   },
   "113005": {
@@ -31950,7 +31976,8 @@
     "available": true,
     "character": [
       "10000002",
-      "10000055"
+      "10000055",
+      "10000901"
     ]
   },
   "113024": {
@@ -32247,7 +32274,8 @@
     "character": [
       "10000074",
       "10000078",
-      "10000080"
+      "10000080",
+      "10000103"
     ]
   },
   "113043": {
@@ -32377,7 +32405,7 @@
   "113051": {
     "id": 113051,
     "name": "제왕의 결단",
-    "desc": "용암철갑 제왕의 망치. 다른 원류바다 이종이든, 태엽 장치든, 아니면 예상치 못한 토벌자든, 용암철갑 제왕은 알현하러 온 수많은 자들을 이 거대한 집게로 부숴버렸다.\\n인간과 달리, 원류바다 이종 사이에는 귀족이나 부잣집 출신이 존재하지 않으며, 그 누구도 태어날 때부터 더 고귀하지 않다. 모든 역경을 극복하고 천적과의 전투에서 승리를 거둔 원류바다 이종은, 기나긴 세월 동안 사냥과 포식을 통해 무한히 힘을 축적해 성장하여, 결국 패왕이라는 경이로운 칭호를 얻게 되었다",
+    "desc": "용암철갑 제왕의 망치.\\n다른 원류바다 이종이든, 태엽 장치든, 아니면 예상치 못한 토벌자든, 용암철갑 제왕은 알현하러 온 수많은 자들을 이 거대한 집게로 부숴버렸다.\\n인간과 달리, 원류바다 이종 사이에는 귀족이나 부잣집 출신이 존재하지 않으며, 그 누구도 태어날 때부터 더 고귀하지 않다. 모든 역경을 극복하고 천적과의 전투에서 승리를 거둔 원류바다 이종은, 기나긴 세월 동안 사냥과 포식을 통해 무한히 힘을 축적해 성장하여, 결국 패왕이라는 경이로운 칭호를 얻게 되었다",
     "icon": "Emperor's_Resolution",
     "type": "캐릭터 육성 소재",
     "rarity": 4,
@@ -32596,6 +32624,20 @@
       "10000101"
     ]
   },
+  "113066": {
+    "id": 113066,
+    "name": "금빛 문양 근원 코어",
+    "desc": "비밀근원 기계·구축기를 처치한 후 동력을 잃고 분리된 몸통에서 발견한 코어 부품.\\n오늘날 비밀근원 기계라고 불리는 모든 기계의 코어는 사실 다 같은 종류의 코어라고 한다. 다만 안에 담긴 정보는 각기 다르며, 금빛 문양의 차이가 이를 증명한다. 도구가 스스로 작동할 수 있도록 추가한 명령이 누적되자 인공지능의 초기 형태를 갖추게 된 것 같다",
+    "icon": "Gold-Inscribed_Secret_Source_Core",
+    "type": "캐릭터 육성 소재",
+    "rarity": 4,
+    "stackLimit": 2000,
+    "source": [],
+    "available": true,
+    "character": [
+      "10000103"
+    ]
+  },
   "114001": {
     "id": 114001,
     "name": "고탑 왕의 잔해",
@@ -32648,9 +32690,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -32692,9 +32732,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -32736,9 +32774,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -32817,9 +32853,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -32861,9 +32895,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -32905,9 +32937,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -32987,9 +33017,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -33029,9 +33057,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -33071,9 +33097,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -33148,9 +33172,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -33185,9 +33207,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -33222,9 +33242,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -33296,9 +33314,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -33333,9 +33349,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -33370,9 +33384,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -33442,9 +33454,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -33477,9 +33487,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -33512,9 +33520,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -33571,9 +33577,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -33597,9 +33601,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -33623,9 +33625,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -33674,9 +33674,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -33701,9 +33699,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -33728,9 +33724,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -33779,9 +33773,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -33805,9 +33797,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -33831,9 +33821,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -33881,9 +33869,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -33907,9 +33893,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -33933,9 +33917,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -33982,9 +33964,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -34007,9 +33987,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -34032,9 +34010,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -34081,9 +34057,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -34107,9 +34081,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -34133,9 +34105,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -34184,9 +34154,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -34211,9 +34179,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -34238,9 +34204,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
@@ -34288,9 +34252,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -34313,9 +34275,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -34338,9 +34298,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -34388,9 +34346,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -34415,9 +34371,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -34442,9 +34396,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
@@ -34476,6 +34428,7 @@
     ],
     "available": true,
     "weapon": [
+      "11430",
       "11431",
       "12431",
       "14516"
@@ -34489,15 +34442,14 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
     ],
     "available": true,
     "weapon": [
+      "11430",
       "11431",
       "12431",
       "14516"
@@ -34511,15 +34463,14 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
     ],
     "available": true,
     "weapon": [
+      "11430",
       "11431",
       "12431",
       "14516"
@@ -34528,20 +34479,19 @@
   "114064": {
     "id": 114064,
     "name": "뜨거운 심장 공양의 영광",
-    "desc": "무기에 돌파의 힘을 부여하는 재료.\\n「세상의 모든 것을 원한다면, 먼저 자신의 모든 것을 세상에 바쳐라」\\n금지된 성의 신성한 주인이 밤의 나라를 향한 기도를 불허한 이후로 한때 구축됐던 정신의 연결 고리는 무너졌다.\\n인도를 받은 붉은 눈동자의 소년은 여러 시련을 겪었는데, 그중 마지막 시련은 최초의 인간신처럼 자기 생명의 소멸을 직시하고, 황금 비수로 자신의 심장을 바치는 것이었다.\\n희생은 승자의 영광이나 다름없으니, 그는 망설임 없이 반짝이는 칼날로 자신의 가슴을 갈랐다. 그의 희생은 마땅한 응답을 받아, 그는 물이 빛처럼 흐르는 나라에서 돌아와 새로운 위업을 이뤄낼 수 있었다",
+    "desc": "무기에 돌파의 힘을 부여하는 재료.\\n「세상의 모든 것을 원한다면, 먼저 자신의 모든 것을 세상에 바쳐라」\\n금지된 성의 신성한 주인이 밤의 나라를 향한 기도를 불허한 이후로 한때 구축됐던 정신의 연결 고리는 무너졌다.\\n인도를 받은 붉은 눈동자의 소년은 여러 시련을 겪었는데, 그중 마지막 시련은 최초의 인간신처럼 황금 비수로 자신의 심장을 바치는 것이었다.\\n자기희생은 승자의 영광이나 다름없기에, 그는 망설임 없이 반짝이는 칼날로 자신의 가슴을 갈랐다. 그리고 그가 다시 나타났을 때는, 물이 빛처럼 흐르는 나라에서 돌아와 다시금 위업을 이뤄낼 때였다",
     "icon": "Blazing_Sacrificial_Heart's_Splendor",
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Monday",
       "Thursday"
     ],
     "available": true,
     "weapon": [
+      "11430",
       "11431",
       "12431",
       "14516"
@@ -34563,6 +34513,7 @@
     "available": true,
     "weapon": [
       "12513",
+      "13430",
       "13431",
       "14431"
     ]
@@ -34575,9 +34526,7 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -34585,6 +34534,7 @@
     "available": true,
     "weapon": [
       "12513",
+      "13430",
       "13431",
       "14431"
     ]
@@ -34597,9 +34547,7 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -34607,6 +34555,7 @@
     "available": true,
     "weapon": [
       "12513",
+      "13430",
       "13431",
       "14431"
     ]
@@ -34619,9 +34568,7 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Tuesday",
       "Friday"
@@ -34629,6 +34576,7 @@
     "available": true,
     "weapon": [
       "12513",
+      "13430",
       "13431",
       "14431"
     ]
@@ -34648,6 +34596,8 @@
     ],
     "available": true,
     "weapon": [
+      "11516",
+      "12430",
       "14427",
       "15431"
     ]
@@ -34660,15 +34610,15 @@
     "type": "무기 돌파 소재",
     "rarity": 3,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
     ],
     "available": true,
     "weapon": [
+      "11516",
+      "12430",
       "14427",
       "15431"
     ]
@@ -34681,15 +34631,15 @@
     "type": "무기 돌파 소재",
     "rarity": 4,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
     ],
     "available": true,
     "weapon": [
+      "11516",
+      "12430",
       "14427",
       "15431"
     ]
@@ -34702,15 +34652,15 @@
     "type": "무기 돌파 소재",
     "rarity": 5,
     "stackLimit": 2000,
-    "source": [
-      "합성 획득"
-    ],
+    "source": [],
     "day": [
       "Wednesday",
       "Saturday"
     ],
     "available": true,
     "weapon": [
+      "11516",
+      "12430",
       "14427",
       "15431"
     ]
@@ -34741,6 +34691,17 @@
     "name": "고대 자동 오르골",
     "desc": "「빛바랜 성」에서 주운 고대 오르골. 신비한 「악장」의 힘이 담겨 있는 것 같다.\\n오르골로 고대 문명이 남긴 악보를 읽을 수 있다. 더 많은 악보를 찾아 과거의 비밀을 풀어보자",
     "icon": "Ancient_Autoharmonic_Music_Box",
+    "type": "임무 아이템",
+    "rarity": 4,
+    "stackLimit": 1,
+    "source": [],
+    "available": true
+  },
+  "121068": {
+    "id": 121068,
+    "name": "밤 여정의 두루마리",
+    "desc": "고대 이름을 제작하는 데 결정적 역할을 하는 재료. 밤의 신에게서 얻은 이 재료의 본질은 「기억」이다. 나타의 지맥은 외부인의 모험 이야기를 기록하지 않기 때문에 특수한 「그릇」이 필요하다.\\n그릇 속에 흐르는 기억의 표면을 주시하고 있으면 나타에서 남긴 중요한 발자취가 보인다.\\n실로닌과 시틀라리는 밤의 신의 상냥함과 관대함 덕분에 이 재료를 순조롭게 얻을 수 있었다고 한다",
+    "icon": "Pilgrim's_Chronicle",
     "type": "임무 아이템",
     "rarity": 4,
     "stackLimit": 1,
