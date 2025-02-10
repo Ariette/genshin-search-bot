@@ -23538,6 +23538,221 @@
       "Friday"
     ]
   },
+  "13432": {
+    "id": 13432,
+    "name": "쉼터의 이야기꾼",
+    "desc": "등불의 형상을 한 채로 이나즈마를 떠돌던 요괴가 잠시 머물렀던 등잔",
+    "type": "장병기",
+    "rarity": 4,
+    "icon": "UI_EquipIcon_Pole_Aoandon",
+    "iconAwake": "UI_EquipIcon_Pole_Aoandon_Awaken",
+    "baseExp": 50000,
+    "stat": [
+      {
+        "type": "기초 공격력",
+        "value": 43.7349,
+        "curve": "GROW_CURVE_ATTACK_202"
+      },
+      {
+        "type": "원소 충전 효율",
+        "value": 0.066667,
+        "curve": "GROW_CURVE_CRITICAL_201"
+      }
+    ],
+    "promote": [
+      {
+        "ascension": 1,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 25.9
+          }
+        ],
+        "costs": [
+          {
+            "id": 114033,
+            "count": 3
+          },
+          {
+            "id": 112116,
+            "count": 3
+          },
+          {
+            "id": 112044,
+            "count": 2
+          },
+          {
+            "id": 202,
+            "count": 5000
+          }
+        ]
+      },
+      {
+        "ascension": 2,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 51.9
+          }
+        ],
+        "costs": [
+          {
+            "id": 114034,
+            "count": 3
+          },
+          {
+            "id": 112116,
+            "count": 12
+          },
+          {
+            "id": 112044,
+            "count": 8
+          },
+          {
+            "id": 202,
+            "count": 15000
+          }
+        ]
+      },
+      {
+        "ascension": 3,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 77.8
+          }
+        ],
+        "costs": [
+          {
+            "id": 114034,
+            "count": 6
+          },
+          {
+            "id": 112117,
+            "count": 6
+          },
+          {
+            "id": 112045,
+            "count": 6
+          },
+          {
+            "id": 202,
+            "count": 20000
+          }
+        ]
+      },
+      {
+        "ascension": 4,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 103.7
+          }
+        ],
+        "costs": [
+          {
+            "id": 114035,
+            "count": 3
+          },
+          {
+            "id": 112117,
+            "count": 12
+          },
+          {
+            "id": 112045,
+            "count": 9
+          },
+          {
+            "id": 202,
+            "count": 30000
+          }
+        ]
+      },
+      {
+        "ascension": 5,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 129.7
+          }
+        ],
+        "costs": [
+          {
+            "id": 114035,
+            "count": 6
+          },
+          {
+            "id": 112118,
+            "count": 9
+          },
+          {
+            "id": 112046,
+            "count": 6
+          },
+          {
+            "id": 202,
+            "count": 35000
+          }
+        ]
+      },
+      {
+        "ascension": 6,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 155.6
+          }
+        ],
+        "costs": [
+          {
+            "id": 114036,
+            "count": 4
+          },
+          {
+            "id": 112118,
+            "count": 18
+          },
+          {
+            "id": 112046,
+            "count": 12
+          },
+          {
+            "id": 202,
+            "count": 45000
+          }
+        ]
+      }
+    ],
+    "story": 193432,
+    "refineItem": 200124,
+    "skill": {
+      "name": "떠도는 이야기꾼",
+      "desc": {
+        "r1": "원소전투 스킬 발동 시, 공격력이 <color=#99FFFFFF>20%</color>, 이동 속도가 10% 증가한다. 지속 시간: 10초",
+        "r2": "원소전투 스킬 발동 시, 공격력이 <color=#99FFFFFF>25%</color>, 이동 속도가 10% 증가한다. 지속 시간: 10초",
+        "r3": "원소전투 스킬 발동 시, 공격력이 <color=#99FFFFFF>30%</color>, 이동 속도가 10% 증가한다. 지속 시간: 10초",
+        "r4": "원소전투 스킬 발동 시, 공격력이 <color=#99FFFFFF>35%</color>, 이동 속도가 10% 증가한다. 지속 시간: 10초",
+        "r5": "원소전투 스킬 발동 시, 공격력이 <color=#99FFFFFF>40%</color>, 이동 속도가 10% 증가한다. 지속 시간: 10초"
+      }
+    },
+    "available": true,
+    "material": [
+      114033,
+      112116,
+      112044,
+      114034,
+      112117,
+      112045,
+      114035,
+      112118,
+      112046,
+      114036
+    ],
+    "day": [
+      "Wednesday",
+      "Saturday"
+    ]
+  },
   "13501": {
     "id": 13501,
     "name": "호마의 지팡이",
@@ -34330,6 +34545,220 @@
       112109,
       112106,
       114068
+    ],
+    "day": [
+      "Tuesday",
+      "Friday"
+    ]
+  },
+  "14518": {
+    "id": 14518,
+    "name": "나른한 새해",
+    "desc": "맑은 보랏빛 옥으로 만든 방울 등. 베개 옆에 두면 행복한 꿈을 불러온다",
+    "type": "법구",
+    "rarity": 5,
+    "icon": "UI_EquipIcon_Catalyst_SakuraFan",
+    "iconAwake": "UI_EquipIcon_Catalyst_SakuraFan_Awaken",
+    "baseExp": 300000,
+    "stat": [
+      {
+        "type": "기초 공격력",
+        "value": 44.3358,
+        "curve": "GROW_CURVE_ATTACK_304"
+      },
+      {
+        "type": "원소 마스터리",
+        "value": 57.6,
+        "curve": "GROW_CURVE_CRITICAL_301"
+      }
+    ],
+    "promote": [
+      {
+        "ascension": 1,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 31.1
+          }
+        ],
+        "costs": [
+          {
+            "id": 114029,
+            "count": 5
+          },
+          {
+            "id": 112110,
+            "count": 5
+          },
+          {
+            "id": 112053,
+            "count": 3
+          },
+          {
+            "id": 202,
+            "count": 10000
+          }
+        ]
+      },
+      {
+        "ascension": 2,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 62.2
+          }
+        ],
+        "costs": [
+          {
+            "id": 114030,
+            "count": 5
+          },
+          {
+            "id": 112110,
+            "count": 18
+          },
+          {
+            "id": 112053,
+            "count": 12
+          },
+          {
+            "id": 202,
+            "count": 20000
+          }
+        ]
+      },
+      {
+        "ascension": 3,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 93.4
+          }
+        ],
+        "costs": [
+          {
+            "id": 114030,
+            "count": 9
+          },
+          {
+            "id": 112111,
+            "count": 9
+          },
+          {
+            "id": 112054,
+            "count": 9
+          },
+          {
+            "id": 202,
+            "count": 30000
+          }
+        ]
+      },
+      {
+        "ascension": 4,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 124.5
+          }
+        ],
+        "costs": [
+          {
+            "id": 114031,
+            "count": 5
+          },
+          {
+            "id": 112111,
+            "count": 18
+          },
+          {
+            "id": 112054,
+            "count": 14
+          },
+          {
+            "id": 202,
+            "count": 45000
+          }
+        ]
+      },
+      {
+        "ascension": 5,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 155.6
+          }
+        ],
+        "costs": [
+          {
+            "id": 114031,
+            "count": 9
+          },
+          {
+            "id": 112112,
+            "count": 14
+          },
+          {
+            "id": 112055,
+            "count": 9
+          },
+          {
+            "id": 202,
+            "count": 55000
+          }
+        ]
+      },
+      {
+        "ascension": 6,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 186.7
+          }
+        ],
+        "costs": [
+          {
+            "id": 114032,
+            "count": 6
+          },
+          {
+            "id": 112112,
+            "count": 27
+          },
+          {
+            "id": 112055,
+            "count": 18
+          },
+          {
+            "id": 202,
+            "count": 65000
+          }
+        ]
+      }
+    ],
+    "story": 194518,
+    "skill": {
+      "name": "온천과 매 그리고 나루카미",
+      "desc": {
+        "r1": "확산 반응 발동 후 6초 동안, 원소 마스터리가 <color=#99FFFFFF>120</color>pt 증가한다. 원소전투 스킬이 적에게 명중 후 9초 동안, 원소 마스터리가 <color=#99FFFFFF>96</color>pt 증가한다. 원소폭발이 적에게 명중 후 30초 동안, 원소 마스터리가 <color=#99FFFFFF>32</color>pt 증가한다",
+        "r2": "확산 반응 발동 후 6초 동안, 원소 마스터리가 <color=#99FFFFFF>150</color>pt 증가한다. 원소전투 스킬이 적에게 명중 후 9초 동안, 원소 마스터리가 <color=#99FFFFFF>120</color>pt 증가한다. 원소폭발이 적에게 명중 후 30초 동안, 원소 마스터리가 <color=#99FFFFFF>40</color>pt 증가한다",
+        "r3": "확산 반응 발동 후 6초 동안, 원소 마스터리가 <color=#99FFFFFF>180</color>pt 증가한다. 원소전투 스킬이 적에게 명중 후 9초 동안, 원소 마스터리가 <color=#99FFFFFF>144</color>pt 증가한다. 원소폭발이 적에게 명중 후 30초 동안, 원소 마스터리가 <color=#99FFFFFF>48</color>pt 증가한다",
+        "r4": "확산 반응 발동 후 6초 동안, 원소 마스터리가 <color=#99FFFFFF>210</color>pt 증가한다. 원소전투 스킬이 적에게 명중 후 9초 동안, 원소 마스터리가 <color=#99FFFFFF>168</color>pt 증가한다. 원소폭발이 적에게 명중 후 30초 동안, 원소 마스터리가 <color=#99FFFFFF>56</color>pt 증가한다",
+        "r5": "확산 반응 발동 후 6초 동안, 원소 마스터리가 <color=#99FFFFFF>240</color>pt 증가한다. 원소전투 스킬이 적에게 명중 후 9초 동안, 원소 마스터리가 <color=#99FFFFFF>192</color>pt 증가한다. 원소폭발이 적에게 명중 후 30초 동안, 원소 마스터리가 <color=#99FFFFFF>64</color>pt 증가한다"
+      }
+    },
+    "available": true,
+    "material": [
+      114029,
+      112110,
+      112053,
+      114030,
+      112111,
+      112054,
+      114031,
+      112112,
+      112055,
+      114032
     ],
     "day": [
       "Tuesday",
