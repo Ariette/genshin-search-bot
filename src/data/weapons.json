@@ -1780,6 +1780,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191401,
     "skill": {
       "name": "바람과 함께",
@@ -1994,6 +1998,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191402,
     "skill": {
       "name": "화음",
@@ -2208,6 +2216,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191403,
     "skill": {
       "name": "침착",
@@ -2422,6 +2434,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191404,
     "skill": {
       "name": "집중",
@@ -2636,6 +2652,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191405,
     "skill": {
       "name": "따끈따끈 찌릿찌릿",
@@ -2850,6 +2870,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191406,
     "skill": {
       "name": "부서진 바위",
@@ -3064,6 +3088,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191407,
     "skill": {
       "name": "에너지 주입 가시",
@@ -3278,6 +3306,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191408,
     "skill": {
       "name": "승승장구",
@@ -3492,6 +3524,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191409,
     "skill": {
       "name": "「정의」",
@@ -3706,6 +3742,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191410,
     "skill": {
       "name": "골목의 레인저",
@@ -3920,11 +3960,15 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191412,
     "skill": {
       "name": "현세 강림",
       "desc": {
-        "r1": "<color=#99FFFFFF>다음 플랫폼에서만 적용:</color>\\n<color=#99FFFFFF>\"PlayStation Network\"</color>\\n일반 공격과 강공격 명중 후 <color=#99FFFFFF>50%</color>의 확률로 작은 범위 내에 공격력 <color=#99FFFFFF>200%</color>의 피해를 준다. 해당 효과는 10초마다 1회 발동한다. 또한 여행자가 강림의 검을 장착하면 공격력이 <color=#99FFFFFF>66</color>pt 증가한다",
+        "r1": "<color=#99FFFFFF>다음 플랫폼에서만 적용:</color>\\n<color=#99FFFFFF>\"PlayStation™Network\"</color>\\n일반 공격과 강공격 명중 후 <color=#99FFFFFF>50%</color>의 확률로 작은 범위 내에 공격력 <color=#99FFFFFF>200%</color>의 피해를 준다. 해당 효과는 10초마다 1회 발동한다. 또한 여행자가 강림의 검을 장착하면 공격력이 <color=#99FFFFFF>66</color>pt 증가한다",
         "r2": null,
         "r3": null,
         "r4": null,
@@ -4134,6 +4178,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191413,
     "refineItem": 200103,
     "skill": {
@@ -4349,6 +4397,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191414,
     "skill": {
       "name": "이와쿠라의 후손",
@@ -4563,6 +4615,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191415,
     "refineItem": 200108,
     "skill": {
@@ -4778,6 +4834,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191416,
     "skill": {
       "name": "투명한 잇신의 기술",
@@ -4992,6 +5052,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191417,
     "skill": {
       "name": "숲의 비호",
@@ -5206,6 +5270,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191418,
     "skill": {
       "name": "지니의 속삭임",
@@ -5420,6 +5488,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191422,
     "refineItem": 200113,
     "skill": {
@@ -5635,6 +5707,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191424,
     "skill": {
       "name": "북풍의 푸른 늑대",
@@ -5849,6 +5925,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191425,
     "skill": {
       "name": "최후의 숭고",
@@ -6063,6 +6143,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191426,
     "refineItem": 200116,
     "skill": {
@@ -6278,6 +6362,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191427,
     "skill": {
       "name": "뱃노래",
@@ -6492,6 +6580,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191428,
     "refineItem": 200118,
     "skill": {
@@ -6707,6 +6799,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191430,
     "skill": {
       "name": "돌격자의 자부심",
@@ -6921,6 +7017,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191431,
     "skill": {
       "name": "거울과 연기의 수수께끼",
@@ -7135,6 +7235,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191432,
     "refineItem": 200123,
     "skill": {
@@ -7350,6 +7454,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191501,
     "skill": {
       "name": "서풍 매의 투쟁",
@@ -7564,6 +7672,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191502,
     "skill": {
       "name": "높은 하늘을 뚫는 이빨",
@@ -7778,6 +7890,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191503,
     "skill": {
       "name": "항쟁의 실천곡",
@@ -7992,6 +8108,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191504,
     "skill": {
       "name": "금빛의 옥·제군의 길",
@@ -8206,6 +8326,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191505,
     "skill": {
       "name": "수호자의 무구한 마음",
@@ -8420,6 +8544,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191509,
     "skill": {
       "name": "무절(霧切) 어검",
@@ -8634,6 +8762,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191510,
     "skill": {
       "name": "흐르는 칼날",
@@ -8848,6 +8980,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191511,
     "skill": {
       "name": "모래바다에 잠긴 서사시",
@@ -9062,6 +9198,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191512,
     "skill": {
       "name": "하얀 달 가지",
@@ -9276,6 +9416,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191513,
     "skill": {
       "name": "호숫빛의 여명과 황혼",
@@ -9490,6 +9634,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191514,
     "skill": {
       "name": "비단 꽃과 감실 검",
@@ -9704,6 +9852,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191515,
     "skill": {
       "name": "죽음의 계약",
@@ -9918,6 +10070,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 191516,
     "skill": {
       "name": "시들지 않는 생명",
@@ -9940,6 +10096,224 @@
       114071,
       112115,
       112103,
+      114072
+    ],
+    "day": [
+      "Wednesday",
+      "Saturday"
+    ]
+  },
+  "11517": {
+    "id": 11517,
+    "name": "창백한 섬광",
+    "desc": "창백한 여명의 별처럼 순수한 검. 지금은 짙푸른 어둠에 물들었다",
+    "type": "한손검",
+    "rarity": 5,
+    "icon": "UI_EquipIcon_Sword_OuterSword",
+    "iconAwake": "UI_EquipIcon_Sword_OuterSword_Awaken",
+    "baseExp": 300000,
+    "stat": [
+      {
+        "type": "기초 공격력",
+        "value": 47.537,
+        "curve": "GROW_CURVE_ATTACK_302"
+      },
+      {
+        "type": "치명타 확률",
+        "value": 0.048,
+        "curve": "GROW_CURVE_CRITICAL_301"
+      }
+    ],
+    "promote": [
+      {
+        "ascension": 1,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 31.1
+          }
+        ],
+        "costs": [
+          {
+            "id": 114069,
+            "count": 5
+          },
+          {
+            "id": 112116,
+            "count": 5
+          },
+          {
+            "id": 112104,
+            "count": 3
+          },
+          {
+            "id": 202,
+            "count": 10000
+          }
+        ]
+      },
+      {
+        "ascension": 2,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 62.2
+          }
+        ],
+        "costs": [
+          {
+            "id": 114070,
+            "count": 5
+          },
+          {
+            "id": 112116,
+            "count": 18
+          },
+          {
+            "id": 112104,
+            "count": 12
+          },
+          {
+            "id": 202,
+            "count": 20000
+          }
+        ]
+      },
+      {
+        "ascension": 3,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 93.4
+          }
+        ],
+        "costs": [
+          {
+            "id": 114070,
+            "count": 9
+          },
+          {
+            "id": 112117,
+            "count": 9
+          },
+          {
+            "id": 112105,
+            "count": 9
+          },
+          {
+            "id": 202,
+            "count": 30000
+          }
+        ]
+      },
+      {
+        "ascension": 4,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 124.5
+          }
+        ],
+        "costs": [
+          {
+            "id": 114071,
+            "count": 5
+          },
+          {
+            "id": 112117,
+            "count": 18
+          },
+          {
+            "id": 112105,
+            "count": 14
+          },
+          {
+            "id": 202,
+            "count": 45000
+          }
+        ]
+      },
+      {
+        "ascension": 5,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 155.6
+          }
+        ],
+        "costs": [
+          {
+            "id": 114071,
+            "count": 9
+          },
+          {
+            "id": 112118,
+            "count": 14
+          },
+          {
+            "id": 112106,
+            "count": 9
+          },
+          {
+            "id": 202,
+            "count": 55000
+          }
+        ]
+      },
+      {
+        "ascension": 6,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 186.7
+          }
+        ],
+        "costs": [
+          {
+            "id": 114072,
+            "count": 6
+          },
+          {
+            "id": 112118,
+            "count": 27
+          },
+          {
+            "id": 112106,
+            "count": 18
+          },
+          {
+            "id": 202,
+            "count": 65000
+          }
+        ]
+      }
+    ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
+    "story": 191517,
+    "skill": {
+      "name": "하얀 산의 선물",
+      "desc": {
+        "r1": "원소전투 스킬 발동 후 12초 동안 공격력이 <color=#99FFFFFF>24%</color> 증가한다. 지속 시간 동안 장착 캐릭터의 원소 에너지가 0이 되면, 추가로 공격력이 <color=#99FFFFFF>24%</color>, 치명타 피해가 <color=#99FFFFFF>40%</color> 증가한다",
+        "r2": "원소전투 스킬 발동 후 12초 동안 공격력이 <color=#99FFFFFF>30%</color> 증가한다. 지속 시간 동안 장착 캐릭터의 원소 에너지가 0이 되면, 추가로 공격력이 <color=#99FFFFFF>30%</color> , 치명타 피해가 <color=#99FFFFFF>50%</color> 증가한다",
+        "r3": "원소전투 스킬 발동 후 12초 동안 공격력이 <color=#99FFFFFF>36%</color> 증가한다. 지속 시간 동안 장착 캐릭터의 원소 에너지가 0이 되면, 추가로 공격력이 <color=#99FFFFFF>36%</color>, 치명타 피해가 <color=#99FFFFFF>60%</color> 증가한다",
+        "r4": "원소전투 스킬 발동 후 12초 동안 공격력이 <color=#99FFFFFF>42%</color> 증가한다. 지속 시간 동안 장착 캐릭터의 원소 에너지가 0이 되면, 추가로 공격력이 <color=#99FFFFFF>42%</color>, 치명타 피해가 <color=#99FFFFFF>70%</color> 증가한다",
+        "r5": "원소전투 스킬 발동 후 12초 동안 공격력이 <color=#99FFFFFF>48%</color> 증가한다. 지속 시간 동안 장착 캐릭터의 원소 에너지가 0이 되면, 추가로 공격력이 <color=#99FFFFFF>48%</color>, 치명타 피해가 <color=#99FFFFFF>80%</color> 증가한다"
+      }
+    },
+    "available": true,
+    "material": [
+      114069,
+      112116,
+      112104,
+      114070,
+      112117,
+      112105,
+      114071,
+      112118,
+      112106,
       114072
     ],
     "day": [
@@ -11510,6 +11884,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192401,
     "skill": {
       "name": "바람과 함께",
@@ -11724,6 +12102,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192402,
     "skill": {
       "name": "반역의 수호자",
@@ -11938,6 +12320,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192403,
     "skill": {
       "name": "침착",
@@ -12152,6 +12538,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192404,
     "skill": {
       "name": "집중",
@@ -12366,6 +12756,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192405,
     "skill": {
       "name": "첨벙첨벙 찌릿찌릿",
@@ -12580,6 +12974,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192406,
     "skill": {
       "name": "분쇄",
@@ -12794,6 +13192,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192407,
     "skill": {
       "name": "에너지 주입 칼날",
@@ -13008,6 +13410,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192408,
     "skill": {
       "name": "승승장구",
@@ -13222,6 +13628,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192409,
     "skill": {
       "name": "파도 가르기",
@@ -13436,6 +13846,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192410,
     "skill": {
       "name": "천암결·일심",
@@ -13650,6 +14064,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192411,
     "skill": {
       "name": "서리의 매장",
@@ -13864,6 +14282,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192412,
     "refineItem": 200106,
     "skill": {
@@ -14079,6 +14501,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192414,
     "skill": {
       "name": "명사의 거동",
@@ -14293,6 +14719,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192415,
     "skill": {
       "name": "모래 위 누각",
@@ -14507,6 +14937,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192416,
     "skill": {
       "name": "파도를 지배하는 와타츠미의 백성",
@@ -14721,6 +15155,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192417,
     "skill": {
       "name": "숲의 비호",
@@ -14935,6 +15373,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192418,
     "refineItem": 200114,
     "skill": {
@@ -15150,6 +15592,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192424,
     "skill": {
       "name": "「설득력」",
@@ -15364,6 +15810,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192425,
     "skill": {
       "name": "순항하는 흰 파도",
@@ -15578,6 +16028,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192426,
     "refineItem": 200119,
     "skill": {
@@ -15793,6 +16247,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192427,
     "skill": {
       "name": "뱃노래",
@@ -16007,6 +16465,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192430,
     "skill": {
       "name": "추락하는 가지의 무게",
@@ -16221,6 +16683,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192431,
     "skill": {
       "name": "푸른 길의 맹세",
@@ -16435,6 +16901,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192501,
     "skill": {
       "name": "맑은 하늘을 가르는 용의 척추",
@@ -16649,6 +17119,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192502,
     "skill": {
       "name": "늑대 같은 사냥꾼",
@@ -16863,6 +17337,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192503,
     "skill": {
       "name": "깃발을 든 반항의 노래",
@@ -17077,6 +17555,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192504,
     "skill": {
       "name": "금빛의 옥·제군의 길",
@@ -17228,6 +17710,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "available": true,
     "material": [
       114001,
@@ -17428,6 +17914,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192510,
     "skill": {
       "name": "오토기 대왕의 동화",
@@ -17642,6 +18132,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192511,
     "skill": {
       "name": "모래바다 파수",
@@ -17856,6 +18350,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192512,
     "skill": {
       "name": "수많은 여명과 황혼의 맹세",
@@ -18070,6 +18568,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192513,
     "skill": {
       "name": "터키석의 사냥",
@@ -18284,6 +18786,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 192514,
     "skill": {
       "name": "다시 타오르는 여명",
@@ -19440,6 +19946,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193401,
     "skill": {
       "name": "따끈따끈 첨벙첨벙",
@@ -19654,6 +20164,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193402,
     "skill": {
       "name": "마력의 갈증",
@@ -19868,6 +20382,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193403,
     "skill": {
       "name": "에너지 주입 바늘",
@@ -20082,6 +20600,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193404,
     "skill": {
       "name": "승승장구",
@@ -20296,6 +20818,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193405,
     "skill": {
       "name": "검투사",
@@ -20510,6 +21036,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193406,
     "skill": {
       "name": "천암결·일심",
@@ -20724,6 +21254,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193407,
     "skill": {
       "name": "바람과 함께",
@@ -20938,6 +21472,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193408,
     "skill": {
       "name": "집중",
@@ -21152,6 +21690,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193409,
     "skill": {
       "name": "서리의 매장",
@@ -21366,6 +21908,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193414,
     "skill": {
       "name": "명사의 거동",
@@ -21580,6 +22126,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193415,
     "refineItem": 200107,
     "skill": {
@@ -21795,6 +22345,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193416,
     "skill": {
       "name": "파도를 지배하는 와타츠미의 백성",
@@ -22009,6 +22563,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193417,
     "skill": {
       "name": "깊은 숲속 달 그림자",
@@ -22223,6 +22781,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193419,
     "refineItem": 200112,
     "skill": {
@@ -22438,6 +23000,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193424,
     "skill": {
       "name": "얼음 벌판의 이야기들",
@@ -22652,6 +23218,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193425,
     "skill": {
       "name": "조금만 더 뾰족했다면",
@@ -22866,6 +23436,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193426,
     "refineItem": 200120,
     "skill": {
@@ -23081,6 +23655,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193427,
     "skill": {
       "name": "석공의 노래",
@@ -23295,6 +23873,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193430,
     "skill": {
       "name": "산 너머의 희망",
@@ -23509,6 +24091,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193431,
     "skill": {
       "name": "흐르는 물과 샘의 약속",
@@ -23723,6 +24309,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193432,
     "refineItem": 200124,
     "skill": {
@@ -23938,6 +24528,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193501,
     "skill": {
       "name": "자유의 붉은 나비",
@@ -24152,6 +24746,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193502,
     "skill": {
       "name": "검은 날개를 절단하는 이빨",
@@ -24366,6 +24964,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193504,
     "skill": {
       "name": "금빛의 옥·제군의 길",
@@ -24580,6 +25182,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193505,
     "skill": {
       "name": "정의의 솔개창",
@@ -24794,6 +25400,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193507,
     "skill": {
       "name": "멸각의 계법",
@@ -25008,6 +25618,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193509,
     "skill": {
       "name": "불시의 꿈·영원한 부뚜막",
@@ -25222,6 +25836,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193511,
     "skill": {
       "name": "신기루 끝의 뜨거운 꿈",
@@ -25436,6 +26054,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193512,
     "skill": {
       "name": "잿빛 태양의 그림자",
@@ -25650,6 +26272,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 193513,
     "skill": {
       "name": "하얀 새벽의 서곡",
@@ -25677,6 +26303,224 @@
     "day": [
       "Wednesday",
       "Saturday"
+    ]
+  },
+  "13514": {
+    "id": 13514,
+    "name": "맛의 지휘자",
+    "desc": "우아한 형태의 창. 어떤 위대한 대악사가 선율과 미각 사이를 연결하는 다리로 삼았던 지휘봉이라고 전해진다",
+    "type": "장병기",
+    "rarity": 5,
+    "icon": "UI_EquipIcon_Pole_Trident",
+    "iconAwake": "UI_EquipIcon_Pole_Trident_Awaken",
+    "baseExp": 300000,
+    "stat": [
+      {
+        "type": "기초 공격력",
+        "value": 45.9364,
+        "curve": "GROW_CURVE_ATTACK_301"
+      },
+      {
+        "type": "치명타 피해",
+        "value": 0.144,
+        "curve": "GROW_CURVE_CRITICAL_301"
+      }
+    ],
+    "promote": [
+      {
+        "ascension": 1,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 31.1
+          }
+        ],
+        "costs": [
+          {
+            "id": 114053,
+            "count": 5
+          },
+          {
+            "id": 112086,
+            "count": 5
+          },
+          {
+            "id": 112080,
+            "count": 3
+          },
+          {
+            "id": 202,
+            "count": 10000
+          }
+        ]
+      },
+      {
+        "ascension": 2,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 62.2
+          }
+        ],
+        "costs": [
+          {
+            "id": 114054,
+            "count": 5
+          },
+          {
+            "id": 112086,
+            "count": 18
+          },
+          {
+            "id": 112080,
+            "count": 12
+          },
+          {
+            "id": 202,
+            "count": 20000
+          }
+        ]
+      },
+      {
+        "ascension": 3,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 93.4
+          }
+        ],
+        "costs": [
+          {
+            "id": 114054,
+            "count": 9
+          },
+          {
+            "id": 112087,
+            "count": 9
+          },
+          {
+            "id": 112081,
+            "count": 9
+          },
+          {
+            "id": 202,
+            "count": 30000
+          }
+        ]
+      },
+      {
+        "ascension": 4,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 124.5
+          }
+        ],
+        "costs": [
+          {
+            "id": 114055,
+            "count": 5
+          },
+          {
+            "id": 112087,
+            "count": 18
+          },
+          {
+            "id": 112081,
+            "count": 14
+          },
+          {
+            "id": 202,
+            "count": 45000
+          }
+        ]
+      },
+      {
+        "ascension": 5,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 155.6
+          }
+        ],
+        "costs": [
+          {
+            "id": 114055,
+            "count": 9
+          },
+          {
+            "id": 112088,
+            "count": 14
+          },
+          {
+            "id": 112082,
+            "count": 9
+          },
+          {
+            "id": 202,
+            "count": 55000
+          }
+        ]
+      },
+      {
+        "ascension": 6,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 186.7
+          }
+        ],
+        "costs": [
+          {
+            "id": 114056,
+            "count": 6
+          },
+          {
+            "id": 112088,
+            "count": 27
+          },
+          {
+            "id": 112082,
+            "count": 18
+          },
+          {
+            "id": 202,
+            "count": 65000
+          }
+        ]
+      }
+    ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
+    "story": 193514,
+    "skill": {
+      "name": "맛의 교향곡",
+      "desc": {
+        "r1": "공격력이 <color=#99FFFFFF>12%</color> 증가한다. 장착 캐릭터가 대기 상태 시, 공격력이 추가로 <color=#99FFFFFF>12%</color> 증가한다. 치유 진행 후, 장착 캐릭터와 치유를 받은 캐릭터의 공격력이 <color=#99FFFFFF>32%</color> 증가하는 「달콤한 울림」 효과를 획득한다. 지속 시간: 3초. 해당 효과는 장착 캐릭터가 대기 상태 시에도 발동한다",
+        "r2": "공격력이 <color=#99FFFFFF>15%</color> 증가한다. 장착 캐릭터가 대기 상태 시, 공격력이 추가로 <color=#99FFFFFF>15%</color> 증가한다. 치유 진행 후, 장착 캐릭터와 치유를 받은 캐릭터의 공격력이 <color=#99FFFFFF>40%</color> 증가하는 「달콤한 울림」 효과를 획득한다. 지속 시간: 3초. 해당 효과는 장착 캐릭터가 대기 상태 시에도 발동한다",
+        "r3": "공격력이 <color=#99FFFFFF>18%</color> 증가한다. 장착 캐릭터가 대기 상태 시, 공격력이 추가로 <color=#99FFFFFF>18%</color> 증가한다. 치유 진행 후, 장착 캐릭터와 치유를 받은 캐릭터의 공격력이 <color=#99FFFFFF>48%</color> 증가하는 「달콤한 울림」 효과를 획득한다. 지속 시간: 3초. 해당 효과는 장착 캐릭터가 대기 상태 시에도 발동한다",
+        "r4": "공격력이 <color=#99FFFFFF>21%</color> 증가한다. 장착 캐릭터가 대기 상태 시, 공격력이 추가로 <color=#99FFFFFF>21%</color> 증가한다. 치유 진행 후, 장착 캐릭터와 치유를 받은 캐릭터의 공격력이 <color=#99FFFFFF>56%</color> 증가하는 「달콤한 울림」 효과를 획득한다. 지속 시간: 3초. 해당 효과는 장착 캐릭터가 대기 상태 시에도 발동한다",
+        "r5": "공격력이 <color=#99FFFFFF>24%</color> 증가한다. 장착 캐릭터가 대기 상태 시, 공격력이 추가로 <color=#99FFFFFF>24%</color> 증가한다. 치유 진행 후, 장착 캐릭터와 치유를 받은 캐릭터의 공격력이 <color=#99FFFFFF>64%</color> 증가하는 「달콤한 울림」 효과를 획득한다. 지속 시간: 3초. 해당 효과는 장착 캐릭터가 대기 상태 시에도 발동한다"
+      }
+    },
+    "available": true,
+    "material": [
+      114053,
+      112086,
+      112080,
+      114054,
+      112087,
+      112081,
+      114055,
+      112088,
+      112082,
+      114056
+    ],
+    "day": [
+      "Tuesday",
+      "Friday"
     ]
   },
   "14101": {
@@ -27242,6 +28086,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194401,
     "skill": {
       "name": "바람과 함께",
@@ -27456,6 +28304,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194402,
     "skill": {
       "name": "등장 음악",
@@ -27670,6 +28522,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194403,
     "skill": {
       "name": "침착",
@@ -27884,6 +28740,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194404,
     "skill": {
       "name": "집중",
@@ -28098,6 +28958,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194405,
     "skill": {
       "name": "해와 달의 광휘",
@@ -28312,6 +29176,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194406,
     "skill": {
       "name": "도금",
@@ -28526,6 +29394,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194407,
     "skill": {
       "name": "에너지 주입 두루마리",
@@ -28740,6 +29612,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194408,
     "skill": {
       "name": "승승장구",
@@ -28954,6 +29830,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194409,
     "skill": {
       "name": "메아리",
@@ -29168,6 +30048,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194410,
     "skill": {
       "name": "변화무쌍",
@@ -29382,6 +30266,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194412,
     "skill": {
       "name": "서리의 매장",
@@ -29596,6 +30484,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194413,
     "refineItem": 200105,
     "skill": {
@@ -29811,6 +30703,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194414,
     "skill": {
       "name": "벚꽃 재궁",
@@ -30025,6 +30921,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194415,
     "refineItem": 200109,
     "skill": {
@@ -30240,6 +31140,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194416,
     "skill": {
       "name": "숲과 들의 저녁별",
@@ -30454,6 +31358,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194417,
     "skill": {
       "name": "원만의 상",
@@ -30668,6 +31576,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194424,
     "skill": {
       "name": "흐르는 옥",
@@ -30882,6 +31794,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194425,
     "skill": {
       "name": "미완의 걸작",
@@ -31096,6 +32012,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194426,
     "refineItem": 200117,
     "skill": {
@@ -31311,6 +32231,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194427,
     "refineItem": 200122,
     "skill": {
@@ -31526,6 +32450,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194430,
     "skill": {
       "name": "회전하는 송곳니",
@@ -31740,6 +32668,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194431,
     "skill": {
       "name": "비옥한 땅의 메아리",
@@ -31954,6 +32886,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194501,
     "skill": {
       "name": "사방을 떠다니는 뭉게구름",
@@ -32168,6 +33104,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194502,
     "skill": {
       "name": "끝없는 은혜",
@@ -32382,6 +33322,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194504,
     "skill": {
       "name": "금빛의 옥·제군의 길",
@@ -32596,6 +33540,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194505,
     "skill": {
       "name": "정토옥규",
@@ -32810,6 +33758,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194506,
     "skill": {
       "name": "백야의 밝은 달",
@@ -33024,6 +33976,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194509,
     "skill": {
       "name": "신성한 벚나무의 카미아소비 카구라의 춤",
@@ -33238,6 +34194,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194511,
     "skill": {
       "name": "천 개의 새벽이 부르는 노래",
@@ -33452,6 +34412,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194512,
     "skill": {
       "name": "파묻힌 사파이어의 눈물",
@@ -33666,6 +34630,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194513,
     "skill": {
       "name": "황금 혈조",
@@ -33880,6 +34848,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194514,
     "skill": {
       "name": "영원한 파도",
@@ -34094,6 +35066,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194515,
     "skill": {
       "name": "운급 강림 비법",
@@ -34308,6 +35284,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194516,
     "skill": {
       "name": "물빛 추억",
@@ -34522,6 +35502,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194517,
     "skill": {
       "name": "바람과 태양에 바치는 연기 제사",
@@ -34736,6 +35720,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 194518,
     "skill": {
       "name": "온천과 매 그리고 나루카미",
@@ -34759,6 +35747,224 @@
       112112,
       112055,
       114032
+    ],
+    "day": [
+      "Tuesday",
+      "Friday"
+    ]
+  },
+  "14519": {
+    "id": 14519,
+    "name": "빛나는 마음",
+    "desc": "비옥한 터전의 보석과 꽃깃회의 수정으로 만든 트로피. 과거 어느 전설적인 레슬링 선수의 소유였다고 전해진다",
+    "type": "법구",
+    "rarity": 5,
+    "icon": "UI_EquipIcon_Catalyst_VaresaTransformer",
+    "iconAwake": "UI_EquipIcon_Catalyst_VaresaTransformer_Awaken",
+    "baseExp": 300000,
+    "stat": [
+      {
+        "type": "기초 공격력",
+        "value": 47.537,
+        "curve": "GROW_CURVE_ATTACK_302"
+      },
+      {
+        "type": "치명타 피해",
+        "value": 0.096,
+        "curve": "GROW_CURVE_CRITICAL_301"
+      }
+    ],
+    "promote": [
+      {
+        "ascension": 1,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 31.1
+          }
+        ],
+        "costs": [
+          {
+            "id": 114065,
+            "count": 5
+          },
+          {
+            "id": 112119,
+            "count": 5
+          },
+          {
+            "id": 112101,
+            "count": 3
+          },
+          {
+            "id": 202,
+            "count": 10000
+          }
+        ]
+      },
+      {
+        "ascension": 2,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 62.2
+          }
+        ],
+        "costs": [
+          {
+            "id": 114066,
+            "count": 5
+          },
+          {
+            "id": 112119,
+            "count": 18
+          },
+          {
+            "id": 112101,
+            "count": 12
+          },
+          {
+            "id": 202,
+            "count": 20000
+          }
+        ]
+      },
+      {
+        "ascension": 3,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 93.4
+          }
+        ],
+        "costs": [
+          {
+            "id": 114066,
+            "count": 9
+          },
+          {
+            "id": 112120,
+            "count": 9
+          },
+          {
+            "id": 112102,
+            "count": 9
+          },
+          {
+            "id": 202,
+            "count": 30000
+          }
+        ]
+      },
+      {
+        "ascension": 4,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 124.5
+          }
+        ],
+        "costs": [
+          {
+            "id": 114067,
+            "count": 5
+          },
+          {
+            "id": 112120,
+            "count": 18
+          },
+          {
+            "id": 112102,
+            "count": 14
+          },
+          {
+            "id": 202,
+            "count": 45000
+          }
+        ]
+      },
+      {
+        "ascension": 5,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 155.6
+          }
+        ],
+        "costs": [
+          {
+            "id": 114067,
+            "count": 9
+          },
+          {
+            "id": 112121,
+            "count": 14
+          },
+          {
+            "id": 112103,
+            "count": 9
+          },
+          {
+            "id": 202,
+            "count": 55000
+          }
+        ]
+      },
+      {
+        "ascension": 6,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 186.7
+          }
+        ],
+        "costs": [
+          {
+            "id": 114068,
+            "count": 6
+          },
+          {
+            "id": 112121,
+            "count": 27
+          },
+          {
+            "id": 112103,
+            "count": 18
+          },
+          {
+            "id": 202,
+            "count": 65000
+          }
+        ]
+      }
+    ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
+    "story": 194519,
+    "skill": {
+      "name": "무지개의 소원",
+      "desc": {
+        "r1": "공격력이 <color=#99FFFFFF>28%</color> 증가한다. 낙하 공격 시, 「아침놀빛」 효과를 획득한다: 낙하 공격으로 주는 치명타 피해가 <color=#99FFFFFF>28%</color> 증가한다. 원소전투 스킬 또는 원소폭발 발동 시, 「저녁놀빛」 효과를 획득한다: 낙하 공격으로 주는 치명타 피해가 <color=#99FFFFFF>40%</color> 증가한다. 상술한 2가지 효과는 각각 15초 동안 지속되며, 추락 충격이 명중하면 0.1초 후에 사라진다",
+        "r2": "공격력이 <color=#99FFFFFF>35%</color> 증가한다. 낙하 공격 시, 「아침놀빛」 효과를 획득한다: 낙하 공격으로 주는 치명타 피해가 <color=#99FFFFFF>35%</color> 증가한다. 원소전투 스킬 또는 원소폭발 발동 시, 「저녁놀빛」 효과를 획득한다: 낙하 공격으로 주는 치명타 피해가 <color=#99FFFFFF>50%</color> 증가한다. 상술한 2가지 효과는 각각 15초 동안 지속되며, 추락 충격이 명중하면 0.1초 후에 사라진다",
+        "r3": "공격력이 <color=#99FFFFFF>42%</color> 증가한다. 낙하 공격 시, 「아침놀빛」 효과를 획득한다: 낙하 공격으로 주는 치명타 피해가 <color=#99FFFFFF>42%</color> 증가한다. 원소전투 스킬 또는 원소폭발 발동 시, 「저녁놀빛」 효과를 획득한다: 낙하 공격으로 주는 치명타 피해가 <color=#99FFFFFF>60%</color> 증가한다. 상술한 2가지 효과는 각각 15초 동안 지속되며, 추락 충격이 명중하면 0.1초 후에 사라진다",
+        "r4": "공격력이 <color=#99FFFFFF>49%</color> 증가한다. 낙하 공격 시, 「아침놀빛」 효과를 획득한다: 낙하 공격으로 주는 치명타 피해가 <color=#99FFFFFF>49%</color> 증가한다. 원소전투 스킬 또는 원소폭발 발동 시, 「저녁놀빛」 효과를 획득한다: 낙하 공격으로 주는 치명타 피해가 <color=#99FFFFFF>70%</color> 증가한다. 상술한 2가지 효과는 각각 15초 동안 지속되며, 추락 충격이 명중하면 0.1초 후에 사라진다",
+        "r5": "공격력이 <color=#99FFFFFF>56%</color> 증가한다. 낙하 공격 시, 「아침놀빛」 효과를 획득한다: 낙하 공격으로 주는 치명타 피해가 <color=#99FFFFFF>56%</color> 증가한다. 원소전투 스킬 또는 원소폭발 발동 시, 「저녁놀빛」 효과를 획득한다: 낙하 공격으로 주는 치명타 피해가 <color=#99FFFFFF>80%</color> 증가한다. 상술한 2가지 효과는 각각 15초 동안 지속되며, 추락 충격이 명중하면 0.1초 후에 사라진다"
+      }
+    },
+    "available": true,
+    "material": [
+      114065,
+      112119,
+      112101,
+      114066,
+      112120,
+      112102,
+      114067,
+      112121,
+      112103,
+      114068
     ],
     "day": [
       "Tuesday",
@@ -36328,6 +37534,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195401,
     "skill": {
       "name": "바람과 함께",
@@ -36542,6 +37752,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195402,
     "skill": {
       "name": "무형 화살의 노래",
@@ -36756,6 +37970,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195403,
     "skill": {
       "name": "침착",
@@ -36970,6 +38188,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195404,
     "skill": {
       "name": "집중",
@@ -37184,6 +38406,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195405,
     "skill": {
       "name": "속사 궁술",
@@ -37398,6 +38624,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195406,
     "skill": {
       "name": "이착불귀",
@@ -37612,6 +38842,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195407,
     "skill": {
       "name": "에너지 주입 화살",
@@ -37826,6 +39060,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195408,
     "skill": {
       "name": "승승장구",
@@ -38040,6 +39278,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195409,
     "skill": {
       "name": "청록색의 바람",
@@ -38254,6 +39496,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195410,
     "skill": {
       "name": "골목의 매복자",
@@ -38468,6 +39714,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195411,
     "refineItem": 200110,
     "skill": {
@@ -38683,6 +39933,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195412,
     "skill": {
       "name": "극야의 2중주",
@@ -38897,6 +40151,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195413,
     "refineItem": 200104,
     "skill": {
@@ -39112,6 +40370,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195414,
     "skill": {
       "name": "아사세의 활고자",
@@ -39326,11 +40588,15 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195415,
     "skill": {
       "name": "강력한 공격",
       "desc": {
-        "r1": "<color=#99FFFFFF>다음 플랫폼에서만 적용:</color>\\n<color=#99FFFFFF>\"PlayStation Network\"</color>\\n적에게 얼음 원소 피해를 준 후, 일반 공격과 강공격으로 주는 피해가 10% 증가한다. 지속 시간: 6초, 최대 중첩수: 2회. 또한, 에일로이가 포식자를 장착할 때 공격력이 66pt 증가한다",
+        "r1": "<color=#99FFFFFF>다음 플랫폼에서만 적용:</color>\\n<color=#99FFFFFF>\"PlayStation™Network\"</color>\\n적에게 얼음 원소 피해를 준 후, 일반 공격과 강공격으로 주는 피해가 10% 증가한다. 지속 시간: 6초, 최대 중첩수: 2회. 또한, 에일로이가 포식자를 장착할 때 공격력이 66pt 증가한다",
         "r2": null,
         "r3": null,
         "r4": null,
@@ -39540,6 +40806,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195416,
     "skill": {
       "name": "파도를 지배하는 와타츠미의 백성",
@@ -39754,6 +41024,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195417,
     "skill": {
       "name": "미궁의 왕의 가르침",
@@ -39968,6 +41242,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195418,
     "refineItem": 200111,
     "skill": {
@@ -40183,6 +41461,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195419,
     "refineItem": 200115,
     "skill": {
@@ -40398,6 +41680,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195424,
     "skill": {
       "name": "옛길에 내리쬐는 태양",
@@ -40612,6 +41898,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195425,
     "skill": {
       "name": "심해의 활시위",
@@ -40826,6 +42116,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195426,
     "refineItem": 200121,
     "skill": {
@@ -41041,6 +42335,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195427,
     "skill": {
       "name": "석공의 노래",
@@ -41255,6 +42553,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195430,
     "skill": {
       "name": "오지 않은 꽃차례",
@@ -41469,6 +42771,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195431,
     "skill": {
       "name": "꽃과 떨어진 깃털의 노래",
@@ -41496,6 +42802,225 @@
     "day": [
       "Wednesday",
       "Saturday"
+    ]
+  },
+  "15432": {
+    "id": 15432,
+    "name": "침묵의 사격",
+    "desc": "초장거리 사격과 조용한 암살을 위해 만들어진 기계 장궁. 차가운 화살 소리는 밤을 그윽하게 울린다",
+    "type": "활",
+    "rarity": 4,
+    "icon": "UI_EquipIcon_Bow_Stinger",
+    "iconAwake": "UI_EquipIcon_Bow_Stinger_Awaken",
+    "baseExp": 50000,
+    "stat": [
+      {
+        "type": "기초 공격력",
+        "value": 42.401,
+        "curve": "GROW_CURVE_ATTACK_201"
+      },
+      {
+        "type": "HP",
+        "value": 0.09,
+        "curve": "GROW_CURVE_CRITICAL_201"
+      }
+    ],
+    "promote": [
+      {
+        "ascension": 1,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 25.9
+          }
+        ],
+        "costs": [
+          {
+            "id": 114049,
+            "count": 3
+          },
+          {
+            "id": 112119,
+            "count": 3
+          },
+          {
+            "id": 112083,
+            "count": 2
+          },
+          {
+            "id": 202,
+            "count": 5000
+          }
+        ]
+      },
+      {
+        "ascension": 2,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 51.9
+          }
+        ],
+        "costs": [
+          {
+            "id": 114050,
+            "count": 3
+          },
+          {
+            "id": 112119,
+            "count": 12
+          },
+          {
+            "id": 112083,
+            "count": 8
+          },
+          {
+            "id": 202,
+            "count": 15000
+          }
+        ]
+      },
+      {
+        "ascension": 3,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 77.8
+          }
+        ],
+        "costs": [
+          {
+            "id": 114050,
+            "count": 6
+          },
+          {
+            "id": 112120,
+            "count": 6
+          },
+          {
+            "id": 112084,
+            "count": 6
+          },
+          {
+            "id": 202,
+            "count": 20000
+          }
+        ]
+      },
+      {
+        "ascension": 4,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 103.7
+          }
+        ],
+        "costs": [
+          {
+            "id": 114051,
+            "count": 3
+          },
+          {
+            "id": 112120,
+            "count": 12
+          },
+          {
+            "id": 112084,
+            "count": 9
+          },
+          {
+            "id": 202,
+            "count": 30000
+          }
+        ]
+      },
+      {
+        "ascension": 5,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 129.7
+          }
+        ],
+        "costs": [
+          {
+            "id": 114051,
+            "count": 6
+          },
+          {
+            "id": 112121,
+            "count": 9
+          },
+          {
+            "id": 112085,
+            "count": 6
+          },
+          {
+            "id": 202,
+            "count": 35000
+          }
+        ]
+      },
+      {
+        "ascension": 6,
+        "props": [
+          {
+            "type": "기초 공격력",
+            "value": 155.6
+          }
+        ],
+        "costs": [
+          {
+            "id": 114052,
+            "count": 4
+          },
+          {
+            "id": 112121,
+            "count": 18
+          },
+          {
+            "id": 112085,
+            "count": 12
+          },
+          {
+            "id": 202,
+            "count": 45000
+          }
+        ]
+      }
+    ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
+    "story": 195432,
+    "refineItem": 200125,
+    "skill": {
+      "name": "조용한 사격",
+      "desc": {
+        "r1": "공격이 적에게 명중 시, 목표 위치에 HP 최대치의 <color=#99FFFFFF>40%</color>에 해당하는 범위 피해를 준다. 해당 효과는 15초마다 최대 1회 발동된다",
+        "r2": "공격이 적에게 명중 시, 목표 위치에 HP 최대치의 <color=#99FFFFFF>50%</color>에 해당하는 범위 피해를 준다. 해당 효과는 15초마다 최대 1회 발동된다",
+        "r3": "공격이 적에게 명중 시, 목표 위치에 HP 최대치의 <color=#99FFFFFF>60%</color>에 해당하는 범위 피해를 준다. 해당 효과는 15초마다 최대 1회 발동된다",
+        "r4": "공격이 적에게 명중 시, 목표 위치에 HP 최대치의 <color=#99FFFFFF>70%</color>에 해당하는 범위 피해를 준다. 해당 효과는 15초마다 최대 1회 발동된다",
+        "r5": "공격이 적에게 명중 시, 목표 위치에 HP 최대치의 <color=#99FFFFFF>80%</color>에 해당하는 범위 피해를 준다. 해당 효과는 15초마다 최대 1회 발동된다"
+      }
+    },
+    "available": true,
+    "material": [
+      114049,
+      112119,
+      112083,
+      114050,
+      112120,
+      112084,
+      114051,
+      112121,
+      112085,
+      114052
+    ],
+    "day": [
+      "Monday",
+      "Thursday"
     ]
   },
   "15501": {
@@ -41683,6 +43208,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195501,
     "skill": {
       "name": "하늘에 메아리치는 노래",
@@ -41897,6 +43426,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195502,
     "skill": {
       "name": "잊지 않은 포부",
@@ -42111,6 +43644,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195503,
     "skill": {
       "name": "이별의 그리운 노래",
@@ -42262,6 +43799,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "available": true,
     "material": [
       114001,
@@ -42399,6 +43940,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "available": true,
     "material": [
       114001,
@@ -42599,6 +44144,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195507,
     "skill": {
       "name": "백야의 전조자",
@@ -42813,6 +44362,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195508,
     "skill": {
       "name": "만물 정화의 형상",
@@ -43027,6 +44580,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195509,
     "skill": {
       "name": "비뢰 어궁",
@@ -43241,6 +44798,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195511,
     "skill": {
       "name": "동물이 거니는 길의 끝",
@@ -43455,6 +45016,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195512,
     "skill": {
       "name": "위대한 자·파르치팔",
@@ -43669,6 +45234,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195513,
     "skill": {
       "name": "드리아스의 야상곡",
@@ -43883,6 +45452,10 @@
         ]
       }
     ],
+    "destroy": {
+      "id": 0,
+      "count": 0
+    },
     "story": 195514,
     "skill": {
       "name": "동공 속 달무리",
